@@ -1,0 +1,7 @@
+pandas
+cameo
+jupyter
+django
+djangorestframework
+django-cors-headers
+
