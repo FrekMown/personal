@@ -1,0 +1,82 @@
+header {
+  background-color: black;
+}
+
+body {
+  /* Definition of global variables */
+  --first-color: #FDFDFF;
+  --second-color: #53A2BE;
+  --third-color: #1D84B5;
+  --fourth-color: #176087;
+  color: var(--first-color);
+  background-color: black;
+}
+
+.section {
+  min-height: 100vh;
+}
+
+.section .title {
+  font-family: 'Major Mono Display', monospace;
+  font-size: 1.8rem;
+  text-align: center;
+  /* border-bottom: 1px solid var(--second-color); */
+}
+
+body {
+  border: 1px solid black;
+  font-family: 'Amaranth', sans-serif;
+}
+
+.table-of-contents {
+  font-size: 1.3rem;
+  /* font-family: 'Major Mono Display', monospace; */
+}
+
+.table-of-contents a {
+  color: var(--fourth-color)
+}
+
+.table-of-contents a.active {
+  color: var(--first-color);
+  border-left: 2px solid var(--second-color);
+}
+
+.table-of-contents a:not(.active):hover {
+  color: var(--second-color);
+  border-left: 1px solid var(--second-color);
+}
+
+header img {
+  max-height: 100vh;
+  max-width: 100vw;
+  z-index: 100;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* Amaranth Font */
+/* amaranth-regular - latin */
+@font-face {
+  font-family: 'Amaranth';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Amaranth Regular'), local('Amaranth-Regular'),
+       url('/static/main/fonts/amaranth-v10-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('/static/main/fonts/amaranth-v10-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* major-mono-display-regular - latin */
+@font-face {
+  font-family: 'Major Mono Display';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Major Mono Display Regular'), local('MajorMonoDisplay-Regular'),
+       url('/static/main/fonts/major-mono-display-v4-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('/static/main/fonts/major-mono-display-v4-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
