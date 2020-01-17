@@ -22,4 +22,4 @@ yarn-error.log*
 # others
 __pycache__/
 .vscode/
-static/
+/static/

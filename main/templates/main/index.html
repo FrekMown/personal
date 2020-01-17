@@ -3,32 +3,75 @@
 
 <head>
   <!-- Materialize -->
-  <link rel="stylesheet" href="/static/main/materialize.min.css">
   <!-- Google Fonts -->
   <!-- <link href="https://fonts.googleapis.com/css?family=Amaranth&display=swap" rel="stylesheet"> -->
-
+  <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/static/main/css/materialize.min.css">
   <link rel="stylesheet" href="master.css">
   <title>Alfredo Alarcon - Scientific Informatics</title>
-  <style>
-
-  </style>
 </head>
 
 <body>
-  <header>
-    <img src="/static/main/header.jpg">
-  </header>
+  <!-- Header -->
+  <header><img src="/static/main/img/header.jpg"></header>
   <div class="row">
     <!-- Main content -->
-    <div class="col s12 m9 l10">
+    <div class="col s12 m10 l8 offset-l1">
 
       <!-- Presentation -->
       <div id="presentation" class="section scrollspy">
-        <div class="container">
-          <div class="title">presentation</div>
+        <div class="title">presentation</div>
+        <div class="section-content">
+
+          <!-- Who Am I ? -->
+          <div class="my-card">
+            <img id="profile-pic" src="/static/main/img/profile_picture.png" alt="">
+            <div class="subtitle">Who Am I?</div>
+            <ul class="check-list">
+              <li>Engineer from the Ecole Polytechnique</li>
+              <li>8 years experience in data science and web development</li>
+              <li>Passionate about science and technology</li>
+            </ul>
+            <a href="/static/main/docs/CV_Alfredo_ALARCON.pdf" class="btn waves-effect waves-light blue lighten-1">
+              Download CV
+            </a>
+          </div>
+          <!-- Expertise -->
+          <div class="my-card">
+            <div class="subtitle">Expertise</div>
+            <div id="expertise-list">
+              <div>
+                <img src="/static/main/img/113k_reverse_transcriptase.png" alt="">
+                <div>Bioinformatics</div>
+              </div>
+              <div>
+                <img src="/static/main/img/web-development.jpg" alt="">
+                <div>Web Development</div>
+              </div>
+              <div>
+                <img src="/static/main/img/network-analysis.jpg" alt="">
+                <div>Network Modelling</div>
+              </div>
+              <div>
+                <img src="/static/main/img/218a_tryptophan.png" alt="">
+                <div>Chemoinformatics</div>
+              </div>
+              <div>
+                <img src="/static/main/img/data-analysis.jpg" alt="">
+                <div>Data Analysis </div>
+                <div>& Visualisation</div>
+              </div>
+              <div>
+                <img src="/static/main/img/project-management.jpg" alt="">
+                <div>Management</div>
+                <div>& Coaching</div>
+              </div>
+
+            </div>
+          </div>
         </div>
       </div>
 
@@ -62,8 +105,8 @@
     </div>
 
     <!-- table of contents -->
-    <div class="col hide-on-small-only m3 l2">
-      <div class="pushpin">
+    <div class="col hide-on-small-only m2 l2"  id="table-contents-container">
+      <div class="pushpin" >
         <ul class="section table-of-contents">
           <li><a href="#presentation">Presentation</a></li>
           <li><a href="#experience">Experience</a></li>
@@ -76,8 +119,9 @@
   </div>
 
 
-  <script src="/static/main/materialize.min.js"></script>
+
   <!-- Initialize materialize -->
+  <script src="/static/main/js/materialize.min.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       let scrollspyOptions = {
