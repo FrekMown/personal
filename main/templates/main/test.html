@@ -1,1 +1,38 @@
-<h1>Test</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #experience {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+      /* grid-template-rows: 1fr 4fr 2fr; */
+      border: 1px solid lightgreen;
+    }
+
+    #experience>.title,
+    #experience>#my-stack {
+      grid-column: 1 / 2;
+    }
+
+    #experience>div {
+      border: 1px solid black;
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="experience">
+    <div class="title">experience</div>
+    <div>Who Am I</div>
+    <div>Expertise</div>
+    <div id="my-stack">My Stack</div>
+  </div>
+</body>
+
+</html>
