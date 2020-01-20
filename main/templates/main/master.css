@@ -46,6 +46,37 @@ header {
   justify-content: space-around;
 }
 
+
+/* Section Expertise  */
+#expertise {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 400px));
+
+}
+
+#expertise>.my-card {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 280px);
+  justify-content: space-around;
+}
+
+#expertise>.my-card:nth-child(-n+4) {
+  grid-column: 1/-1;
+
+}
+
+#expertise>.my-card>div:first-child {
+  grid-column: 1/-1;
+}
+
+.expertise-item {
+  border: 1px solid white;
+}
+
+/* #expertise>.my-card:nth-child(2){
+  grid-column: 1/-2;
+  background-color: pink;
+} */
+
 /* Section Experience */
 .experience-list {
   display: flex;
@@ -184,7 +215,6 @@ header {
 ul.check-list {
   list-style-type: none;
   text-align: left;
-  /* border: 1px solid white; */
 }
 
 ul.check-list li::before {
@@ -204,9 +234,8 @@ ul.check-list li::before {
   margin-top: 3vh;
 }
 
-/* Elements inside expertise list */
-
-#expertise-list>div {
+#expertise-list>a {
+  display: block;
   background-color: var(--background-2);
   box-shadow: var(--shadow);
   border: 1px solid rgba(87, 87, 99, 0.8);
