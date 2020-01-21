@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>My first Chartist Tests</title>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+
+  <style>
+    body {
+      --first-color: rgb(237, 237, 238);
+      --second-color: rgb(111, 181, 206);
+      --third-color: rgb(44, 138, 182);
+      --fourth-color: #176087;
+      --background-1: rgb(19, 19, 34);
+      --background-2: rgb(14, 14, 27);
+      --background-3: rgb(87, 87, 99);
+      background-color: var(--background-1);
+      ;
+    }
+
+    .ct-label {
+      color: white;
+    }
+
+    .ct-grid {
+      stroke: rgb(214, 212, 212);
+    }
+
+    .ct-series .ct-line {
+      stroke-width: 2px;
+    }
+
+    .ct-series .ct-point {
+      stroke-width: 7px;
+    }
+
+    .ct-series-a .ct-line,
+    .ct-series-a .ct-point {
+      stroke: var(--first-color);
+    }
+
+    .ct-series-b .ct-line,
+    .ct-series-b .ct-point {
+      stroke: var(--second-color);
+    }
+
+    .ct-series-c .ct-line,
+    .ct-series-c .ct-point {
+      stroke: var(--third-color);
+    }
+
+    .ct-series-d .ct-line,
+    .ct-series-d .ct-point {
+      stroke: var(--fourth-color);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="ct-chart ct-octave" id="ct-expertise"></div>
+
+
+  <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+  <script>
+    const data = {
+      // A labels array that can contain any sort of values
+      labels: [1, 2, 3, 4, 5, 6, 7, 8],
+      series: [
+        [1, 2, 3, 1, -2, 0, 1, 0],
+        [-2, -1, -2, -1, -3, -1, -2, -1],
+        [0, 0, 0, 1, 2, 3, 2, 1],
+        [3, 2, 1, 0.5, 1, 0, -1, -3]
+      ]
+    };
+
+
+    const options = {
+      high: 3,
+      low: -3,
+      fullWidth: true,
+      // As this is axis specific we need to tell Chartist to use whole numbers only on the concerned axis
+      axisY: {
+        onlyInteger: true,
+        offset: 20
+      }
+    };
+
+
+    // const options = {
+    //   height: 250,
+    //   width: 350,
+    // }
+    new Chartist.Line('#ct-expertise', data);
+  </script>
+</body>
+
+</html>

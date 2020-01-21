@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+
+<!-- Escher files -->
+<script src="/static/main/js/escher.min.js" charset="utf-8"></script>
+
+<!-- The script for the demo -->
+<script src="test-escher-me.js"></script>
+
+
+
+<meta charset="utf-8" />
+
+<body>
+  <div id="escher-map"></div>
+</body>
+
+<style>
+  body {
+    --first-color: rgb(237, 237, 238);
+    --second-color: rgb(111, 181, 206);
+    --third-color: rgb(44, 138, 182);
+    --fourth-color: #176087;
+    --background-1: rgb(19, 19, 34);
+  }
+
+  #escher-map {
+    width: 600px;
+    height: 500px;
+    background-color: black;
+  }
+
+  svg.escher-svg #canvas {
+    fill: var(--background-1);
+    stroke:var(--background-1);
+    stroke-width: 7px;
+  }
+
+  svg.escher-svg .label {
+    fill: var(--first-color);
+  }
+
+  svg.escher-svg .metabolite-circle {
+    stroke: var(--second-color);
+    fill: var(--background-1);
+    stroke-width: 7px;
+  }
+</style>
+
+</html>
