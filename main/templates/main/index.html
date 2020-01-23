@@ -10,11 +10,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="/static/main/css/materialize.min.css">
+  <link rel="stylesheet" href="/static/main/css/chartist.min.css">
+  <link rel="stylesheet" href="chartist-plot.css">
   <link rel="stylesheet" href="master.css">
   <title>Alfredo Alarcon - Scientific Informatics</title>
 </head>
 
 <body>
+  <!-- Initialize 3Dmol -->
+  <script src="/static/main/js/3Dmol-min.js"></script>
+
   <!-- Header -->
   <header><img src="/static/main/img/header-no-contact.jpg"></header>
   <div class="row">
@@ -127,7 +132,9 @@
 
         <!-- Informatics -->
         <div class="my-card" id="data-science">
-          <div class="subtitle">Informatics</div>
+          <div class="subtitle">Data Science & Full Stack WebDev</div>
+          <!-- Animation -->
+          <div class="ct-chart" id="ct-expertise"></div>
           <!-- Full Stack Web Development -->
           <div class="expertise-item">
             <div class="exp-title-2">Full Stack Web Development</div>
@@ -136,18 +143,15 @@
           <div class="expertise-item">
             <div class="exp-title-2">Machine Learning</div>
           </div>
-          <!-- Visualisation -->
-          <div class="expertise-item">
-            <div class="exp-title-2">Visualisation</div>
-          </div>
         </div>
 
         <!-- Computational Biology -->
         <div class="my-card" id="computational-biology">
           <div class="subtitle">Computational Biology</div>
           <!-- DNA and Protein Sequence Analysi -->
+          <img id="biology-image" src="/static/main/img/logos-expertise/expertise-biology.png" alt="">
           <div class="expertise-item">
-            <div class="exp-title-2">DNA and Protein Sequence Analysis</div>
+            <!-- <div class="exp-title-2">DNA and Protein Sequence Analysis</div> -->
           </div>
           <!-- Metabolic Modelling -->
           <div class="expertise-item">
@@ -163,10 +167,12 @@
         <div class="my-card" id="chemoinformatics">
           <div class="subtitle">Chemoinformatics</div>
           <!-- RDKit -->
-          <div class="expertise-item">
-            <div class="exp-title-2">Modelling Chemistry - RDKit</div>
-            <img src="" alt="">
+          <!-- <div class="expertise-item"> -->
+          <!-- <div class="exp-title-2">Modelling Chemistry - RDKit</div> -->
+          <div id="tubocurarine" data-href="/static/main/science/tubocurarine.sdf" data-type="sdf" data-style="stick"
+            class="viewer_3Dmoljs" data-backgroundcolor="0x131322">
           </div>
+          <!-- </div> -->
           <!-- Mass Spectrometry -->
           <div class="expertise-item">
             <div class="exp-title-2">Mass Spectrometry</div>
@@ -178,6 +184,10 @@
         <!-- Network Analysis -->
         <div class="my-card" id="network-analysis">
           <div class="subtitle">Network Analysis</div>
+          <div id="escher-map-container">
+            <div id="escher-title">lero lero</div>
+            <div id="escher-map"></div>
+          </div>
           <!-- Graph Modelling -->
           <div class="expertise-item">
             <div class="exp-title-2">Graph Modelling</div>
@@ -381,6 +391,16 @@
       elem.onclick = () => window.open(links[elem.id], "_blank");
     })
   </script>
+
+  <!-- Initialize Chartist Animation -->
+  <script src="/static/main/js/chartist.min.js"></script>
+  <script src="chartist-plot.js"></script>
+
+  <!-- Initialize Escher -->
+  <script src="/static/main/js/escher.min.js" charset="utf-8"></script>
+  <script src="escher-map.js"></script>
+  <link rel="stylesheet" href="escher-map.css">
+
 
   <!-- Initialize materialize -->
   <script src="/static/main/js/materialize.min.js"></script>

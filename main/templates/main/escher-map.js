@@ -61,7 +61,7 @@ async function plotEscher() {
     // No keyboard shortcuts
     enable_keys: false,
     // No tooltips
-    enable_tooltips: true,
+    enable_tooltips: false,
     full_screen_button: true,
     // reaction data
     // reaction_data: data[1],

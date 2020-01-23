@@ -1,0 +1,52 @@
+body {
+    --first-color: rgb(237, 237, 238);
+    --second-color: rgb(111, 181, 206);
+    --third-color: rgb(44, 138, 182);
+    --fourth-color: #176087;
+    --background-1: rgb(19, 19, 34);
+    --background-2: rgb(14, 14, 27);
+    --background-3: rgb(87, 87, 99);
+    background-color: var(--background-1);
+    ;
+  }
+
+  #ct-expertise {
+      padding: 10vh;
+      width: 60vw;
+      height: 50vw;
+  }
+  .ct-label {
+    color: white;
+  }
+
+  .ct-grid {
+    stroke: rgb(214, 212, 212);
+  }
+
+  .ct-series .ct-line {
+    stroke-width: 3px;
+  }
+
+  .ct-series .ct-point {
+    stroke-width: 6px;
+  }
+
+  .ct-series-a .ct-line,
+  .ct-series-a .ct-point {
+    stroke: var(--second-color);
+  }
+
+  .ct-series-b .ct-line,
+  .ct-series-b .ct-point {
+    stroke: var(--first-color);
+  }
+
+  .ct-series-c .ct-line,
+  .ct-series-c .ct-point {
+    stroke: var(--first-color);
+  }
+
+  .ct-series-d .ct-line,
+  .ct-series-d .ct-point {
+    stroke: var(--fourth-color);
+  }

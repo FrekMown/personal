@@ -1,34 +1,4 @@
-<!DOCTYPE html>
-<html>
-
-
-<!-- Escher files -->
-
-
-
-
-<meta charset="utf-8" />
-
-<body>
-  <div id="escher-map-container">
-    <div id="escher-title">lero lero</div>
-    <div id="escher-map"></div>
-  </div>
-
-  <script src="/static/main/js/escher.min.js" charset="utf-8"></script>
-  <script src="test-escher-me.js"></script>
-</body>
-
-<style>
-  body {
-    --first-color: rgb(237, 237, 238);
-    --second-color: rgb(111, 181, 206);
-    --third-color: rgb(44, 138, 182);
-    --fourth-color: #176087;
-    --background-1: rgb(19, 19, 34);
-  }
-
-  #escher-map-container {    
+ #escher-map-container {    
     border: 1px solid black;
     display: flex;
     flex-direction: column;
@@ -38,15 +8,14 @@
   }
 
   #escher-map {
-    width: 83vw;
-    height: 50vw;
+    width: 400px;
+    height: 300px;
     flex-grow: 1;
     color: var(--first-color);
     background-color: var(--background-1);
   }
 
   #escher-title {
-    /* min-height: 3em; */
     color: var(--first-color);
     align-self: center;
     padding: 1em;
@@ -71,6 +40,3 @@
     fill: var(--background-1);
     stroke-width: 7px;
   }
-</style>
-
-</html>

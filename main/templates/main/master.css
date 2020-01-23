@@ -48,14 +48,25 @@ header {
 
 
 /* Section Expertise  */
-#expertise {
-  grid-template-columns: repeat(auto-fit, 400px);
+#biology-image {
+  width: 385px;
+}
+#tubocurarine {
+  height: 300px;
+  width: 400px;
+}
 
+#tubocurarine canvas {
+  padding: 10px;
+}
+
+#expertise {
+  grid-template-columns: repeat(auto-fit, 450px);
 }
 
 #expertise>.my-card {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 280px);
+  grid-template-columns: repeat(auto-fit, 400px);
   justify-content: space-around;
 }
 
@@ -251,7 +262,7 @@ ul.check-list li::before {
   text-align: center;
 }
 
-#expertise-list>div:hover {
+#expertise-list>a:hover {
   box-shadow: none;
   color: var(--first-color);
 }

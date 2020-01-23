@@ -7,10 +7,19 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Molecule</title>
   <style>
-    #biotin {
-      height: 600px;
-      width: 400px;
+    body {
+      --background-1: rgb(19, 19, 34);
+    }
+
+    #epibatidine {
+      height: 30vh;
+      width: 30vh;
       border: 2px solid black;
+    }
+
+    #tubocurarine {
+      height: 40vh;
+      width: 40vh;
     }
   </style>
 
@@ -18,8 +27,17 @@
 </head>
 
 <body>
-  <div id="biotin" data-pdb="2POR" class="viewer_3Dmoljs" data-style='stick'>
+  <!-- <div id="biotin" data-pdb="2POR" class="viewer_3Dmoljs" data-style='stick'></div> -->
+  <!-- <div id="biotin" data-href="/static/main/science/thc-3d.sdf" data-type="sdf" class="viewer_3Dmoljs"
+    data-style='stick'></div> -->
+  <!-- Epibatidine -->
+  <div id="epibatidine" data-href="/static/main/science/epibatidine.sdf" data-type="sdf" data-style="stick" class="viewer_3Dmoljs">
   </div>
+  <!-- <div id="tubocurarine" data-href="/static/main/science/tubocurarine.sdf" data-type="sdf" data-style="line" class="viewer_3Dmoljs">
+  </div> -->
+  <div id="tubocurarine" data-href="/static/main/science/tubocurarine.sdf" data-type="sdf" data-style="stick" class="viewer_3Dmoljs" data-surface="opacity:0.6">
+  </div>
+
   <!-- <div id="biotin" data-href="/static/main/docs/biotin.mol" class="viewer_3Dmoljs" data-type="mol2" data-style='stick'> -->
   <!-- </div> -->
 
