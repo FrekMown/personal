@@ -1,1 +1,47 @@
-{"sucarg": {"name": "N2-Succinyl-L-arginine", "match": [0, 1, 2, 3]}, "arg__L": {"name": "L-Arginine", "match": [0, 1, 2, 3]}, "agm": {"name": "Agmatine", "match": [0, 1, 2, 3]}, "argsuc": {"name": "N(omega)-(L-Arginino)succinate", "match": [0, 1, 2, 11]}, "fpram": {"name": "2-(Formamido)-N1-(5-phospho-D-ribosyl)acetamidine", "match": [0, 1, 2, 5]}}
+{
+    "fpram": {
+        "name": "2-(Formamido)-N1-(5-phospho-D-ribosyl)acetamidine",
+        "match": [
+            0,
+            1,
+            2,
+            5
+        ]
+    },
+    "argsuc": {
+        "name": "N(omega)-(L-Arginino)succinate",
+        "match": [
+            0,
+            1,
+            2,
+            11
+        ]
+    },
+    "sucarg": {
+        "name": "N2-Succinyl-L-arginine",
+        "match": [
+            0,
+            1,
+            2,
+            3
+        ]
+    },
+    "arg__L": {
+        "name": "L-Arginine",
+        "match": [
+            0,
+            1,
+            2,
+            3
+        ]
+    },
+    "agm": {
+        "name": "Agmatine",
+        "match": [
+            0,
+            1,
+            2,
+            3
+        ]
+    }
+}

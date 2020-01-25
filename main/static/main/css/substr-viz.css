@@ -1,0 +1,43 @@
+body {
+    font-family: 'Amaranth', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#chem-container {
+    height: 95vh;
+    width: 95vw;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 700px;
+}
+
+.mol-element {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.mol-name {
+    color: white;
+    border-bottom: 1px solid gray;
+    z-index: 100;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+#mol-substr>.mol-name {
+    color: lightblue;
+}
+
+@font-face {
+    font-family: 'Amaranth';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Amaranth Regular'), local('Amaranth-Regular'), url('/static/main/fonts/amaranth-v10-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('/static/main/fonts/amaranth-v10-latin-regular.woff') format('woff');
+    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }

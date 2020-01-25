@@ -48,9 +48,10 @@ header {
 
 
 /* Section Expertise  */
-#biology-image {
+#biology-image, #web-development-image, #modelling-image, #chemoinfo-image {
   width: 385px;
 }
+
 #tubocurarine {
   height: 300px;
   width: 400px;

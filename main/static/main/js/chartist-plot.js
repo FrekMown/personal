@@ -9,7 +9,6 @@ async function startAnimation() {
   const { line1, line2, noise } = await fetchData();
 
   intervalId = setInterval(() => {
-    // const data = get
     chart.data = getNextData(line1, line2, noise);
     chart.update();
   }, 80);
@@ -51,11 +50,11 @@ function getNextData(line1, line2, noise) {
 }
 
 async function fetchData() {
-  const line1 = await fetch("/static/main/science/plot_line_1.json").then(resp => resp.json());
-  const line2 = await fetch("/static/main/science/plot_line_2.json").then(resp => resp.json());
-  const noise = await fetch("/static/main/science/plot_noise.json").then(resp => resp.json());
+  const line1 = await fetch("/static/main/science/plotting/plot_line_1.json").then(resp => resp.json());
+  const line2 = await fetch("/static/main/science/plotting/plot_line_2.json").then(resp => resp.json());
+  const noise = await fetch("/static/main/science/plotting/plot_noise.json").then(resp => resp.json());
 
-  console.log(line1, line2, noise);
+  // console.log(line1, line2, noise);
   return { line1, line2, noise };
 }
 

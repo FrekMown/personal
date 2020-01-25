@@ -1,45 +1,25 @@
-<!DOCTYPE html>
-<html>
-
-
-<!-- Escher files -->
-
-
-
-
-<meta charset="utf-8" />
-
-<body>
-  <div id="escher-map-container">
-    <div id="escher-title">lero lero</div>
-    <div id="escher-map"></div>
-  </div>
-
-  <script src="/static/main/js/escher.min.js" charset="utf-8"></script>
-  <script src="test-escher-me.js"></script>
-</body>
-
-<style>
-  body {
+body {
     --first-color: rgb(237, 237, 238);
     --second-color: rgb(111, 181, 206);
     --third-color: rgb(44, 138, 182);
     --fourth-color: #176087;
     --background-1: rgb(19, 19, 34);
+    background-color: black;
   }
 
   #escher-map-container {    
-    border: 1px solid black;
+    /* border: 1px solid red; */
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
-    align-items: center;
     background-color: black;
-    justify-content: center;
+    justify-content: space-around;
+
   }
 
   #escher-map {
-    width: 83vw;
-    height: 50vw;
+    width: 700px;
+    height: 500px;
     flex-grow: 1;
     color: var(--first-color);
     background-color: var(--background-1);
@@ -48,13 +28,11 @@
   #escher-title {
     /* min-height: 3em; */
     color: var(--first-color);
-    align-self: center;
+    align-self: flex-start;
     padding: 1em;
     font-size: 1.1em;
     font-weight: bold;
   }
-
-
 
   svg.escher-svg #canvas {
     fill: var(--background-1);
@@ -71,6 +49,11 @@
     fill: var(--background-1);
     stroke-width: 7px;
   }
-</style>
 
-</html>
+  .search-menu-container {
+    display: none;
+  }
+
+  .button-panel {
+    display: none;
+  }

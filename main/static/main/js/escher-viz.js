@@ -9,63 +9,58 @@ const background3 = "rgb(87, 87, 99)";
 let escherBuilder;
 let counterFluxes = 0;
 let fluxes;
-const escherTitleElem = document.querySelector("#escher-title");
+
 
 const fluxesURL = [
-  "/main/static/main/science/fluxes_pFBA_bm-wt.json",
-  "/main/static/main/science/fluxes_pFBA_bm-pkt.json",
-  "/main/static/main/science/fluxes_pFBA_acetone-wt.json",
-  "/main/static/main/science/fluxes_pFBA_acetone-pkt.json",
+  "/static/main/science/modelling/fluxes_pFBA_bm-wt.json",
+  "/static/main/science/modelling/fluxes_pFBA_bm-pkt.json",
+  "/static/main/science/modelling/fluxes_pFBA_acetone-wt.json",
+  "/static/main/science/modelling/fluxes_pFBA_acetone-pkt.json",
 ];
 
+const modelURL = "/static/main/science/modelling/iML1515_PKT.json";
+
 const fluxesTitle = [
-  "Maximize Biomass Production Wild-Type Strain",
-  "Maximize Biomass Production PKT Strain",
-  "Maximize Acetone Production Wild-Type Strain",
-  "Maximize Acetone Production PKT Strain",
+  "Maximize Biomass Production<br>Wild-Type Strain",
+  "Maximize Biomass Production<br>PKT Strain",
+  "Maximize Acetone Production<br>Wild-Type Strain",
+  "Maximize Acetone Production<br>PKT Strain",
 ]
 
-const mapURL = '/main/static/main/science/iML1515-Map_EM.json';
+const mapURL = '/static/main/science/modelling/iML1515-Map_EM.json';
+
+// Set Initial Title
+const initialTitle = "Central Metabolism for Escherichia Coli<br>Model iML1515";
+const escherTitleElem = document.querySelector("#escher-title");
+escherTitleElem.innerHTML = initialTitle;
 
 
 plotEscher();
 
 function animateEscher() {
-  let title = "Central Metabolism for Escherichia Coli", flux = null;
+  let flux = null;
   counterFluxes = (counterFluxes + 1) % (fluxes.length + 1);
 
   if (counterFluxes !== fluxes.length) {
-    title = fluxesTitle[counterFluxes];
+    escherTitleElem.innerHTML = fluxesTitle[counterFluxes];
     flux = fluxes[counterFluxes];
   }
 
+  else {
+    escherTitleElem.innerHTML= initialTitle;
+  }
   escherBuilder.set_reaction_data(flux);
-  escherTitleElem.textContent = title;
+
 }
 
 
-// function launchAnimation()
-
 async function plotEscher() {
   const map = await fetch(mapURL).then(resp => resp.json());
-  
   fluxes = await Promise.all(fluxesURL.map(url => fetch(url).then(resp=>resp.json())));  
 
   const options = {
     // Just show the zoom buttons
-    menu: "none",
-    // use the smooth pan and zoom option
-    use_3d_transform: true,
-    // No editing in this map
-    enable_editing: false,
-    // No keyboard shortcuts
-    enable_keys: false,
-    // No tooltips
-    enable_tooltips: true,
-    full_screen_button: true,
-    // reaction data
-    // reaction_data: data[1],
-    // hide_secondary_metabolites: true,
+    menu: "all",
     reaction_scale: [
       { type: "min",  color: background3, size: 10},
       { type: "mean", color: secondColor, size: 20},
@@ -74,12 +69,13 @@ async function plotEscher() {
     reaction_compare_style: "log2_fold",
     reaction_no_data_color: background3,
     scroll_behavior: "zoom",
+    never_ask_before_quit: true,
   };
 
   // Initialize escher
   escherBuilder = escher.Builder(map, null, null, escher.libs.d3_select('#escher-map'), options);
   
   // launch animation
-  setInterval(animateEscher, 2000);
+  setInterval(animateEscher, 3000);
 
 }
