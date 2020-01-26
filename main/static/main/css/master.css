@@ -7,10 +7,11 @@ body {
   --third-color: rgb(44, 138, 182);
   --fourth-color: #176087;
   --background-1: rgb(19, 19, 34);
-  --background-2:  rgb(14, 14, 27);
+  --background-2: rgb(14, 14, 27);
   --background-3: rgb(87, 87, 99);
   color: var(--first-color);
   --shadow: 3px 3px 3px rgba(87, 87, 99, 0.8);
+  --shadow-2: 5px 5px 5px rgba(87, 87, 99, 0.8);
 }
 
 header img {
@@ -29,7 +30,6 @@ header {
   min-height: 100vh;
 }
 
-
 .section .subtitle {
   color: var(--second-color);
   font-size: 1.6rem;
@@ -46,19 +46,61 @@ header {
   justify-content: space-around;
 }
 
-
 /* Section Expertise  */
-#biology-image, #web-development-image, #modelling-image, #chemoinfo-image {
+
+#chemoinfo-image {
   width: 385px;
+  cursor: pointer;
+  border-radius: 50px;
+  border: 2px solid gray;
+  /* box-shadow : var(--shadow-2); */
 }
 
-#tubocurarine {
-  height: 300px;
+#chemoinfo-image:hover {
+  border: 2px solid whitesmoke;
+  filter: brightness(150%);
+}
+
+#modelling-image {
   width: 400px;
+  cursor: pointer;
+  border-radius: 50px;
+  border: 2px solid gray;
 }
 
-#tubocurarine canvas {
-  padding: 10px;
+#modelling-image:hover {
+  border: 2px solid whitesmoke;
+  filter: brightness(150%);
+}
+
+/* Animation Bio */
+#bio-1 {
+  position: absolute;
+  width: 330px;
+}
+
+#bio-2 {
+  position: relative;
+  width: 280px;
+  margin-top: 25px;
+  margin-left: 25px;
+}
+
+.rotate {
+  animation: rotation 50s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+#web-development-image {
+  width: 280px;
 }
 
 #expertise {
@@ -71,9 +113,13 @@ header {
   justify-content: space-around;
 }
 
+#network-analysis {
+  /* padding: 0; */
+  grid-template-columns: repeat(auto-fir, 450px);
+}
+
 #expertise>.my-card:nth-child(-n+4) {
   grid-column: 1/-1;
-
 }
 
 #expertise>.my-card>div:first-child {
@@ -90,6 +136,7 @@ header {
 } */
 
 /* Section Experience */
+
 .experience-list {
   display: flex;
   justify-content: space-around;
@@ -121,6 +168,10 @@ header {
   cursor: pointer;
   grid-row: 1/3;
   grid-column: 2/2;
+}
+
+.experience-section img:hover {
+  filter: brightness(180%);
 }
 
 .exp-title-2 {
@@ -158,6 +209,7 @@ header {
 }
 
 /* Section  Presentation version Grid */
+
 .grid-section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 450px));
@@ -180,7 +232,7 @@ header {
   padding: 20px 5px;
 }
 
-#my-stack  {
+#my-stack {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 5px;
@@ -224,6 +276,7 @@ header {
 }
 
 /* List with checks */
+
 ul.check-list {
   list-style-type: none;
   text-align: left;
@@ -266,6 +319,7 @@ ul.check-list li::before {
 #expertise-list>a:hover {
   box-shadow: none;
   color: var(--first-color);
+  filter: brightness(140%);
 }
 
 #expertise-list img {
@@ -275,10 +329,12 @@ ul.check-list li::before {
 }
 
 /* Table of Contents */
+
 #table-contents-container {
   display: flex;
   justify-content: center;
 }
+
 .table-of-contents {
   font-size: 1.3rem;
 }

@@ -147,7 +147,11 @@
         <div class="my-card" id="computational-biology">
           <div class="subtitle">Computational Biology</div>
           <!-- DNA and Protein Sequence Analysi -->
-          <img id="biology-image" src="/static/main/img/logos-expertise/expertise-biology.png" alt="">
+          <!-- <img id="biology-image" src="/static/main/img/logos-expertise/expertise-biology.png" alt=""> -->
+          <div id="biology-image">
+            <img class="rotate" id="bio-1" src="/static/main/img/logos-expertise/expertise-biology-plasmid.png" alt="">
+            <img id="bio-2" src="/static/main/img/logos-expertise/expertise-biology-elements.png" alt="">
+          </div>
           <div class="expertise-item">
           </div>
           <!-- Metabolic Modelling -->
@@ -166,7 +170,8 @@
           <!-- RDKit -->
           <!-- <div class="expertise-item"> -->
           <!-- <div class="exp-title-2">Modelling Chemistry - RDKit</div> -->
-          <img id="chemoinfo-image" src="/static/main/img/logos-expertise/expertise-chemoinfo.png" alt="">
+          <img id="chemoinfo-image" class="tooltipped" data-tooltip="Click for interactive animation"
+          src="/static/main/img/logos-expertise/expertise-chemoinfo.png" alt="">
           <!-- </div> -->
           <!-- Mass Spectrometry -->
           <div class="expertise-item">
@@ -181,7 +186,6 @@
           <img id="web-development-image" src="/static/main/img/logos-expertise/web-development.png" alt="">
 
           <!-- Animation -->
-          <div class="ct-chart" id="ct-expertise"></div>
           <!-- Full Stack Web Development -->
           <div class="expertise-item">
             <div class="exp-title-2">Data Science</div>
@@ -191,11 +195,8 @@
         <!-- Network Analysis -->
         <div class="my-card" id="network-analysis">
           <div class="subtitle">Network Analysis</div>
-          <!-- <div id="escher-map-container">
-            <div id="escher-title">lero lero</div>
-            <div id="escher-map"></div>
-          </div> -->
-          <img id="modelling-image" src="/static/main/img/logos-expertise/modelling-pkt.png" alt="">
+          <img id="modelling-image" class="tooltipped" data-tooltip="Click for interactive animation"
+            src="/static/main/img/logos-expertise/modelling-pkt.png" alt="">
           <!-- Graph Modelling -->
           <div class="expertise-item">
             <div class="exp-title-2">Graph Modelling</div>
@@ -402,7 +403,11 @@
     // Expertise Links
     const chemoInfoImg = document.querySelector("#chemoinfo-image");
     chemoInfoImg.onclick = () => window.open("substr-viz.html",
-       "_blank", "width: ")
+      "_blank", "width: 700; height: 900; menubar=off; toolbar=false; resizable=off; ");
+    const modellingImg = document.querySelector("#modelling-image");
+    modellingImg.onclick = () => window.open("escher-viz.html",
+      "_blank", "width: 700; height: 900; menubar=off; toolbar=false; resizable=off; ");
+
 
   </script>
 
