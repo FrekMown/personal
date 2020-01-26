@@ -2,14 +2,15 @@ body {
   font-family: 'Amaranth', sans-serif;
   background-color: black;
   /* Definition of global variables */
-  --first-color: rgb(237, 237, 238);
-  --second-color: rgb(111, 181, 206);
-  --third-color: rgb(44, 138, 182);
+  --first-color: rgb(65, 218, 218);
+  --second-color: rgb(239, 239, 243); 
+  --third-color: rgb(54, 186, 247);
   --fourth-color: #176087;
+  --separator-color: rgb(87, 87, 99);
   --background-1: rgb(19, 19, 34);
   --background-2: rgb(14, 14, 27);
-  --background-3: rgb(87, 87, 99);
-  color: var(--first-color);
+  --background-3: rgb(33, 33, 43);
+  color: var(--second-color);
   --shadow: 3px 3px 3px rgba(87, 87, 99, 0.8);
   --shadow-2: 5px 5px 5px rgba(87, 87, 99, 0.8);
 }
@@ -31,7 +32,7 @@ header {
 }
 
 .section .subtitle {
-  color: var(--second-color);
+  color: var(--first-color);
   font-size: 1.6rem;
 }
 
@@ -47,6 +48,74 @@ header {
 }
 
 /* Section Expertise  */
+#expertise {
+  grid-template-columns: repeat(auto-fit, 450px);
+}
+/* Cards inside Expertise */
+#expertise>.my-card {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 400px);
+  justify-content: space-around;
+  /* align-content: space-around; */
+  grid-column: 1/-1;
+  /* min-height: 90vh; */
+  padding: 30px 0;
+}
+/* Title of card */
+#expertise>.my-card>div:first-child {
+  grid-column: 1/-1;
+  text-align: center;
+}
+
+.expertise-image {
+  grid-row: 3 / 6;
+  margin: 10px 0;
+  text-align: center;
+}
+
+/* Select only odd images */
+#expertise>.my-card:nth-child(odd)>.expertise-image {
+  grid-column: -2;
+}
+
+.background-item {
+  grid-column: 1 / -1;
+}
+
+#network-analysis .background-item {
+  grid-column: auto;
+}
+
+#network-analysis .expertise-image {
+  grid-row: 2/4;
+}
+
+.expertise-item {
+  padding: 5px;
+  color: var(--second-color);
+  /* font-size: 0.95em; */
+  margin: 5px;
+}
+
+
+.expertise-item .check-list {
+  margin: 5px;
+}
+
+
+.expertise-item .exp-title-2 {
+  text-align: center;
+  color: var(--first-color);
+  border-style: solid;
+  border-color: var(--separator-color);
+  border-width: 0 0 1px 0;
+}
+
+@media only screen and (max-width: 1000px) {
+  .expertise-image {
+    grid-row-start: 2;
+  }
+}
 
 #chemoinfo-image {
   width: 385px;
@@ -69,21 +138,21 @@ header {
 }
 
 #modelling-image:hover {
-  border: 2px solid whitesmoke;
   filter: brightness(150%);
 }
 
+
 /* Animation Bio */
-#bio-1 {
-  position: absolute;
-  width: 330px;
+#bio-rotate {
+  position: relative;
+  width: 400px;
 }
 
-#bio-2 {
-  position: relative;
-  width: 280px;
-  margin-top: 25px;
-  margin-left: 25px;
+#bio-norotate {
+  position: absolute;
+  width: 360px;
+  margin-top: 20px;
+  margin-left: 20px;
 }
 
 .rotate {
@@ -100,40 +169,15 @@ header {
 }
 
 #web-development-image {
-  width: 280px;
+  width: 330px;
 }
 
-#expertise {
-  grid-template-columns: repeat(auto-fit, 450px);
+.image-legend {
+  color: var(--second-color);
+  text-align: center;
+  font-size: 0.85em;
 }
 
-#expertise>.my-card {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 400px);
-  justify-content: space-around;
-}
-
-#network-analysis {
-  /* padding: 0; */
-  grid-template-columns: repeat(auto-fir, 450px);
-}
-
-#expertise>.my-card:nth-child(-n+4) {
-  grid-column: 1/-1;
-}
-
-#expertise>.my-card>div:first-child {
-  grid-column: 1/-1;
-}
-
-.expertise-item {
-  border: 1px solid white;
-}
-
-/* #expertise>.my-card:nth-child(2){
-  grid-column: 1/-2;
-  background-color: pink;
-} */
 
 /* Section Experience */
 
@@ -149,7 +193,7 @@ header {
   justify-content: center;
   border-style: solid;
   border-width: 0 0 1px 0;
-  border-color: var(--background-3);
+  border-color: var(--separator-color);
   padding: 10px;
 }
 
@@ -158,7 +202,7 @@ header {
 }
 
 .experience-section ul {
-  font-size: 0.9em;
+  /* font-size: 0.9em; */
   padding: 5px;
   grid-column: 1/3;
   color: var(--second-color);

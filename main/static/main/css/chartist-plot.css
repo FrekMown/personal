@@ -1,7 +1,7 @@
 #ct-expertise {
     padding: 10px;
     width: 400px;
-    height: 380px;
+    height: 350px;
 }
 .ct-label {
   color: white;
@@ -26,18 +26,18 @@
 
 .ct-series-a .ct-line,
 .ct-series-a .ct-point {
-  stroke: var(--first-color);
+  stroke: var(--second-color);
   /* fill: var(--background-1); */
 }
 
 .ct-series-b .ct-line,
 .ct-series-b .ct-point {
-  stroke: var(--second-color);
+  stroke: var(--first-color);
 }
 
 .ct-series-c .ct-line,
 .ct-series-c .ct-point {
-  stroke: var(--second-color);
+  stroke: var(--first-color);
 }
 
 .ct-series-d .ct-line,
