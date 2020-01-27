@@ -4,6 +4,7 @@ services:
   personal:
     build: ./
     image: chemocobra
+    user: 1000
     volumes:
       - ../:/code/
     ports:
