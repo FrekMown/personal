@@ -4,4 +4,4 @@ jupyter
 django
 djangorestframework
 django-cors-headers
-
+mod-wsgi

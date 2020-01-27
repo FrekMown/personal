@@ -3,7 +3,7 @@ version: '3'
 services:
   personal:
     build: ./
-    image: chemocobra
+    image: personal
     user: "1000"
     volumes:
       - ../:/code/

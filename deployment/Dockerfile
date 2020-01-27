@@ -4,6 +4,7 @@ LABEL Conda Development Team <conda@continuum.io>
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 ENV PATH /opt/conda/bin:$PATH
 
+
 RUN apt-get update --fix-missing && \
     apt-get install -y wget bzip2 ca-certificates curl git && \
     apt-get clean && \
@@ -21,8 +22,9 @@ RUN apt-get update
 RUN apt-get -y install apache2 apache2-dev 
 RUN pip install --upgrade pip
 ADD ./requirements.txt /tmp
-# RUN apt-get install -y libxrender-dev
 RUN conda install -c rdkit rdkit
 RUN pip install -r /tmp/requirements.txt
+RUN apt-get install -y libxrender-dev
+ENV VERSION_APP PRODUCTION
 
 WORKDIR /code/

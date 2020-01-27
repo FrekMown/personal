@@ -4,6 +4,10 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STATIC_DIR = os.path.join(BASE_DIR,'static')
 
+VERSION = "DEVELOPMENT"
+if "VERSION_APP" in os.environ:
+    VERSION = os.environ["VERSION_APP"]
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
@@ -13,7 +17,7 @@ SECRET_KEY = '1u^ie*&x*ze#z0@ey_mh64$9k&7o-ki2it5(_t09n-7u)3lcwc'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["frekmown.space"]
+ALLOWED_HOSTS = ["frekmown.space", "localhost"]
 
 
 # Application definition
@@ -31,7 +35,11 @@ INSTALLED_APPS = [
     'museo_solidaridad',
     'geodata',
     'main',
+
 ]
+
+if VERSION == "PRODUCTION":
+    INSTALLED_APPS += ['mod_wsgi.server']
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
