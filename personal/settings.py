@@ -17,7 +17,7 @@ SECRET_KEY = '1u^ie*&x*ze#z0@ey_mh64$9k&7o-ki2it5(_t09n-7u)3lcwc'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["frekmown.space", "localhost"]
+ALLOWED_HOSTS = ["frekmown.space", "localhost", "188.166.35.164"]
 
 
 # Application definition
