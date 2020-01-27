@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  personal:
+    build: ./
+    image: chemocobra
+    volumes:
+      - ../:/code/
+    ports:
+      - "8200:8000"
+    working_dir: /code/
+    command: > 
+      bash -c "python manage.py collectstatic --noinput
+      && python manage.py runmodwsgi --processes=1 --threads=5"
