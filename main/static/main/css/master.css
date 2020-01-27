@@ -1,7 +1,6 @@
-body {
-  font-family: 'Amaranth', sans-serif;
-  background-color: black;
-  /* Definition of global variables */
+/* Definition of variables */
+:root {
+  /* Colors */
   --first-color: rgb(65, 218, 218);
   --second-color: rgb(239, 239, 243); 
   --third-color: rgb(54, 186, 247);
@@ -10,9 +9,24 @@ body {
   --background-1: rgb(19, 19, 34);
   --background-2: rgb(14, 14, 27);
   --background-3: rgb(33, 33, 43);
-  color: var(--second-color);
+  /* Shadows */
   --shadow: 3px 3px 3px rgba(87, 87, 99, 0.8);
   --shadow-2: 5px 5px 5px rgba(87, 87, 99, 0.8);
+  /* Resolutions for media queries */
+  --large-tablet: 991px;
+  --medium-tablet: 767px;
+  --mobile: 479px;
+  /* Sizes */
+  --max-col-size: 600px;
+}
+
+
+
+body {
+  font-family: 'Amaranth', sans-serif;
+  background-color: black;  
+  color: var(--second-color);
+  font-size: 1.2em;  
 }
 
 header img {
@@ -33,7 +47,8 @@ header {
 
 .section .subtitle {
   color: var(--first-color);
-  font-size: 1.6rem;
+  font-size: 2.2rem;
+  margin-bottom: 25px;
 }
 
 .section .subsubtitle {
@@ -41,25 +56,27 @@ header {
   font-size: 1.1rem;
 }
 
-.section-content {
+/* Section Expertise  */
+#expertise-marker {
+  min-height: 0;
+}
+#expertise {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  flex-direction: column;
 }
 
-/* Section Expertise  */
-#expertise {
-  grid-template-columns: repeat(auto-fit, 450px);
+#expertise>.section {
+  min-height: auto;
 }
+
 /* Cards inside Expertise */
 #expertise>.my-card {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 400px);
+  grid-template-columns: repeat(auto-fit, var(--max-col-size));
   justify-content: space-around;
-  /* align-content: space-around; */
   grid-column: 1/-1;
-  /* min-height: 90vh; */
   padding: 30px 0;
+  margin: 50px;
 }
 /* Title of card */
 #expertise>.my-card>div:first-child {
@@ -70,7 +87,9 @@ header {
 .expertise-image {
   grid-row: 3 / 6;
   margin: 10px 0;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Select only odd images */
@@ -80,6 +99,15 @@ header {
 
 .background-item {
   grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+}
+
+.expertise-item ul {
+  align-self: center;
+  border-style: solid;
+  border-color: var(--separator-color);
+  border-width: 1px 0 0 0;
 }
 
 #network-analysis .background-item {
@@ -90,10 +118,16 @@ header {
   grid-row: 2/4;
 }
 
+#expertise>#management {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
 .expertise-item {
   padding: 5px;
   color: var(--second-color);
-  /* font-size: 0.95em; */
   margin: 5px;
 }
 
@@ -106,15 +140,6 @@ header {
 .expertise-item .exp-title-2 {
   text-align: center;
   color: var(--first-color);
-  border-style: solid;
-  border-color: var(--separator-color);
-  border-width: 0 0 1px 0;
-}
-
-@media only screen and (max-width: 1000px) {
-  .expertise-image {
-    grid-row-start: 2;
-  }
 }
 
 #chemoinfo-image {
@@ -131,7 +156,7 @@ header {
 }
 
 #modelling-image {
-  width: 400px;
+  width: 450px;
   cursor: pointer;
   border-radius: 50px;
   border: 2px solid gray;
@@ -145,14 +170,14 @@ header {
 /* Animation Bio */
 #bio-rotate {
   position: relative;
-  width: 400px;
+  width: 450px;
 }
 
 #bio-norotate {
   position: absolute;
-  width: 360px;
-  margin-top: 20px;
-  margin-left: 20px;
+  width: 390px;
+  margin-top: 30px;
+  /* margin-left: 10px; */
 }
 
 .rotate {
@@ -169,7 +194,7 @@ header {
 }
 
 #web-development-image {
-  width: 330px;
+  width: 350px;
 }
 
 .image-legend {
@@ -194,7 +219,11 @@ header {
   border-style: solid;
   border-width: 0 0 1px 0;
   border-color: var(--separator-color);
-  padding: 10px;
+  padding: 10px 40px;
+}
+
+#education {
+  font-size: 0.9em;
 }
 
 .experience-section:last-child {
@@ -240,27 +269,30 @@ header {
 #x-logo {
   background-color: black;
   border-radius: 5px;
-  width: 120px;
+  width: 140px;
 }
 
 #saclay-logo {
-  width: 180px;
+  width: 190px;
   grid-row: 1/4;
 }
 
 #mooc-logo {
-  width: 100px;
+  width: 130px;
 }
 
-/* Section  Presentation version Grid */
+/* Section  Presentation*/
 
 .grid-section {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 450px));
+  grid-template-columns: repeat(2, 1fr);
   width: 100%;
-  justify-content: space-around;
-  align-content: space-around;
-  gap: 10px;
+  justify-content: center;
+  align-content: center;
+  row-gap: 3vh;
+  column-gap: 3vw;
+  /* column-gap: 1vw; */
+  
 }
 
 .grid-section>.title {
@@ -273,7 +305,7 @@ header {
 
 .grid-section>.footer {
   grid-column: 1 / -1;
-  padding: 20px 5px;
+  /* padding: 20px 5px; */
 }
 
 #my-stack {
@@ -296,8 +328,8 @@ header {
 }
 
 #my-stack img {
-  max-height: 40px;
-  max-width: 40px;
+  max-height: 65px;
+  max-width: 65px;
   border-radius: 5px;
   background-color: var(--background-1);
   margin: 5px 2px 0 0;
@@ -305,15 +337,15 @@ header {
 
 .my-card {
   background-color: var(--background-1);
-  padding: 5px;
+  padding: 20px 10px 10px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 2vh;
-  flex: 0 0 450px;
   cursor: default;
+  justify-content: space-around;
 }
+
 
 .my-card>img {
   margin-bottom: 3vh;
@@ -336,11 +368,8 @@ ul.check-list li::before {
 }
 
 #expertise-list {
-  display: flex;
-  justify-content: space-between;
-  align-self: stretch;
-  flex-wrap: wrap;
-  margin-top: 3vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 #expertise-list>a {
@@ -367,25 +396,48 @@ ul.check-list li::before {
 }
 
 #expertise-list img {
-  height: 100px;
+  height: 120px;
   border-radius: 2px;
   margin-bottom: 10px;
 }
 
-/* Table of Contents */
+/* General Layout */
+#main-layout {
+  display: flex;
+}
+
+#main-content {
+  padding-left: 5vw;
+  flex-grow: 1;
+}
 
 #table-contents-container {
+  min-width: 20vw;
   display: flex;
   justify-content: center;
 }
 
+/* Make table of contents disappear on small devices */
+@media screen and (max-width: var(--medium-tablet)) {
+  #table-contents-container {
+    display: none;
+  }
+}
+
 .table-of-contents {
-  font-size: 1.3rem;
+  font-size: 1.3em;
 }
 
 .table-of-contents a {
   color: var(--fourth-color)
 }
+
+.table-of-contents a.subsection-link {
+  font-size: 0.8em;
+  margin-left: 40px;
+  padding-left: 10px;
+}
+
 
 .table-of-contents a.active {
   color: var(--first-color);
@@ -419,4 +471,34 @@ ul.check-list li::before {
   src: local('Major Mono Display Regular'), local('MajorMonoDisplay-Regular'), url('/static/main/fonts/major-mono-display-v4-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
   url('/static/main/fonts/major-mono-display-v4-latin-regular.woff') format('woff');
   /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* MEDIA QUERIES */
+
+/* Small devices */
+@media screen and (max-width: 479px) {
+
+}
+
+/* Medium devices */
+@media screen and (max-width: 990px) {
+  /* Redefine variables */
+  :root {
+    --max-col-size: 700px;
+  }
+  /* hide table of contents */
+  #table-contents-container {
+    display: none;
+  }
+  .expertise-image {
+    grid-row-start: 2;
+  }
+  .grid-section {
+    grid-template-columns: var(--max-col-size);
+  }
+
+  #my-stack img {
+    max-width: 50px;
+  }
+
 }

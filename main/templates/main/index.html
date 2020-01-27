@@ -21,9 +21,11 @@
   <!-- <header><img src="/static/main/img/header-no-contact.jpg"></header> -->
 
   <!-- Row with main content and table of contents -->
-  <div class="row">
+  <!-- <div class="row"> -->
+  <div id="main-layout">
+
     <!-- Main content -->
-    <div class="col s12 m9 l8 offset-l1">
+    <div id="main-content">
 
       <!-- Presentation -->
       <div id="presentation" class="grid-section grid-section section scrollspy">
@@ -125,17 +127,20 @@
         </div>
       </div>
 
+      <!-- Expertise marker -->
+      <div id="expertise-marker" class="scrollspy"></div>
       <!-- Expertise -->
-      <div id="expertise" class="grid-section section scrollspy">
+      <div id="expertise" class="grid-section section">
         <div class="title">expertise</div>
 
         <!-- Data Science -->
-        <div class="my-card" id="data-science">
+        <div class="my-card section scrollspy" id="data-science">
           <div class="subtitle">Data Science</div>
           <!-- Animation -->
           <div class="expertise-image">
             <div class="ct-chart" id="ct-expertise"></div>
-            <div class="image-legend">The <em>Lemniscate of Gerono</em> is defined by the following equation:<br><var>y<sup>2</sup></var> =
+            <div class="image-legend">The <em>Lemniscate of Gerono</em> is defined by the following
+              equation:<br><var>y<sup>2</sup></var> =
               <var>x<sup>2</sup></var> - <var>x<sup>4</sup></var>.</div>
           </div>
           <!-- Background -->
@@ -177,7 +182,7 @@
         </div>
 
         <!-- Computational Biology -->
-        <div class="my-card" id="computational-biology">
+        <div class="my-card section scrollspy" id="computational-biology">
           <div class="subtitle">Computational Biology</div>
           <!-- Background -->
           <div class="expertise-item background-item">
@@ -225,7 +230,7 @@
         </div>
 
         <!-- Chemoinformatics -->
-        <div class="my-card" id="chemoinformatics">
+        <div class="my-card section scrollspy" id="chemoinformatics">
           <div class="subtitle">Chemoinformatics</div>
           <!-- Background -->
           <div class="expertise-item background-item">
@@ -242,7 +247,8 @@
               src="/static/main/img/logos-expertise/expertise-chemoinfo.png" alt="">
             <div class="image-legend">Example of a substructure research analysis. The substructure on top-left was
               confronted against 1520 unique structures in the metabolic model of <em>Escherichia Coli</em>. Results are
-              depicted above. I annotated these structures in a semi-automated way, structures for all metabolites in the model are not directly available online.</div>
+              depicted above. I annotated these structures in a semi-automated way, structures for all metabolites in
+              the model are not directly available online.</div>
           </div>
           <!-- RDKit -->
           <div class="expertise-item">
@@ -267,13 +273,14 @@
         </div>
 
         <!-- Full Stack Web Development -->
-        <div class="my-card" id="web-development">
+        <div class="my-card section scrollspy" id="web-development">
           <div class="subtitle">Full Stack Web Development</div>
           <!-- Background -->
           <div class="expertise-item background-item">
             <div class="exp-title-2">Background</div>
             <ul class="check-list">
-              <li>Data-driven scientific applications are necessary today to interpret and confront results more efficiently.</li>
+              <li>Data-driven scientific applications are necessary today to interpret and confront results more
+                efficiently.</li>
               <li>Using open-source libraries I construct personalised websites because each need is different.</li>
               <li>You can see the github repository for this website <a
                   href="https://github.com/FrekMown/personal">here</a>. Take a look at some side projects <a
@@ -289,9 +296,11 @@
           <div class="expertise-item">
             <div class="exp-title-2">Frontend & Backend</div>
             <ul class="check-list">
-              <li>With Python in backend and Javascript in frontend I create scientific data-driven dynamic applications easily
+              <li>With Python in backend and Javascript in frontend I create scientific data-driven dynamic applications
+                easily
                 accessible via a web browser.</li>
-              <li>From database (SQL or NoSQL) and web server to javascript and react, I have developped several web apps by myself or with a collaborator.</li>
+              <li>From database (SQL or NoSQL) and web server to javascript and react, I have developped several web
+                apps by myself or with a collaborator.</li>
             </ul>
           </div>
           <!-- Deploying Apps -->
@@ -299,13 +308,14 @@
             <div class="exp-title-2">Continuous Integration & Continuous Deployment</div>
             <ul class="check-list">
               <li>Using tools such as docker or vagrant, app deployment can be completely automatised.</li>
-              <li>Experience with online hosting, DNS registration, reverse proxing and SSL/TLS certificates generation. These skills are needed in order to publish a website online.</li>
+              <li>Experience with online hosting, DNS registration, reverse proxing and SSL/TLS certificates generation.
+                These skills are needed in order to publish a website online.</li>
             </ul>
           </div>
         </div>
 
         <!-- Network Analysis -->
-        <div class="my-card" id="network-analysis">
+        <div class="my-card section scrollspy" id="network-analysis">
           <div class="subtitle">Network Analysis</div>
           <!-- Image -->
           <div class="expertise-image">
@@ -327,9 +337,10 @@
           <div class="expertise-item">
             <div class="exp-title-2">Metabolic Modelling</div>
             <ul class="check-list">
-              <li>Genome-scale metabolic models attempt to store all published data regarding metabolites, reactions and genes in a
+              <li>Genome-scale metabolic models attempt to store all published data regarding metabolites, reactions and
+                genes in a
                 metabolic network for a specific organism. </li>
-                <li>They allow for a holistic view of an organism's metabolism.</li>
+              <li>They allow for a holistic view of an organism's metabolism.</li>
               <li>Using linear optimization we can simulate different metabolic scenarios and confont them to
                 experimental results.</li>
               <li>These models can be a basis for more complex analysis regarding omics (transcriptomics, fluxomics,
@@ -339,21 +350,23 @@
         </div>
 
         <!-- Management & Coaching -->
-        <div class="my-card" id="management">
+        <div class="my-card section scrollspy" id="management">
           <div class="subtitle">Management & Coaching</div>
-          <!-- Sharing Knowledge -->
-          <div class="expertise-item">
-            <div class="exp-title-2">Sharing Knowledge</div>
-          </div>
+          <ul class="check-list">
+            <li>As Bioinformatics team leader I had the opportunity to work with a collaborator. It was a fruitful experience for both sides.</li>
+            <li>I also led a 28h workshop on web development in Mahindra Ecole Central in Hyderabad, India. <a href="#india-workshop">More on this here</a>.</li>
+            <li>I strongly believe in positive management. Working together is an opportunity to share knowledge and skills no matter the level of experience.</li>
+          </ul>
         </div>
 
       </div>
 
       <!-- Experience & Education -->
-      <div id="experience" class="grid-section section scrollspy">
+      <div id="experience" class="scrollspy section grid-section">
         <div class="title">experience</div>
+        <!-- Experience -->
         <div class="my-card experience-list">
-          <div class="subtitle">Experience</div>
+          <div class="subtitle">Professional Experience</div>
           <!-- Experience GBE -->
           <div class="experience-section">
             <div class="exp-title-2">Bioinformatics Team Leader</div>
@@ -383,71 +396,104 @@
           </div>
         </div>
         <!-- Education -->
-        <div class="my-card experience-list">
+        <div class="my-card experience-list" id="education">
           <div class="subtitle">Education</div>
           <!-- Experience MOOCS -->
-          <div class="experience-section">
+          <div class="experience-section" id="moocs">
             <img id="mooc-logo" src="/static/main/img/logos-experience/mooc.png" alt="">
             <div class="exp-title-2">Online Courses in Coursera, Udemy and edX</div>
             <div class="exp-title-3"><em>Web Development, Data Science & Biotechnology</em></div>
             <!-- All MOOCs -->
             <ul class="check-list">
               <li>
-                <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/AX2LHK6WJR52">
-                  Deep Learning Specialisation</a> - <em>deeplearning.ai</em>
+                <a target="_blank"
+                  href="https://www.coursera.org/account/accomplishments/specialization/certificate/AX2LHK6WJR52">
+                  Deep Learning Specialisation</a>
+                <a target="_blank" href="https://www.coursera.org/account/accomplishments/certificate/BJL262VTRDBP">
+                  1 </a>
+                <a target="_blank" href="https://www.coursera.org/account/accomplishments/certificate/PDEDH5GVFYX6">
+                  2 </a>
+                <a target="_blank" href="https://www.coursera.org/account/accomplishments/certificate/Y9HA6ETNDUUW">
+                  3 </a>
+                <a target="_blank" href="https://www.coursera.org/account/accomplishments/certificate/T83MLWPKF59E">
+                  4 </a>
+                <a target="_blank" href="https://www.coursera.org/account/accomplishments/certificate/Z37NBYYQ5NAR">
+                  5 </a>
+
+                - <em>deeplearning.ai</em>
               </li>
               <li>
                 Bioinformatics
-                <a href="https://www.coursera.org/account/accomplishments/certificate/8ZDW4QVVAY3C">
+                <a target="_blank" href="https://www.coursera.org/account/accomplishments/certificate/8ZDW4QVVAY3C">
                   1 </a>
-                <a href="https://www.coursera.org/account/accomplishments/certificate/Z62YRZRYZCEZ">
+                <a target="_blank" href="https://www.coursera.org/account/accomplishments/certificate/Z62YRZRYZCEZ">
                   2
                 </a>
-                <a href="https://www.coursera.org/account/accomplishments/certificate/PTS458YUUTZ2">
+                <a target="_blank" href="https://www.coursera.org/account/accomplishments/certificate/PTS458YUUTZ2">
                   3
                 </a>
-                <a href="https://www.coursera.org/account/accomplishments/certificate/4MGX4F9EV7Q2">
+                <a target="_blank" href="https://www.coursera.org/account/accomplishments/certificate/4MGX4F9EV7Q2">
                   4
                 </a>
                 - <em>UC San Diego</em>
               </li>
               <li>
                 Data Analysis for Life Sciences
-                <a href="https://courses.edx.org/certificates/user/7711275/course/course-v1:HarvardX+PH525.1x+3T-2015">
+                <a target="_blank"
+                  href="https://courses.edx.org/certificates/user/7711275/course/course-v1:HarvardX+PH525.1x+3T-2015">
                   1
                 </a>
-                <a href="https://courses.edx.org/certificates/user/7711275/course/course-v1:HarvardX+PH525.2x+3T-2015">
+                <a target="_blank"
+                  href="https://courses.edx.org/certificates/user/7711275/course/course-v1:HarvardX+PH525.2x+3T-2015">
                   2
                 </a>
-                <a href="https://courses.edx.org/certificates/user/7711275/course/course-v1:HarvardX+PH525.3x+3T-2015">
+                <a target="_blank"
+                  href="https://courses.edx.org/certificates/user/7711275/course/course-v1:HarvardX+PH525.3x+3T-2015">
                   3
                 </a>
-                <a href="https://courses.edx.org/certificates/user/7711275/course/course-v1:HarvardX+PH525.4x+3T2015">
+                <a target="_blank"
+                  href="https://courses.edx.org/certificates/user/7711275/course/course-v1:HarvardX+PH525.4x+3T2015">
                   4
                 </a>
                 - <em>HarvardX</em>
               </li>
               <li>
-                <a
+                <a target="_blank"
                   href="https://s3.amazonaws.com/verify.edx.org/downloads/81b609fd04a14e1eb8bd84994eedb333/Certificate.pdf">
                   Biochemistry
                 </a>
                 - <em>HarvardX</em>
               </li>
               <li>
-                <a href="https://courses.edx.org/certificates/user/7711275/course/course-v1:DavidsonX+D001x+1T2018">
+                <a target="_blank"
+                  href="https://courses.edx.org/certificates/user/7711275/course/course-v1:MITx+20.305x+3T2015">
+                  Principles of Synthetic Biology
+                </a>
+                - <em>MITx</em>
+              </li>
+              <li>
+                <a target="_blank"
+                  href="https://courses.edx.org/certificates/user/7711275/course/course-v1:MITx+10.03x_2+3T2015">
+                  Biopharmaceutical Manufacturing
+                </a>
+                - <em>MITx</em>
+              </li>
+              <li>
+                <a target="_blank"
+                  href="https://courses.edx.org/certificates/user/7711275/course/course-v1:DavidsonX+D001x+1T2018">
                   Medicinal Chemistry
                 </a>
                 - <em>Davidson College</em>
               </li>
+
               <li>
-                <a href="https://www.coursera.org/account/accomplishments/certificate/KX6EJBGBLA4E">
+                <a target="_blank" href="https://www.coursera.org/account/accomplishments/certificate/KX6EJBGBLA4E">
                   Human Physiology
                 </a>
                 - <em>Duke University</em>
               </li>
               <li>
-                <a href="">
+                <a target="_blank" href="https://www.coursera.org/account/accomplishments/certificate/EC5NLWUF5WD7">
                   Epigenetics
                 </a>
                 - <em>University of Melbourne</em>
@@ -508,11 +554,18 @@
 
 
     <!-- table of contents -->
-    <div class="col hide-on-small-only m3 l2" id="table-contents-container">
+    <!-- <div class="col hide-on-small-only m3 l2" id="table-contents-container"> -->
+    <div id="table-contents-container">
       <div class="pushpin">
         <ul class="section table-of-contents">
           <li><a href="#presentation">Presentation</a></li>
-          <li><a href="#expertise">Expertise</a></li>
+          <li><a href="#expertise-marker">Expertise</a></li>
+          <li><a href="#data-science" class="subsection-link" id="">Data Science</a></li>
+          <li><a href="#computational-biology" class="subsection-link" id="">Computational Biology</a></li>
+          <li><a href="#chemoinformatics" class="subsection-link" id="">Chemoinformatics</a></li>
+          <li><a href="#web-development" class="subsection-link" id="">Web Development</a></li>
+          <li><a href="#network-analysis" class="subsection-link" id="">Network Analysis</a></li>
+          <li><a href="#management" class="subsection-link" id="">Management</a></li>
           <li><a href="#experience">Experience</a></li>
           <li><a href="#side-projects">Side Projects</a></li>
           <li><a href="#pictures">Pictures</a></li>
