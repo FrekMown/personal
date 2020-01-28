@@ -5,33 +5,32 @@ body {
     --fourth-color: #176087;
     --background-1: rgb(19, 19, 34);
     background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   #escher-map-container {    
-    /* border: 1px solid red; */
-    flex-grow: 1;
     display: flex;
     flex-direction: column;
     background-color: black;
-    justify-content: space-around;
-
+    justify-content: center;
+    height: 98vh;
+    width: 98vw;
   }
 
   #escher-map {
-    width: 700px;
-    height: 500px;
     flex-grow: 1;
     color: var(--first-color);
     background-color: var(--background-1);
   }
 
   #escher-title {
-    /* min-height: 3em; */
     color: var(--first-color);
-    align-self: flex-start;
     padding: 1em;
-    font-size: 1.1em;
+    font-size: 1.3rem;
     font-weight: bold;
+    text-align: center;
   }
 
   svg.escher-svg #canvas {

@@ -49,11 +49,9 @@ function drawOneMolecule(m_id) {
     viewer.addSurface("VDW", surfaceStyle, atomSel, null, atomSel);
   }
 
-  const animDirections = [{ x: 1 }, { y: 1 }, {x:1, z: 1 }];
+  const animDirections = [{ y: 1 }, { x: 1 }, {x:1, z: 1 }];
 
-  let randomNum = Math.floor(Math.random() * (animDirections.length + 1));
-  console.log(randomNum);
-  randomNum = molIds.indexOf(m_id) % animDirections.length;
+  let randomNum = molIds.indexOf(m_id) % animDirections.length;
 
   // Animation
   setInterval(() => {
