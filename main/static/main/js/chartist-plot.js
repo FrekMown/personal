@@ -37,7 +37,7 @@ function getNextData(line1, line2, noise) {
     data.series.push(dataLine1);
     data.series.push({ name: "line2", data: line2.slice(c) })
   }
-  else if (counter < 200 + noise.length + line1.length + line2.length) {
+  else if (counter < 40 + noise.length + line1.length + line2.length) {
     data.series = [dataNoise, dataLine1, dataLine2];
   }
   else {
