@@ -20,9 +20,6 @@
   --max-col-size: 600px;
 }
 
-
-
-
 body {
   font-family: 'Amaranth', sans-serif;
   background-color: black;  
@@ -66,57 +63,13 @@ header {
 }
 
 #contact form {
+  /* align-self: stretch; */
   min-width: 500px;
+  /* display: grid; */
 }
 
 #contact input {
   color: var(--second-color);
-}
-
-/* Section Pictures */
-#pictures {
-  display: grid;
-  grid-template-columns: 1fr;
-  justify-content: center;
-}
-
-
-#pictures>.my-card {
-  /* border: 1px solid white; */
-}
-
-#pictures-container {
-  /* border: 1px solid green; */
-  height: 80vh;
-  align-self: stretch;
-  display: flex;
-  flex-direction: row;
-  overflow: hidden;
-}
-
-#pictures-container>div {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-}
-
-#pictures-container .picture {  
-  border: 2px solid black;
-}
-
-#pictures-container img {
-  /* display: none; */
-  object-fit: cover;
-  width: 100%;
-  max-height: 100%;
-}
-
-
-#pictures-container>div {
-  box-sizing: border-box;
-  /* border: 1px solid white; */
-  /* min-width: var(--max-col-size); */
-  flex-grow: 1;
-
 }
 
 /* Section Expertise  */
@@ -560,17 +513,12 @@ ul.check-list li::before {
   .expertise-image {
     grid-row-start: 2;
   }
-  .grid-section, #pictures {
+  .grid-section {
     grid-template-columns: var(--max-col-size);
   }
 
   #my-stack img {
     max-width: 50px;
   }
-
-  #pictures-container>div:last-child {
-    display: none;
-  }
-
 
 }
