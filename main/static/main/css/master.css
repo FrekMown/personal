@@ -20,6 +20,7 @@
   --max-col-size: 600px;
 }
 
+/* Button */
 
 
 
@@ -60,6 +61,64 @@ header {
   font-size: 1.1rem;
 }
 
+/* Section Side Projects */
+#side-projects {
+  display: flex;
+  flex-direction: column;
+}
+
+#side-projects>.section {
+  min-height: auto;
+}
+
+#side-projects>.my-card {
+  margin: 50px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 20px;
+  gap: 20px;
+}
+
+#side-projects .first-line {
+  display: flex;
+  align-self: stretch;
+  margin: 20px;
+  align-items: center;
+  grid-column: 1/-1;
+}
+
+#side-projects img {
+  border: 1px solid gray;
+  border-radius: 5px;
+  width: 100%;
+}
+
+#side-projects .first-line .subtitle {
+  flex-grow: 1;
+  text-align: center;
+  margin: 0;
+}
+
+#side-projects .first-line>a:nth-child(3) {
+  margin-left: 10px;
+}
+
+#side-projects #mahindra {
+  width: 100px;
+  border-width: 0;
+  cursor: pointer;
+  border: 2px solid gray;
+  /* align-self: center; */
+}
+
+.project-descriptions {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+
 /* Section Contact */
 #contact {
   grid-template-columns: 700px;
@@ -80,18 +139,13 @@ header {
   justify-content: center;
 }
 
-
-#pictures>.my-card {
-  /* border: 1px solid white; */
-}
-
 #pictures-container {
   /* border: 1px solid green; */
   height: 80vh;
   align-self: stretch;
   display: flex;
   flex-direction: row;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 #pictures-container>div {
@@ -101,6 +155,7 @@ header {
 
 #pictures-container .picture {  
   border: 2px solid black;
+  overflow: hidden;
 }
 
 #pictures-container img {
@@ -193,11 +248,17 @@ header {
   padding: 5px;
   color: var(--second-color);
   margin: 5px;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* align-items: stretch; */
+  /* border: 1px solid white; */
 }
 
 
 .expertise-item .check-list {
   margin: 5px;
+  /* align-self: center; */
+  /* text-align: center; */
 }
 
 
@@ -363,6 +424,7 @@ header {
   text-align: center;
   font-weight: bold;
   grid-column: 1 / -1;
+  text-shadow: 11px 11px 11px rgba(214,214,214,0.7);
 }
 
 .grid-section>.footer {
@@ -548,7 +610,7 @@ ul.check-list li::before {
 }
 
 /* Medium devices */
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1200px) {
   /* Redefine variables */
   :root {
     --max-col-size: 700px;
@@ -570,6 +632,10 @@ ul.check-list li::before {
 
   #pictures-container>div:last-child {
     display: none;
+  }
+
+  #side-projects>.my-card {
+    grid-template-columns: 1fr;
   }
 
 
