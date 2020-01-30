@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="/static/main/css/chartist.min.css">
   <link rel="stylesheet" href="/static/main/css/chartist-plot.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="/static/main/css/master~v1.css">
+  <link rel="stylesheet" href="/static/main/css/master~v2.css">
   <title>Alfredo Alarcon - Scientific Informatics</title>
 </head>
 
@@ -41,8 +41,8 @@
             <li>Passionate about science and technology</li>
           </ul>
           <a target="_blank" href="/static/main/docs/CV_Alfredo_ALARCON.pdf"
-            class="btn waves-effect waves-light blue lighten-1">
-            Download CV
+            class="btn-large waves-effect waves-light blue lighten-1">
+            Download CV <i class="material-icons right">open_in_new</i>
           </a>
         </div>
         <!-- Expertise -->
@@ -130,7 +130,7 @@
 
       <!-- Expertise -->
       <div id="expertise-marker" class="scrollspy"></div>
-      <div id="expertise" class="grid-section section">
+      <div id="expertise" class="section">
         <div class="title">expertise</div>
 
         <!-- Data Science -->
@@ -539,8 +539,90 @@
       </div>
 
       <!-- Side Projects -->
-      <div id="side-projects" class="grid-section section scrollspy">
+      <div id="side-projects-marker" class="scrollspy"></div>
+      <div id="side-projects" class="section">
         <div class="title">side projects</div>
+        <!-- Chemocobra -->
+        <div class="my-card section scrollspy" id="chemocobra">
+          <div class="first-line">
+            <div class="subtitle">Chemocobra</div>
+            <!-- <a target="_blank" href="/chemocobra" class="btn btn-small waves-effect waves-light blue lighten-1">
+              App <i class="material-icons right">open_in_new</i> </a> -->
+          </div>
+          <div>Coming soon...</div>
+        </div>
+
+
+        <!-- Web Development Workshop -->
+        <div class="my-card section scrollspy" id="webdev-workshop">
+          <!-- Title and buttons -->
+          <div class="first-line">
+            <div class="subtitle">Web Development Workshop</div>
+            <a target="_blank" href="/webdev-workshop/app"
+              class="btn btn-small waves-effect waves-light blue lighten-1">App <i
+                class="material-icons right">open_in_new</i> </a>
+            <a target="_blank" href="/webdev-workshop/slides"
+              class="btn btn-small waves-effect waves-light blue lighten-1">Slides <i
+                class="material-icons right">open_in_new</i></a>
+
+          </div>
+
+          <!-- Image -->
+          <div>
+            <img id="geodata-img" alt="">
+            <div class="image-legend">
+              Final project of the workshop. This application retrieves data from World Bank Indicators API as well as
+              Rest Countries API and displays these data with dynamic plots and maps. <br>Stack: React (with hooks) and
+              Plotly.
+            </div>
+          </div>
+
+          <!-- Text - Description -->
+          <div class="project-descriptions">
+            <div>
+              <img src="/static/main/img/side-projects/mahindra.jpg" alt="" id="mahindra">
+            </div>
+            <div class="expertise-item">
+              <div class="exp-title-2">28h Workshop on Frontend Web Development.</div>
+              <ul class="check-list">
+                <li>The objective of this workshop was to introduce Computer Science students at Mahindra Ecole Centrale
+                  (Hyderabad, India) to modern web technologies.</li>
+                <li>Main content was frontend development, including HTML, CSS, Javascript and React with Hooks. </li>
+                <li>It was a hands-on workshop, most of the time students were developing applications with Javascript
+                  and
+                  React.</li>
+              </ul>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- Museo de la Solidaridad -->
+        <div class="my-card section scrollspy" id="museo-solidaridad">
+          <!-- Title and button -->
+          <div class="first-line">
+            <div class="subtitle">Museo de la Solidaridad</div>
+            <a target="_blank" href="/museo-solidaridad" class="btn btn-small waves-effect waves-light blue lighten-1">
+              WebSite <i class="material-icons right">open_in_new</i> </a>
+          </div>
+          <!-- Text - Description -->
+          <div class="expertise-item">
+            <div class="exp-title-2">Dynamic website for an upcoming documentary</div>
+            <ul class="check-list">
+              <li>This website was created for a documentary about the Museo de la Solidaridad.</li>
+              <li>Created with materialize, a CSS and JS library.</li>
+            </ul>
+          </div>
+          <!-- Image -->
+          <div>
+            <img src="/static/main/img/side-projects/museo-solidaridad.gif" alt="">
+            <div class="image-legend">
+              Website developped with materialize.css. All photos and videos belong to Tomás Strahovsky&copy;
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- Pictures -->
@@ -647,7 +729,10 @@
           <li><a href="#network-analysis" class="subsection-link" id="">Network Analysis</a></li>
           <li><a href="#management" class="subsection-link" id="">Management</a></li>
           <li><a href="#experience">Experience</a></li>
-          <li><a href="#side-projects">Side Projects</a></li>
+          <li><a href="#side-projects-marker">Side Projects</a></li>
+          <li><a href="#chemocobra" class="subsection-link" id="">Chemocobra</a></li>
+          <li><a href="#webdev-workshop" class="subsection-link" id="">Webdev Workshop</a></li>
+          <li><a href="#museo-solidaridad" class="subsection-link" id="">Museo Solidaridad</a></li>
           <li><a href="#pictures">Pictures</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -656,7 +741,7 @@
 
   </div>
 
-  <!-- Add Links -->
+  <!-- Add Links and Images -->
   <script>
     // Experience Links
     const links = {
@@ -664,6 +749,7 @@
       "systra-logo": "http://www.systra.com",
       "x-logo": "http://www.polytechnique.edu",
       "saclay-logo": "http://www.mssb.fr",
+
     }
     Array.from(document.querySelectorAll(".experience-section img")).forEach(elem => {
       elem.onclick = () => window.open(links[elem.id], "_blank");
@@ -672,11 +758,23 @@
     // Expertise Links
     const chemoInfoImg = document.querySelector("#chemoinfo-image");
     chemoInfoImg.onclick = () => window.open("substr-viz.html",
-      "_blank", "width: 700; height: 900; menubar=off; toolbar=false; resizable=off; ");
+      "_blank", "width: 700; height: 900; menubar=off; toolbar=false; resizable=off;");
     const modellingImg = document.querySelector("#modelling-image");
     modellingImg.onclick = () => window.open("escher-viz.html",
-      "_blank", "width: 700; height: 900; menubar=off; toolbar=false; resizable=off; ");
+      "_blank", "width: 700; height: 900; menubar=off; toolbar=false; resizable=off;");
 
+
+    // Mahindra
+    document.querySelector("#mahindra").onclick = () => window.open("https://www.mahindraecolecentrale.edu.in/", "_blank");
+
+    // Animation webdev-workshop
+    const imgGeodata = ["geodata-map.jpg", "geodata-time-series.jpg"];
+    imgGeodataElem = document.querySelector("#geodata-img");
+    setInterval(() => {
+      let currentImg = imgGeodataElem.src.split('/').splice(-1)[0];
+      let nextSrc = imgGeodata.filter(img => img !== currentImg)[0];
+      imgGeodataElem.src = "/static/main/img/side-projects/" + nextSrc;
+    }, 1000);
 
   </script>
 
