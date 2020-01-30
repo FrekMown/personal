@@ -26,7 +26,7 @@
 
 body {
   font-family: 'Amaranth', sans-serif;
-  background-color: black;  
+  background-color: black;
   color: var(--second-color);
   font-size: 1.2em;  
 }
@@ -496,24 +496,20 @@ ul.check-list li::before {
 #expertise-list {
   display: grid;
   grid-template-columns: repeat(3, 180px);
-  gap: 20px;
+  gap: 10px;
 
 }
 
 #expertise-list>a {
   display: block;
   background-color: var(--background-2);
-  /* box-shadow: var(--shadow); */
   border: 1px solid rgba(87, 87, 99, 0.8);
-  /* flex: 1 1 ; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  padding: 10px;
+  padding: 5px;
   color: var(--third-color);
-  margin-bottom: 3vh;
-  margin-right: 10px;
   text-align: center;
 }
 
@@ -524,7 +520,7 @@ ul.check-list li::before {
 }
 
 #expertise-list img {
-  height: 100px;
+  height: 130px;
   border-radius: 2px;
   margin-bottom: 10px;
 }
