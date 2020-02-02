@@ -1,14 +1,4 @@
-#chem-container {
-    flex-grow: 1;
-    align-self: stretch;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    padding: 10px;
-    /* border: 2px solid gray; */
-  }
-
 .mol-element {
-    position: relative;
     display: flex;
     flex-direction: column;
 }
@@ -18,7 +8,12 @@
     border-bottom: 1px solid gray;
     z-index: 100;
     text-align: center;
-    /* font-size: 1.1rem; */
+    font-size: 0.9em;
+}
+
+.mol-container {
+    position: relative;
+    flex-grow: 1;
 }
 
 #mol-substr>.mol-name {

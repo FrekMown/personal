@@ -13,7 +13,8 @@
   <link rel="stylesheet" href="/static/main/css/chartist.min.css">
   <link rel="stylesheet" href="/static/main/css/chartist-plot.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="/static/main/css/master~v2.css">
+  <link rel="stylesheet" href="/static/main/css/master~v3.css">
+  <link rel="stylesheet" href="/static/main/css/substr-viz-main.css">
   <title>Alfredo Alarcon - Scientific Informatics</title>
 </head>
 
@@ -41,7 +42,7 @@
             <li>Passionate about science and technology</li>
           </ul>
           <a target="_blank" href="/static/main/docs/CV_Alfredo_ALARCON.pdf"
-            class="btn-large waves-effect waves-light blue lighten-1">
+            class="btn waves-effect waves-light blue lighten-1">
             Download CV <i class="material-icons right">open_in_new</i>
           </a>
         </div>
@@ -231,7 +232,12 @@
 
         <!-- Chemoinformatics -->
         <div class="my-card section scrollspy" id="chemoinformatics">
-          <div class="subtitle">Chemoinformatics</div>
+          <div class="first-line">
+            <div class="subtitle">Chemoinformatics</div>
+            <a target="_blank" href="/chemoinformatics-viz"
+              class="btn btn-small waves-effect waves-light blue lighten-1">Animation <i
+                class="material-icons right">open_in_new</i></a>
+          </div>
           <!-- Background -->
           <div class="expertise-item background-item">
             <div class="exp-title-2">Background</div>
@@ -243,9 +249,13 @@
           </div>
           <!-- Image -->
           <div class="expertise-image">
-            <img id="chemoinfo-image" class="tooltipped" data-tooltip="Click for interactive animation"
-              src="/static/main/img/logos-expertise/expertise-chemoinfo.png" alt="">
-            <div class="image-legend">Click for Animation. Example of a substructure research analysis. The substructure on top-left was
+            <!-- <img id="chemoinfo-image" class="tooltipped" data-tooltip="Click for interactive animation"
+              src="/static/main/img/logos-expertise/expertise-chemoinfo.png" alt=""> -->
+            <div id="chem-container"></div>
+            <a target="_blank" id="chemoinfo-rotate" class="btn-large waves-effect waves-light blue lighten-1">
+              Rotate</a>
+            <div class="image-legend">Example of a substructure research analysis. The substructure
+              on top-left was
               confronted against 1520 unique structures in the metabolic model of <em>Escherichia Coli</em>. Results are
               depicted above. I annotated these structures in a semi-automated way, structures for all metabolites in
               the model are not directly available online.</div>
@@ -254,7 +264,8 @@
           <div class="expertise-item">
             <div class="exp-title-2">Modelling Chemistry - RDKit</div>
             <ul class="check-list">
-              <li>RDKit is a C++ and Python library capable of handling structural chemical data.</li>
+              <li>RDKit is a C++ and Python library capable of handling structural chemical data (molecules and
+                reactions).</li>
               <li>Classical methods such as subtructure matching, structure similarity or maximum common substructure
                 are directly applied on large quantities of molecules.</li>
               <li>This allows for screening of large chemical databases to find molecules with specific properties.</li>
@@ -316,12 +327,18 @@
 
         <!-- Network Analysis -->
         <div class="my-card section scrollspy" id="network-analysis">
-          <div class="subtitle">Network Analysis</div>
+          <div class="first-line">
+            <div class="subtitle">Network Analysis</div>
+            <a target="_blank" href="/metabolic-modelling-viz"
+              class="btn-small waves-effect waves-light blue lighten-1">Animation <i
+                class="material-icons right">open_in_new</i></a>
+          </div>
           <!-- Image -->
           <div class="expertise-image">
             <img id="modelling-image" class="tooltipped" data-tooltip="Click for interactive animation"
               src="/static/main/img/logos-expertise/modelling-pkt.png" alt="">
-            <div class="image-legend">Click for Animation. Metabolic Modelling for a <em>Escherichia Coli</em> using the iML1515 model
+            <div class="image-legend">Click for Animation. Metabolic Modelling for a <em>Escherichia Coli</em> using the
+              iML1515 model
               (containing 1877 metabolites, 2712 reactions and 1516 genes). The animation shows the improvement in
               theoretical yield for acetone production with the PKT strain patented by Global Bioenergies&copy;</div>
           </div>
@@ -338,8 +355,7 @@
             <div class="exp-title-2">Metabolic Modelling</div>
             <ul class="check-list">
               <li>Genome-scale metabolic models attempt to store all published data regarding metabolites, reactions and
-                genes in a
-                metabolic network for a specific organism. </li>
+                genes in a metabolic network for a specific organism. </li>
               <li>They allow for a holistic view of an organism's metabolism.</li>
               <li>Using linear optimization we can simulate different metabolic scenarios and confont them to
                 experimental results.</li>
@@ -609,9 +625,11 @@
           </div>
           <!-- Text - Description -->
           <div class="expertise-item">
-            <div class="exp-title-2">Dynamic website for an upcoming documentary</div>
+            <div class="exp-title-2">El Museo de la Solidaridad</div>
             <ul class="check-list">
-              <li>This website was created for a documentary about the Museo de la Solidaridad.</li>
+              <li>This website was created for an upcoming documentary relating a Chilean story happening during the
+                dictatorship.</li>
+              <li>The objective was to show the material used for the documentary in order to apply for financing.</li>
               <li>Created with materialize, a CSS and JS library.</li>
             </ul>
           </div>
@@ -741,6 +759,32 @@
 
   </div>
 
+  <!-- Initialize materialize -->
+  <script src="/static/main/js/materialize.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const scrollspyOptions = {
+        scrollOffset: 30,
+      }
+      const scrollspyInst = M.ScrollSpy.init(document.querySelectorAll('.scrollspy'), scrollspyOptions);
+      const parallaxInst = M.Parallax.init(document.querySelectorAll('.parallax'), {});
+      const pushpinOptions = {
+        offset: 50,
+        // top: 100,
+      }
+      const pushpinInst = M.Pushpin.init(document.querySelectorAll('.pushpin'), pushpinOptions);
+      const tooltipOptions = {
+        position: "top",
+        margin: 0,
+        inDuration: 100,
+        outDuration: 0,
+      }
+      const tooltipInst = M.Tooltip.init(document.querySelectorAll(".tooltipped"), tooltipOptions);
+      // materialboxed
+      const materialboxedInst = M.Materialbox.init(document.querySelectorAll(".materialboxed"), {});
+    });
+  </script>
+
   <!-- Add Links and Images -->
   <script>
     // Experience Links
@@ -753,15 +797,19 @@
     }
     Array.from(document.querySelectorAll(".experience-section img")).forEach(elem => {
       elem.onclick = () => window.open(links[elem.id], "_blank");
-    })
+    });
+
+    // Rotate chemoinfo
+    document.querySelector("#chemoinfo-rotate").onclick = () => window.rotateAll();
 
     // Expertise Links
-    const chemoInfoImg = document.querySelector("#chemoinfo-image");
-    chemoInfoImg.onclick = () => window.open("substr-viz.html",
-      "_blank", "width: 700; height: 900; menubar=off; toolbar=false; resizable=off;");
+    // const chemoInfoImg = document.querySelector("#chemoinfo-image");
+    // chemoInfoImg.onclick = () => window.open("chemoinformatics-viz",
+    //   "_blank", "width: 700; height: 900; menubar=off; toolbar=false; resizable=off;");
     const modellingImg = document.querySelector("#modelling-image");
-    modellingImg.onclick = () => window.open("escher-viz.html",
+    modellingImg.onclick = () => window.open("metabolic-modelling-viz",
       "_blank", "fullscreen=yes; menubar=off; toolbar=false; resizable=off;");
+
 
 
     // Mahindra
@@ -772,6 +820,7 @@
     imgGeodataElem = document.querySelector("#geodata-img");
     setInterval(() => {
       let currentImg = imgGeodataElem.src.split('/').splice(-1)[0];
+      // console.log(currentImg);
       let nextSrc = imgGeodata.filter(img => img !== currentImg)[0];
       imgGeodataElem.src = "/static/main/img/side-projects/" + nextSrc;
     }, 1000);
@@ -787,32 +836,10 @@
   <!-- <script src="escher-map.js"></script> -->
   <!-- <link rel="stylesheet" href="escher-map.css"> -->
 
+  <!-- Initialize molecule viz -->
+  <script src="/static/main/js/3Dmol-min.js"></script>
+  <script src="/static/main/js/substr-viz-main.js"></script>
 
-  <!-- Initialize materialize -->
-  <script src="/static/main/js/materialize.min.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const scrollspyOptions = {
-        scrollOffset: 30,
-      }
-      const scrollspyInst = M.ScrollSpy.init(document.querySelectorAll('.scrollspy'), scrollspyOptions);
-      const parallaxInst = M.Parallax.init(document.querySelectorAll('.parallax'), {});
-      const pushpinOptions = {
-        offset: 200,
-        // top: 100,
-      }
-      const pushpinInst = M.Pushpin.init(document.querySelectorAll('.pushpin'), pushpinOptions);
-      const tooltipOptions = {
-        position: "top",
-        margin: 0,
-        inDuration: 100,
-        outDuration: 0,
-      }
-      const tooltipInst = M.Tooltip.init(document.querySelectorAll(".tooltipped"), tooltipOptions);
-      // materialboxed
-      const materialboxedInst = M.Materialbox.init(document.querySelectorAll(".materialboxed"), {});
-    });
-  </script>
 </body>
 
 </html>

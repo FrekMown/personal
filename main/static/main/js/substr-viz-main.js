@@ -22,7 +22,6 @@ function drawOneMolecule(m_id) {
   // Parent Element
   const parentElem = document.createElement("div");
   parentElem.classList.add("mol-element");
-  parentElem.id = `mol-${m_id}`;
 
   // Info Element
   const nameElem = document.createElement("div");
