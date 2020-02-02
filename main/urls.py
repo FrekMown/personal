@@ -22,8 +22,8 @@ def mastercss(request):
 
 urlpatterns = [
     path('', index),
-    path('escher-viz.html', escher),
-    path('substr-viz.html', molecules),
+    path('metabolic-modelling-viz', escher),
+    path('chemoinformatics-viz', molecules),
     path('index-dev', index_dev),
     path('main/static/main/css/master.css', mastercss)
 ]
