@@ -42,7 +42,7 @@ function drawOneMolecule(m_id) {
 
   // Create 3DMoljs viewer
   const config = {
-    backgroundColor: "0x1b1b27",
+    backgroundColor: "0x001b1b27",
   }
 
   // Creation of viewer and application of styles

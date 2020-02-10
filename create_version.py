@@ -25,6 +25,7 @@ for cssfile in CSS_FILES:
     os.system("cp {} {}".format(os.path.join(CSS_DIR, cssfile), os.path.join(CSS_DIR, new_filename)))
     new_filedir_html = os.path.join('/static', app_name, "css", new_filename)
     print("*** File created: {}".format(new_filedir_html))
+
     # Change name in HTML files
     for htmlfile in HTML_FILES:
         htmlfile_dev = '{}-dev.html'.format(htmlfile.split('.')[0])

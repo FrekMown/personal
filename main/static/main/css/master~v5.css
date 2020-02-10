@@ -1,0 +1,764 @@
+/* Definition of variables */
+
+:root {
+  /* Colors */
+  --first-color: rgb(65, 218, 218);
+  --second-color: rgb(239, 239, 243);
+  --third-color: rgb(54, 186, 247);
+  --fourth-color: #176087;
+  --separator-color: rgb(79, 79, 87);
+  --background-1: rgba(27, 27, 39, 0.7);
+  --background-2: rgba(14, 14, 27, 0.8);
+  --background-3: rgba(33, 33, 43, 0.6);
+  /* Shadows */
+  --shadow: 3px 3px 3px rgba(87, 87, 99, 0.5);
+  --shadow-2: 10px 10px 10px 0 rgba(87, 87, 99, 0.5);
+  /* Resolutions for media queries */
+  --large-tablet: 991px;
+  --medium-tablet: 767px;
+  --mobile: 479px;
+  /* Sizes */
+  --max-col-size: 600px;
+}
+
+/* General Layout */
+
+#data-science, #web-development, #network-analysis, #computational-biology, #chemoinformatics, #management, #chemocobra, #webdev-workshop, #museo-solidaridad {
+  min-height: 98vh;
+  display: flex;
+  align-items: center;
+}
+
+#presentation>.title {
+  padding: 10px;
+  background-color: var(--background-1);
+}
+
+#chem-container {
+  min-height: 400px;
+}
+
+/* Button */
+
+body {
+  font-family: 'Amaranth', sans-serif;
+  /* background-color: black; */
+  /* font-size: 1em;   */
+  color: var(--second-color);
+  background-image: url("/static/main/background/background-presentation-v2.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  transition: background-image 1s;
+}
+
+body img {
+  filter: brightness(110%);
+}
+
+header img {
+  max-height: 100vh;
+  max-width: 100vw;
+  z-index: 100;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section {
+  /* min-height: 100vh; */
+  padding: 0;
+  /* margin-bottom: 10vh; */
+}
+
+.section .subtitle {
+  color: var(--first-color);
+  font-size: 1.6em;
+  /* margin-bottom: 2vh; */
+}
+
+.section .subsubtitle {
+  color: var(--third-color);
+  font-size: 1.1rem;
+}
+
+/* Section Side Projects */
+
+#side-projects {
+  display: flex;
+  flex-direction: column;
+}
+
+#side-projects .my-card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.my-card .first-line {
+  display: flex;
+  align-self: stretch;
+  margin: 20px;
+  align-items: center;
+  grid-column: 1/-1;
+}
+
+#side-projects img {
+  border: 1px solid gray;
+  border-radius: 5px;
+  width: 100%;
+  opacity: 0.8;
+}
+
+.my-card .first-line .subtitle {
+  flex-grow: 1;
+  text-align: center;
+  margin: 0;
+}
+
+.my-card .first-line>a:nth-child(3) {
+  margin-left: 10px;
+}
+
+#side-projects #mahindra {
+  width: 100px;
+  border-width: 0;
+  cursor: pointer;
+  border: 2px solid gray;
+  /* align-self: center; */
+}
+
+.project-descriptions {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+
+#geodata-img {
+  max-width: 500px;
+  margin: auto;
+}
+
+video {
+  width: 100%;
+  max-width: 800px;
+}
+
+/* Section Contact */
+
+#contact {
+  grid-template-columns: 700px;
+}
+
+#contact form {
+  min-width: 500px;
+}
+
+#contact input {
+  color: var(--second-color);
+}
+
+/* Section Pictures */
+
+#pictures {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+}
+
+#pictures-container {
+  /* border: 1px solid green; */
+  height: 80vh;
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  /* overflow: hidden; */
+}
+
+#pictures-container>div {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+#pictures-container .picture {
+  border: 2px solid black;
+  overflow: hidden;
+}
+
+#pictures-container img {
+  /* display: none; */
+  object-fit: cover;
+  width: 100%;
+  max-height: 100%;
+}
+
+#pictures-container>div {
+  box-sizing: border-box;
+  /* border: 1px solid white; */
+  /* min-width: var(--max-col-size); */
+  flex-grow: 1;
+}
+
+/* Section Expertise  */
+
+#expertise-marker {
+  min-height: 0;
+}
+
+#expertise {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 
+#expertise>.section {
+  min-height: auto;
+} */
+
+/* Cards inside Expertise */
+
+#expertise .my-card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: space-around;
+  grid-column: 1/-1;
+}
+
+/* Title of card */
+
+#expertise .my-card>div:first-child {
+  grid-column: 1/-1;
+  text-align: center;
+}
+
+.expertise-image {
+  grid-row: 3 / 6;
+  /* margin: 10px 0; */
+  padding: 3vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+/* Select only odd images */
+
+#expertise>.my-card:nth-child(odd)>.expertise-image {
+  grid-column: -2;
+}
+
+.background-item {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+}
+
+.expertise-item ul {
+  align-self: center;
+  border-style: solid;
+  border-color: var(--separator-color);
+  border-width: 1px 0 0 0;
+}
+
+#network-analysis .background-item {
+  grid-column: auto;
+}
+
+#network-analysis .expertise-image {
+  grid-row: 2/5;
+}
+
+#management>.my-card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 50px;
+}
+
+.expertise-item {
+  padding: 5px;
+  color: var(--second-color);
+  margin: 5px;
+}
+
+.expertise-item .check-list {
+  margin: 5px;
+}
+
+.expertise-item .exp-title-2 {
+  text-align: center;
+  color: var(--first-color);
+}
+
+#chemoinformatics>.expertise-image {
+  min-height: 500px;
+  grid-row: 3 / 5;
+}
+
+#chemoinfo-image {
+  width: 385px;
+  cursor: pointer;
+  border-radius: 50px;
+  border: 2px solid gray;
+}
+
+#chemoinfo-image:hover {
+  border: 2px solid whitesmoke;
+  filter: brightness(150%);
+}
+
+#chem-container {
+  flex-grow: 1;
+  align-self: stretch;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  padding: 10px;
+  align-items: center;
+}
+
+.mol-element {
+  height: 100%;
+}
+
+#modelling-image {
+  cursor: pointer;
+  width: 100%;
+  object-fit: contain;
+  max-height: 450px;
+  opacity: 0.7;
+}
+
+#modelling-image:hover {
+  filter: brightness(150%);
+}
+
+#network-analysis>.expertise-image {
+  /* border: 1px solid white; */
+  align-items: stretch;
+  overflow: hidden;
+}
+
+/* Animation Bio */
+
+#bio-rotate {
+  position: relative;
+  width: 400px;
+}
+
+#bio-norotate {
+  position: absolute;
+  width: 350px;
+  margin-top: 25px;
+  /* margin-left: 10px; */
+}
+
+.rotate {
+  animation: rotation 50s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+#web-development-image {
+  width: 350px;
+  filter: brightness(130%)
+}
+
+.image-legend {
+  color: var(--second-color);
+  text-align: center;
+  font-size: 0.85em;
+}
+
+/* Section Experience */
+
+#experience {
+  row-gap: 0;
+}
+
+.experience-list {
+  display: flex;
+  justify-content: space-around;
+}
+
+.experience-section {
+  align-self: stretch;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  justify-content: center;
+  border-style: solid;
+  border-width: 0 0 1px 0;
+  border-color: var(--separator-color);
+  padding: 1vh 1vw;
+}
+
+#education {
+  font-size: 0.9em;
+}
+
+.experience-section:last-child {
+  border-width: 0;
+}
+
+.experience-section ul {
+  /* font-size: 0.9em; */
+  padding: 5px;
+  grid-column: 1/3;
+  color: var(--second-color);
+}
+
+.experience-section img {
+  cursor: pointer;
+  grid-row: 1/3;
+  grid-column: 2/2;
+}
+
+.experience-section img:hover {
+  filter: brightness(180%);
+}
+
+.exp-title-2 {
+  color: var(--first-color);
+  font-weight: bold;
+}
+
+.exp-title-3 {
+  color: var(--first-color);
+  font-size: 0.85em;
+}
+
+#systra-logo {
+  width: 170px;
+}
+
+#gbe-logo {
+  width: 220px;
+  border-radius: 5px;
+}
+
+#x-logo {
+  background-color: black;
+  border-radius: 5px;
+  width: 140px;
+}
+
+#saclay-logo {
+  width: 190px;
+  grid-row: 1/4;
+}
+
+#mooc-logo {
+  width: 130px;
+}
+
+/* Section  Presentation*/
+
+#presentation {
+  min-height: 98vh;
+}
+
+#presentation>.title {
+  margin: 0;
+}
+
+.grid-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  justify-content: center;
+  align-content: space-evenly;
+  row-gap: 3vh;
+  column-gap: 1.5vw;
+}
+
+.title {
+  font-family: 'Major Mono Display', monospace;
+  font-size: 1.8rem;
+  text-align: center;
+  font-weight: bold;
+  grid-column: 1 / -1;
+  text-shadow: 11px 11px 11px rgba(214, 214, 214, 0.7);
+  margin: 5vh 0;
+}
+
+.grid-section>.footer {
+  grid-column: 1 / -1;
+  /* padding: 20px 5px; */
+}
+
+#my-stack {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+  justify-content: space-around;
+}
+
+#my-stack div {
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+#my-stack>img.transparent {
+  background-color: transparent;
+}
+
+#my-stack img {
+  height: 50px;
+  /* max-width: 60px; */
+  border-radius: 5px;
+  margin: 5px 2px 0 0;
+}
+
+.my-card {
+  background-color: var(--background-1);
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: default;
+  justify-content: space-around;
+  box-shadow: var(--shadow-2);
+  border: 1px solid rgb(38, 38, 41);
+}
+
+.my-card>img {
+  margin-bottom: 3vh;
+}
+
+/* List with checks */
+
+ul.check-list {
+  list-style-type: none;
+  text-align: left;
+}
+
+ul.check-list li::before {
+  content: "✔ ";
+}
+
+#profile-pic {
+  height: 20vh;
+  border-radius: 10vh;
+}
+
+#expertise-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+#expertise-list>a {
+  display: block;
+  background-color: var(--background-2);
+  /* border: 1px solid var(--separator-color); */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 5px;
+  color: var(--third-color);
+  text-align: center;
+  padding: 5px;
+  box-shadow: var(--shadow);
+}
+
+#expertise-list>a:hover {
+  /* box-shadow: none; */
+  color: var(--first-color);
+  filter: brightness(140%);
+  /* border-color: var(--third-color); */
+}
+
+#expertise-list img {
+  height: 12vh;
+  border-radius: 2px;
+  margin-bottom: 10px;
+}
+
+/* General Layout */
+
+#main-layout {
+  display: flex;
+}
+
+#main-content {
+  /* padding-left: 5vw; */
+  padding: 1vh 50px 0 50px;
+  /* flex-grow: 1; */
+}
+
+#table-contents-container {
+  min-width: 20vw;
+  display: flex;
+  justify-content: center;
+}
+
+/* Make table of contents disappear on small devices */
+
+@media screen and (max-width: var(--medium-tablet)) {
+  #table-contents-container {
+    display: none;
+  }
+}
+
+ul.table-of-contents {
+  font-size: 1.2rem;
+  background-color: var(--background-1);
+  padding: 20px;
+  /* border-radius: 10px; */
+  box-shadow: var(--shadow-2);
+}
+
+.table-of-contents a {
+  color: var(--fourth-color)
+}
+
+.table-of-contents .section-title {
+  color: var(--fourth-color);
+  padding-left: 14px;
+  cursor: default;
+}
+
+.table-of-contents a.subsection-link {
+  font-size: 0.9em;
+  margin-left: 1vw;
+  padding-left: 1vw;
+}
+
+.table-of-contents a.active {
+  color: var(--first-color);
+  border-left: 2px solid var(--second-color);
+}
+
+.table-of-contents a:not(.active):hover {
+  color: var(--second-color);
+  border-left: 1px solid var(--second-color);
+}
+
+/* Amaranth Font */
+
+/* amaranth-regular - latin */
+
+@font-face {
+  font-family: 'Amaranth';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Amaranth Regular'), local('Amaranth-Regular'), url('/static/main/fonts/amaranth-v10-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+  url('/static/main/fonts/amaranth-v10-latin-regular.woff') format('woff');
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* major-mono-display-regular - latin */
+
+@font-face {
+  font-family: 'Major Mono Display';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Major Mono Display Regular'), local('MajorMonoDisplay-Regular'), url('/static/main/fonts/major-mono-display-v4-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+  url('/static/main/fonts/major-mono-display-v4-latin-regular.woff') format('woff');
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* MEDIA QUERIES */
+
+/* Medium devices */
+
+@media screen and (max-width: 990px) {
+  /* Redefine variables */
+  :root {
+    --max-col-size: 400px;
+  }
+  body {
+    font-size: 1.1rem;
+  }
+  /* hide table of contents */
+  #table-contents-container {
+    display: none;
+  }
+  .expertise-image {
+    grid-row-start: 2;
+  }
+  .grid-section, #pictures {
+    grid-template-columns: 1fr;
+  }
+  #my-stack img {
+    height: 50px;
+  }
+  #expertise>.my-card, #side-projects>.my-card {
+    grid-template-columns: 1fr;
+  }
+  #pictures-container>div:last-child {
+    display: none;
+  }
+  #main-content {
+    /* border: 1px solid white; */
+    /* margin-left: 10vw; */
+    /* margin-right:  10vw; */
+    padding: 3vw;
+  }
+  #presentation {
+    /* display: grid; */
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0;
+  }
+  /* Resize images */
+  #bio-rotate {
+    filter: brightness(120%);
+    width: 360px;
+  }
+  #bio-norotate {
+    filter: brightness(120%);
+    width: 300px;
+    margin-top: 25px;
+    /* margin-left: 10px; */
+  }
+  #web-development-image {
+    width: 300px;
+  }
+  .experience-list {
+    margin: 5vh 0;
+  }
+  #chem-container {
+    min-height: 500px;
+  }
+}
+
+/* Small devices */
+
+@media screen and (max-width: 479px) {
+  body {
+    font-size: 1.7rem;
+  }
+  #presentation {
+    grid-template-columns: 1fr;
+  }
+  #profile-pic {
+    height: 20vh;
+    border-radius: 20vh;
+  }
+  #expertise-list img {
+    height: 25vh;
+  }
+  .experience-section {
+    padding: 5vh 1vw;
+    /* margin: 5vh 0; */
+  }
+  .btn-small {
+    font-size: 1.2rem;
+  }
+}

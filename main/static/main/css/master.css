@@ -1,17 +1,18 @@
 /* Definition of variables */
+
 :root {
   /* Colors */
   --first-color: rgb(65, 218, 218);
-  --second-color: rgb(239, 239, 243); 
+  --second-color: rgb(239, 239, 243);
   --third-color: rgb(54, 186, 247);
   --fourth-color: #176087;
   --separator-color: rgb(79, 79, 87);
-  --background-1: rgb(27, 27, 39);
-  --background-2: rgb(14, 14, 27);
-  --background-3: rgb(33, 33, 43);
+  --background-1: rgba(27, 27, 39, 0.7);
+  --background-2: rgba(14, 14, 27, 0.8);
+  --background-3: rgba(33, 33, 43, 0.6);
   /* Shadows */
-  --shadow: 3px 3px 3px rgba(87, 87, 99, 0.8);
-  --shadow-2: 4px 4px 4px 0 rgba(87, 87, 99, 0.8);
+  --shadow: 3px 3px 3px rgba(87, 87, 99, 0.5);
+  --shadow-2: 10px 10px 10px 0 rgba(87, 87, 99, 0.5);
   /* Resolutions for media queries */
   --large-tablet: 991px;
   --medium-tablet: 767px;
@@ -20,12 +21,34 @@
   --max-col-size: 600px;
 }
 
+/* General Layout */
+
+#data-science, #web-development, #network-analysis, #computational-biology, #chemoinformatics, #management, #chemocobra, #webdev-workshop, #museo-solidaridad {
+  min-height: 98vh;
+  display: flex;
+  align-items: center;
+}
+
+#presentation>.title {
+  padding: 10px;
+  background-color: var(--background-1);
+}
+
+#chem-container {
+  min-height: 400px;
+}
+
 /* Button */
+
 body {
   font-family: 'Amaranth', sans-serif;
-  background-color: black;
+  /* background-color: black; */
   /* font-size: 1em;   */
   color: var(--second-color);
+  background-image: url("/static/main/background/background-presentation-v2.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  transition: background-image 1s;
 }
 
 body img {
@@ -47,9 +70,8 @@ header {
 .section {
   /* min-height: 100vh; */
   padding: 0;
-  margin-bottom: 10vh;
+  /* margin-bottom: 10vh; */
 }
-
 
 .section .subtitle {
   color: var(--first-color);
@@ -63,19 +85,15 @@ header {
 }
 
 /* Section Side Projects */
+
 #side-projects {
   display: flex;
   flex-direction: column;
 }
 
-#side-projects>.section {
-  min-height: auto;
-}
-
-#side-projects>.my-card {
+#side-projects .my-card {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  /* padding: 20px; */
   gap: 20px;
 }
 
@@ -91,6 +109,7 @@ header {
   border: 1px solid gray;
   border-radius: 5px;
   width: 100%;
+  opacity: 0.8;
 }
 
 .my-card .first-line .subtitle {
@@ -119,7 +138,18 @@ header {
   height: 100%;
 }
 
+#geodata-img {
+  max-width: 500px;
+  margin: auto;
+}
+
+video {
+  width: 100%;
+  max-width: 800px;
+}
+
 /* Section Contact */
+
 #contact {
   grid-template-columns: 700px;
 }
@@ -133,6 +163,7 @@ header {
 }
 
 /* Section Pictures */
+
 #pictures {
   display: grid;
   grid-template-columns: 1fr;
@@ -153,7 +184,7 @@ header {
   grid-template-columns: repeat(2, 1fr);
 }
 
-#pictures-container .picture {  
+#pictures-container .picture {
   border: 2px solid black;
   overflow: hidden;
 }
@@ -165,37 +196,41 @@ header {
   max-height: 100%;
 }
 
-
 #pictures-container>div {
   box-sizing: border-box;
   /* border: 1px solid white; */
   /* min-width: var(--max-col-size); */
   flex-grow: 1;
-
 }
 
 /* Section Expertise  */
+
 #expertise-marker {
   min-height: 0;
 }
+
 #expertise {
   display: flex;
   flex-direction: column;
 }
 
+/* 
 #expertise>.section {
   min-height: auto;
-}
+} */
 
 /* Cards inside Expertise */
-#expertise>.my-card {
+
+#expertise .my-card {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-content: space-around;
   grid-column: 1/-1;
 }
+
 /* Title of card */
-#expertise>.my-card>div:first-child {
+
+#expertise .my-card>div:first-child {
   grid-column: 1/-1;
   text-align: center;
 }
@@ -210,10 +245,8 @@ header {
   height: 100%;
 }
 
-
-
-
 /* Select only odd images */
+
 #expertise>.my-card:nth-child(odd)>.expertise-image {
   grid-column: -2;
 }
@@ -239,13 +272,12 @@ header {
   grid-row: 2/5;
 }
 
-#expertise>#management {
+#management>.my-card {
   display: flex;
   flex-direction: column;
   align-items: stretch;
   padding: 50px;
 }
-
 
 .expertise-item {
   padding: 5px;
@@ -261,6 +293,7 @@ header {
   text-align: center;
   color: var(--first-color);
 }
+
 #chemoinformatics>.expertise-image {
   min-height: 500px;
   grid-row: 3 / 5;
@@ -297,6 +330,7 @@ header {
   width: 100%;
   object-fit: contain;
   max-height: 450px;
+  opacity: 0.7;
 }
 
 #modelling-image:hover {
@@ -309,8 +343,8 @@ header {
   overflow: hidden;
 }
 
-
 /* Animation Bio */
+
 #bio-rotate {
   position: relative;
   width: 400px;
@@ -346,7 +380,6 @@ header {
   text-align: center;
   font-size: 0.85em;
 }
-
 
 /* Section Experience */
 
@@ -430,6 +463,11 @@ header {
 }
 
 /* Section  Presentation*/
+
+#presentation {
+  min-height: 98vh;
+}
+
 #presentation>.title {
   margin: 0;
 }
@@ -439,10 +477,9 @@ header {
   grid-template-columns: repeat(2, 1fr);
   width: 100%;
   justify-content: center;
-  align-content: flex-start;
+  align-content: space-evenly;
   row-gap: 3vh;
   column-gap: 1.5vw;
-  
 }
 
 .title {
@@ -451,8 +488,8 @@ header {
   text-align: center;
   font-weight: bold;
   grid-column: 1 / -1;
-  text-shadow: 11px 11px 11px rgba(214,214,214,0.7);
-  margin-bottom: 5vh;
+  text-shadow: 11px 11px 11px rgba(214, 214, 214, 0.7);
+  margin: 5vh 0;
 }
 
 .grid-section>.footer {
@@ -483,7 +520,6 @@ header {
   height: 50px;
   /* max-width: 60px; */
   border-radius: 5px;
-  background-color: var(--background-1);
   margin: 5px 2px 0 0;
 }
 
@@ -497,9 +533,8 @@ header {
   cursor: default;
   justify-content: space-around;
   box-shadow: var(--shadow-2);
-  border: 1px solid rgb(38, 38, 41);  
+  border: 1px solid rgb(38, 38, 41);
 }
-
 
 .my-card>img {
   margin-bottom: 3vh;
@@ -517,22 +552,20 @@ ul.check-list li::before {
 }
 
 #profile-pic {
-  height: 26vh;
-  border-radius: 13vh;
+  height: 20vh;
+  border-radius: 10vh;
 }
 
 #expertise-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  /* gap: 1vw; */
-
+  gap: 10px;
 }
 
 #expertise-list>a {
   display: block;
   background-color: var(--background-2);
-  /* border: 1px solid rgba(87, 87, 99, 0.8); */
-  border: 1px solid var(--separator-color);
+  /* border: 1px solid var(--separator-color); */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -540,14 +573,15 @@ ul.check-list li::before {
   padding: 5px;
   color: var(--third-color);
   text-align: center;
-  padding: 2vh 0;
+  padding: 5px;
+  box-shadow: var(--shadow);
 }
 
 #expertise-list>a:hover {
-  box-shadow: none;
+  /* box-shadow: none; */
   color: var(--first-color);
   filter: brightness(140%);
-  border-color: var(--third-color);
+  /* border-color: var(--third-color); */
 }
 
 #expertise-list img {
@@ -557,6 +591,7 @@ ul.check-list li::before {
 }
 
 /* General Layout */
+
 #main-layout {
   display: flex;
 }
@@ -564,7 +599,6 @@ ul.check-list li::before {
 #main-content {
   /* padding-left: 5vw; */
   padding: 1vh 50px 0 50px;
-
   /* flex-grow: 1; */
 }
 
@@ -575,18 +609,29 @@ ul.check-list li::before {
 }
 
 /* Make table of contents disappear on small devices */
+
 @media screen and (max-width: var(--medium-tablet)) {
   #table-contents-container {
     display: none;
   }
 }
 
-.table-of-contents {
+ul.table-of-contents {
   font-size: 1.2rem;
+  background-color: var(--background-1);
+  padding: 20px;
+  /* border-radius: 10px; */
+  box-shadow: var(--shadow-2);
 }
 
 .table-of-contents a {
   color: var(--fourth-color)
+}
+
+.table-of-contents .section-title {
+  color: var(--fourth-color);
+  padding-left: 14px;
+  cursor: default;
 }
 
 .table-of-contents a.subsection-link {
@@ -594,7 +639,6 @@ ul.check-list li::before {
   margin-left: 1vw;
   padding-left: 1vw;
 }
-
 
 .table-of-contents a.active {
   color: var(--first-color);
@@ -633,6 +677,7 @@ ul.check-list li::before {
 /* MEDIA QUERIES */
 
 /* Medium devices */
+
 @media screen and (max-width: 990px) {
   /* Redefine variables */
   :root {
@@ -651,57 +696,50 @@ ul.check-list li::before {
   .grid-section, #pictures {
     grid-template-columns: 1fr;
   }
-
   #my-stack img {
     height: 50px;
   }
-
   #expertise>.my-card, #side-projects>.my-card {
     grid-template-columns: 1fr;
   }
-
   #pictures-container>div:last-child {
     display: none;
   }
-
   #main-content {
     /* border: 1px solid white; */
     /* margin-left: 10vw; */
     /* margin-right:  10vw; */
     padding: 3vw;
   }
-
   #presentation {
     /* display: grid; */
     grid-template-columns: repeat(2, 1fr);
+    margin: 0;
   }
-
   /* Resize images */
   #bio-rotate {
     filter: brightness(120%);
     width: 360px;
   }
-  
   #bio-norotate {
     filter: brightness(120%);
     width: 300px;
     margin-top: 25px;
     /* margin-left: 10px; */
   }
-
   #web-development-image {
     width: 300px;
   }
-
   .experience-list {
     margin: 5vh 0;
   }
-
   #chem-container {
     min-height: 500px;
   }
 }
-  /* Small devices */
+
+/* Small devices */
+
 @media screen and (max-width: 479px) {
   body {
     font-size: 1.7rem;
@@ -710,23 +748,17 @@ ul.check-list li::before {
     grid-template-columns: 1fr;
   }
   #profile-pic {
-    height: 40vh;
+    height: 20vh;
     border-radius: 20vh;
   }
   #expertise-list img {
     height: 25vh;
   }
-
   .experience-section {
     padding: 5vh 1vw;
     /* margin: 5vh 0; */
   }
-
   .btn-small {
     font-size: 1.2rem;
   }
-  
-
-}
-
 }

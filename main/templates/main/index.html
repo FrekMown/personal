@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="/static/main/css/chartist.min.css">
   <link rel="stylesheet" href="/static/main/css/chartist-plot.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="/static/main/css/master~v4.css">
+  <link rel="stylesheet" href="/static/main/css/master~v5.css">
   <link rel="stylesheet" href="/static/main/css/substr-viz-main.css">
   <title>Alfredo Alarcon - Scientific Informatics</title>
 </head>
@@ -30,16 +30,17 @@
     <div id="main-content">
 
       <!-- Presentation -->
-      <div id="presentation" class="grid-section grid-section section scrollspy">
+      <div id="presentation" class="grid-section section scrollspy">
         <div class="title">alfredo alarcon y - scientific informatics</div>
         <!-- Who Am I ? -->
         <div class="my-card">
           <img id="profile-pic" src="/static/main/img/profile_picture.png" alt="">
           <div class="subtitle">Who Am I?</div>
           <ul class="check-list">
-            <li>Engineer from the Ecole Polytechnique</li>
+            <li>Generalist Engineer from the Ecole Polytechnique, top Engineering School</li>
             <li>8 years experience in data science and web development</li>
             <li>Passionate about science and technology</li>
+            <li>Looking for new opportunities in any scientific field</li>
           </ul>
           <a target="_blank" href="/static/main/docs/CV_Alfredo_ALARCON.pdf"
             class="btn waves-effect waves-light blue lighten-1">
@@ -50,33 +51,34 @@
         <div class="my-card">
           <div class="subtitle">My Expertise</div>
           <div id="expertise-list">
-            <a href="#computational-biology">
-              <img src="/static/main/img/ha_retrovirus.png" alt="">
-              <div>Computational Biology</div>
-            </a>
+
             <a href="#web-development">
               <img src="/static/main/img/web-development.jpg" alt="">
               <div>Web Development</div>
             </a>
             <a href="#data-science">
               <img src="/static/main/img/data-analysis.jpg" alt="">
-              <div>Data Analysis </div>
-              <div>& Visualisation</div>
+              <div>Data Science </div>
             </a>
             <a href="#network-analysis">
               <img src="/static/main/img/network-analysis.jpg" alt="">
               <div>Network Modelling</div>
+            </a>
+            <a href="#management">
+              <img src="/static/main/img/project-management.jpg" alt="">
+              <div>Management</div>
+              <div>& Coaching</div>
+            </a>
+            <a href="#computational-biology">
+              <img src="/static/main/img/ha_retrovirus.png" alt="">
+              <div>Computational Biology</div>
             </a>
             <a href="#chemoinformatics">
               <img src="/static/main/img/chemoinformatics.png" alt="">
               <div>Chemoinformatics</div>
             </a>
 
-            <a href="#management">
-              <img src="/static/main/img/project-management.jpg" alt="">
-              <div>Management</div>
-              <div>& Coaching</div>
-            </a>
+
           </div>
         </div>
         <!-- My Stack -->
@@ -131,275 +133,289 @@
 
       <!-- Expertise -->
       <div id="expertise-marker" class="scrollspy"></div>
-      <div id="expertise" class="section">
+      <div id="expertise">
         <div class="title">expertise</div>
 
         <!-- Data Science -->
-        <div class="my-card section scrollspy" id="data-science">
-          <div class="subtitle">Data Science</div>
-          <!-- Animation -->
-          <div class="expertise-image">
-            <div class="ct-chart" id="ct-expertise"></div>
-            <div class="image-legend">The <em>Lemniscate of Gerono</em> is defined by the following
-              equation:<br><var>y<sup>2</sup></var> =
-              <var>x<sup>2</sup></var> - <var>x<sup>4</sup></var>.</div>
-          </div>
-          <!-- Background -->
-          <div class="expertise-item background-item">
-            <div class="exp-title-2">Background</div>
-            <ul class="check-list">
-              <li>8 years experience in treatment and analysis of complex data from heterogenous sources (biological,
-                transportation, macroeconomics).</li>
-              <li>Strong mathematical and informatics background developped during my Engineering studies.</li>
-            </ul>
-          </div>
-
-          <!-- Data Treatment -->
-          <div class="expertise-item">
-            <div class="exp-title-2">Data Treatment</div>
-            <ul class="check-list">
-              <li>With Python stack for data science we can automatise data treatment and concentrate on interpreting
-                results.</li>
-            </ul>
-          </div>
-          <!-- Forecasting - Machine Learning -->
-          <div class="expertise-item">
-            <div class="exp-title-2">Forecasting - Machine Learning</div>
-            <ul class="check-list">
-              <li>Python libraries such as scikit-learn or tensorflow help us model and predict values for time series
-                coming from different sources.</li>
-            </ul>
-          </div>
-          <!-- Data Visualisation -->
-          <div class="expertise-item">
-            <div class="exp-title-2">Data Visualisation</div>
-            <ul class="check-list">
-              <li>Python libraries and jupyter notebooks allow us to easily explore data in order to visually find
-                patterns or correlations in data.</li>
-              <li>With javascript libraries we can create interactive visualisations and animations, which can be
-                embedded into a website for either internal purposes or external diffusion.</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Computational Biology -->
-        <div class="my-card section scrollspy" id="computational-biology">
-          <div class="subtitle">Computational Biology</div>
-          <!-- Background -->
-          <div class="expertise-item background-item">
-            <div class="exp-title-2">Background</div>
-            <ul class="check-list">
-              <li>3 years as Bioinformatics Team Leader in a Biotechnology company. Activity created from scratch by
-                myself and one collaborator.</li>
-              <li>Scientific background in Biology acquired during Engineering studies as well as online courses.</li>
-            </ul>
-          </div>
-          <!-- Biology Animation -->
-          <div id="biology-image" class="expertise-image">
-            <img id="bio-norotate" src="/static/main/img/logos-expertise/expertise-biology-elements.png" alt="">
-            <img class="rotate" id="bio-rotate" src="/static/main/img/logos-expertise/expertise-biology-plasmid.png"
-              alt="">
-          </div>
-          <!-- DNA and Protein Sequence Analysis -->
-          <div class="expertise-item">
-            <div class="exp-title-2">DNA and Protein Sequence Analysis</div>
-            <ul class="check-list">
-              <li>Biopython can be used to handle large quantities of sequence data.</li>
-              <li>Multiple alignments tools such as BLAST or HMMER allow for large database screening in research for
-                relevant proteins.</li>
-            </ul>
-          </div>
-          <!-- Lab data treatment -->
-          <div class="expertise-item">
-            <div class="exp-title-2">Lab data treatment</div>
-            <ul class="check-list">
-              <li>Raw data from wet-lab can be treated using python for data science (pandas).</li>
-              <li>Experience handling data from HPLC, gaz chromatography, mass spectrometry ...</li>
-            </ul>
-          </div>
-          <!-- Omics data analysis -->
-          <div class="expertise-item">
-            <div class="exp-title-2">Omics data analysis</div>
-            <ul class="check-list">
-              <li>Genomics and transcriptomics data can be analysed with python statistical tools for high dimensional
-                data (FPKM, q-values).</li>
-              <li>Mutated or differently expressed genes can be put into context using <a
-                  href="#network-analysis">metabolic modelling</a>.</li>
-            </ul>
-          </div>
-
-        </div>
-
-        <!-- Chemoinformatics -->
-        <div class="my-card section scrollspy" id="chemoinformatics">
-          <div class="first-line">
-            <div class="subtitle">Chemoinformatics</div>
-            <a target="_blank" href="/chemoinformatics-viz"
-              class="btn btn-small waves-effect waves-light blue lighten-1">Animation <i
-                class="material-icons right">open_in_new</i></a>
-          </div>
-          <!-- Background -->
-          <div class="expertise-item background-item">
-            <div class="exp-title-2">Background</div>
-            <ul class="check-list">
-              <li>3 years as bioinformatics team leader with a strong emphasis on chemoinformatics</li>
-              <li>Deep knowledge in Organic Chemistry and Biochemistry thanks to Engineering studies as well as online
-                courses.</li>
-            </ul>
-          </div>
-          <!-- Image -->
-          <div class="expertise-image">
-            <!-- <img id="chemoinfo-image" class="tooltipped" data-tooltip="Click for interactive animation"
-              src="/static/main/img/logos-expertise/expertise-chemoinfo.png" alt=""> -->
-            <div id="chem-container"></div>
-            <a target="_blank" id="chemoinfo-rotate" class="btn waves-effect waves-light blue lighten-1">
-              Rotate</a>
-            <div class="image-legend">Example of a substructure research analysis. The substructure
-              on top-left was confronted against 1520 unique structures in the metabolic model of <em>Escherichia
-                Coli</em>. 5 molecules were found. They are depicted above using javascript chemoinformatics libraries.
-              You can rotate the molecules and play around with them.
+        <div class="section scrollspy" id="data-science">
+          <div class="my-card">
+            <div class="subtitle">Data Science</div>
+            <!-- Animation -->
+            <div class="expertise-image">
+              <div class="ct-chart" id="ct-expertise"></div>
+              <div class="image-legend">The <em>Lemniscate of Gerono</em> is defined by the following
+                equation:<br><var>y<sup>2</sup></var> =
+                <var>x<sup>2</sup></var> - <var>x<sup>4</sup></var>.</div>
             </div>
-          </div>
-          <!-- RDKit -->
-          <div class="expertise-item">
-            <div class="exp-title-2">Modelling Chemistry - RDKit</div>
-            <ul class="check-list">
-              <li>RDKit is a C++ and Python library capable of handling structural chemical data (molecules and
-                reactions).</li>
-              <li>Classical methods such as subtructure matching, structure similarity or maximum common substructure
-                are directly applied on large quantities of molecules.</li>
-              <li>This allows for screening of large chemical databases to find molecules with specific properties.
-              </li>
-            </ul>
-          </div>
-          <!-- Mass Spectrometry -->
-          <div class="expertise-item">
-            <div class="exp-title-2">Mass Spectrometry - Exploratory Analysis</div>
-            <ul class="check-list">
-              <li>We can read raw data from mass spectrometry directly within python using pyMZML module.</li>
-              <li>A major challenge of Mass Spectrometry is the identification of m/z values found in a sample.</li>
-              <li>By simulating fragmentation patterns from molecules and comparing them with experimental ones, we
-                can
-                assign provisory names to some of the m/z values found.</li>
-            </ul>
+            <!-- Background -->
+            <div class="expertise-item background-item">
+              <div class="exp-title-2">Background</div>
+              <ul class="check-list">
+                <li>8 years experience in treatment and analysis of complex data from heterogenous sources (biological,
+                  transportation, macroeconomics).</li>
+                <li>Strong mathematical and informatics background developped during my Engineering studies.</li>
+              </ul>
+            </div>
+
+            <!-- Data Treatment -->
+            <div class="expertise-item">
+              <div class="exp-title-2">Data Treatment</div>
+              <ul class="check-list">
+                <li>With Python stack for data science we can automatise data treatment and concentrate on interpreting
+                  results.</li>
+              </ul>
+            </div>
+            <!-- Forecasting - Machine Learning -->
+            <div class="expertise-item">
+              <div class="exp-title-2">Forecasting - Machine Learning</div>
+              <ul class="check-list">
+                <li>Python libraries such as scikit-learn or tensorflow help us model and predict values for time series
+                  coming from different sources.</li>
+              </ul>
+            </div>
+            <!-- Data Visualisation -->
+            <div class="expertise-item">
+              <div class="exp-title-2">Data Visualisation</div>
+              <ul class="check-list">
+                <li>Python libraries and jupyter notebooks allow us to easily explore data in order to visually find
+                  patterns or correlations in data.</li>
+                <li>With javascript libraries we can create interactive visualisations and animations, which can be
+                  embedded into a website for either internal purposes or external diffusion.</li>
+              </ul>
+            </div>
           </div>
         </div>
 
         <!-- Full Stack Web Development -->
-        <div class="my-card section scrollspy" id="web-development">
-          <div class="subtitle">Full Stack Web Development</div>
-          <!-- Background -->
-          <div class="expertise-item background-item">
-            <div class="exp-title-2">Background</div>
-            <ul class="check-list">
-              <li>Data-driven scientific applications are necessary today to interpret and confront results more
-                efficiently.</li>
-              <li>Using open-source libraries I construct personalised websites because each need is different.</li>
-              <li>You can see the github repository for this website <a
-                  href="https://github.com/FrekMown/personal">here</a>. Take a look at some side projects <a
-                  href="#side-projects">here</a>.</li>
-              <!-- <li></li> -->
-            </ul>
-          </div>
-          <!-- Image -->
-          <div class="expertise-image">
-            <img id="web-development-image" src="/static/main/img/logos-expertise/web-development.png" alt="">
-          </div>
-          <!-- Frontend & Backend -->
-          <div class="expertise-item">
-            <div class="exp-title-2">Frontend & Backend</div>
-            <ul class="check-list">
-              <li>With Python in backend and Javascript in frontend I create scientific data-driven dynamic
-                applications
-                easily
-                accessible via a web browser.</li>
-              <li>From database (SQL or NoSQL) and web server to javascript and react, I have developped several web
-                apps by myself or with a collaborator.</li>
-            </ul>
-          </div>
-          <!-- Progressive Web Apps -->
-          <div class="expertise-item">
-            <div class="exp-title-2">Progressive Web Apps</div>
-            <ul class="check-list">
-              <li>With service workers, indexedDB, HTTPS & standard web technologies (javascript, CSS, HTML, React) we
-                can construct cross-platform apps with native features.</li>
-            </ul>
-          </div>
-          <!-- Deploying Apps -->
-          <div class="expertise-item">
-            <div class="exp-title-2">Continuous Integration & Continuous Deployment</div>
-            <ul class="check-list">
-              <li>Using tools such as docker or vagrant, app deployment can be completely automatised.</li>
-              <li>With cloud hosting (Digital Ocean, AWS), DNS registration, reverse proxing (Cloudflare) and SSL/TLS
-                certificates
-                generation we can publish a professional website or web app online.</li>
-            </ul>
+        <div class="section scrollspy" id="web-development">
+          <div class="my-card">
+            <div class="subtitle">Full Stack Web Development</div>
+            <!-- Background -->
+            <div class="expertise-item background-item">
+              <div class="exp-title-2">Background</div>
+              <ul class="check-list">
+                <li>Data-driven scientific applications are necessary today to interpret and confront results more
+                  efficiently.</li>
+                <li>Using open-source libraries I construct personalised websites because each need is different.</li>
+                <li>You can see the github repository for this website <a
+                    href="https://github.com/FrekMown/personal">here</a>. Take a look at some side projects <a
+                    href="#side-projects">here</a>.</li>
+                <!-- <li></li> -->
+              </ul>
+            </div>
+            <!-- Image -->
+            <div class="expertise-image">
+              <img id="web-development-image" src="/static/main/img/logos-expertise/web-development.png" alt="">
+            </div>
+            <!-- Frontend & Backend -->
+            <div class="expertise-item">
+              <div class="exp-title-2">Frontend & Backend</div>
+              <ul class="check-list">
+                <li>With Python in backend and Javascript in frontend I create scientific data-driven dynamic
+                  applications
+                  easily
+                  accessible via a web browser.</li>
+                <li>From database (SQL or NoSQL) and web server to javascript and react, I have developped several web
+                  apps by myself or with a collaborator.</li>
+              </ul>
+            </div>
+            <!-- Progressive Web Apps -->
+            <div class="expertise-item">
+              <div class="exp-title-2">Progressive Web Apps</div>
+              <ul class="check-list">
+                <li>With service workers, indexedDB, HTTPS & standard web technologies (javascript, CSS, HTML, React) we
+                  can construct cross-platform apps with native features.</li>
+              </ul>
+            </div>
+            <!-- Deploying Apps -->
+            <div class="expertise-item">
+              <div class="exp-title-2">Continuous Integration & Continuous Deployment</div>
+              <ul class="check-list">
+                <li>Using tools such as docker or vagrant, app deployment can be completely automatised.</li>
+                <li>With cloud hosting (Digital Ocean, AWS), DNS registration, reverse proxing (Cloudflare) and SSL/TLS
+                  certificates
+                  generation we can publish a professional website or web app online.</li>
+              </ul>
+            </div>
           </div>
         </div>
 
         <!-- Network Analysis -->
-        <div class="my-card section scrollspy" id="network-analysis">
-          <div class="first-line">
-            <div class="subtitle">Network Analysis</div>
-            <a target="_blank" href="/metabolic-modelling-viz"
-              class="btn-small waves-effect waves-light blue lighten-1">Animation <i
-                class="material-icons right">open_in_new</i></a>
-          </div>
-          <!-- Image -->
-          <div class="expertise-image">
-            <img id="modelling-image" class="tooltipped" data-tooltip="Click for interactive animation"
-              src="/static/main/img/logos-expertise/modelling-pkt.png" alt="">
-            <div class="image-legend">Metabolic Modelling for a <em>Escherichia Coli</em> using
-              the iML1515 model (containing 1877 metabolites, 2712 reactions and 1516 genes). The animation shows the
-              improvement in
-              theoretical yield for acetone production with the PKT strain patented by Global Bioenergies&copy;</div>
-          </div>
-          <!-- Background -->
-          <div class="expertise-item background-item">
-            <div class="exp-title-2">Background</div>
-            <ul class="check-list">
-              <li>8 years experience in network analysis and modelling, applied to metabolic networks and
-                transportation
-                analysis.</li>
-            </ul>
-          </div>
-          <!-- Metabolic Modelling -->
-          <div class="expertise-item">
-            <div class="exp-title-2">Metabolic Modelling</div>
-            <ul class="check-list">
-              <li>Genome-scale metabolic models attempt to store all published data regarding metabolites, reactions
-                and
-                genes in a metabolic network for a specific organism. </li>
-              <li>They allow for a holistic view of an organism's metabolism.</li>
-              <li>Using linear optimization we can simulate different metabolic scenarios and confont them to
-                experimental results.</li>
-              <li>These models can be a basis for more complex analysis regarding omics (transcriptomics, fluxomics,
-                genomics), as well as chemical data.</li>
-            </ul>
-          </div>
+        <div class="section scrollspy" id="network-analysis">
+          <div class="my-card">
+            <div class="first-line">
+              <div class="subtitle">Network Analysis</div>
+              <a target="_blank" href="/metabolic-modelling-viz"
+                class="btn-small waves-effect waves-light blue lighten-1">Animation <i
+                  class="material-icons right">open_in_new</i></a>
+            </div>
+            <!-- Image -->
+            <div class="expertise-image">
+              <img id="modelling-image" class="tooltipped" data-tooltip="Click for interactive animation"
+                src="/static/main/img/logos-expertise/modelling-pkt.png" alt="">
+              <div class="image-legend">Metabolic Modelling for a <em>Escherichia Coli</em> using
+                the iML1515 model (containing 1877 metabolites, 2712 reactions and 1516 genes). The animation shows the
+                improvement in
+                theoretical yield for acetone production with the PKT strain patented by Global Bioenergies&copy;</div>
+            </div>
+            <!-- Background -->
+            <div class="expertise-item background-item">
+              <div class="exp-title-2">Background</div>
+              <ul class="check-list">
+                <li>8 years experience in network analysis and modelling, applied to metabolic networks and
+                  transportation
+                  analysis.</li>
+              </ul>
+            </div>
+            <!-- Metabolic Modelling -->
+            <div class="expertise-item">
+              <div class="exp-title-2">Metabolic Modelling</div>
+              <ul class="check-list">
+                <li>Genome-scale metabolic models attempt to store all published data regarding metabolites, reactions
+                  and
+                  genes in a metabolic network for a specific organism. </li>
+                <li>They allow for a holistic view of an organism's metabolism.</li>
+                <li>Using linear optimization we can simulate different metabolic scenarios and confont them to
+                  experimental results.</li>
+                <li>These models can be a basis for more complex analysis regarding omics (transcriptomics, fluxomics,
+                  genomics), as well as chemical data.</li>
+              </ul>
+            </div>
 
-          <!-- Multimodal Transport Modelling -->
-          <div class="expertise-item">
-            <div class="exp-title-2">Multimodal Transport Modelling</div>
-            <ul class="check-list">
-              <li>Using the Quetzal python module developed by Systra, we can model and forecast traffic for a given transportation network.</li>
-            </ul>
+            <!-- Multimodal Transport Modelling -->
+            <div class="expertise-item">
+              <div class="exp-title-2">Multimodal Transport Modelling</div>
+              <ul class="check-list">
+                <li>Using the Quetzal python module developed by Systra, we can model and forecast traffic for a given
+                  transportation network.</li>
+              </ul>
+            </div>
           </div>
         </div>
+
+
+        <!-- Computational Biology -->
+        <div class="section scrollspy" id="computational-biology">
+          <div class="my-card">
+            <div class="subtitle">Computational Biology</div>
+            <!-- Background -->
+            <div class="expertise-item background-item">
+              <div class="exp-title-2">Background</div>
+              <ul class="check-list">
+                <li>3 years as Bioinformatics Team Leader in a Biotechnology company. Activity created from scratch by
+                  myself and one collaborator.</li>
+                <li>Scientific background in Biology acquired during Engineering studies as well as online courses.</li>
+              </ul>
+            </div>
+            <!-- Biology Animation -->
+            <div id="biology-image" class="expertise-image">
+              <img id="bio-norotate" src="/static/main/img/logos-expertise/expertise-biology-elements.png" alt="">
+              <img class="rotate" id="bio-rotate" src="/static/main/img/logos-expertise/expertise-biology-plasmid.png"
+                alt="">
+            </div>
+            <!-- DNA and Protein Sequence Analysis -->
+            <div class="expertise-item">
+              <div class="exp-title-2">DNA and Protein Sequence Analysis</div>
+              <ul class="check-list">
+                <li>Biopython can be used to handle large quantities of sequence data.</li>
+                <li>Multiple alignments tools such as BLAST or HMMER allow for large database screening in research for
+                  relevant proteins.</li>
+              </ul>
+            </div>
+            <!-- Lab data treatment -->
+            <div class="expertise-item">
+              <div class="exp-title-2">Lab data treatment</div>
+              <ul class="check-list">
+                <li>Raw data from wet-lab can be treated using python for data science (pandas).</li>
+                <li>Experience handling data from HPLC, gaz chromatography, mass spectrometry ...</li>
+              </ul>
+            </div>
+            <!-- Omics data analysis -->
+            <div class="expertise-item">
+              <div class="exp-title-2">Omics data analysis</div>
+              <ul class="check-list">
+                <li>Genomics and transcriptomics data can be analysed with python statistical tools for high dimensional
+                  data (FPKM, q-values).</li>
+                <li>Mutated or differently expressed genes can be put into context using <a
+                    href="#network-analysis">metabolic modelling</a>.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chemoinformatics -->
+        <div class="section scrollspy" id="chemoinformatics">
+          <div class="my-card">
+            <div class="first-line">
+              <div class="subtitle">Chemoinformatics</div>
+              <a target="_blank" href="/chemoinformatics-viz"
+                class="btn btn-small waves-effect waves-light blue lighten-1">Animation <i
+                  class="material-icons right">open_in_new</i></a>
+            </div>
+            <!-- Background -->
+            <div class="expertise-item background-item">
+              <div class="exp-title-2">Background</div>
+              <ul class="check-list">
+                <li>3 years as bioinformatics team leader with a strong emphasis on chemoinformatics</li>
+                <li>Deep knowledge in Organic Chemistry and Biochemistry thanks to Engineering studies as well as online
+                  courses.</li>
+              </ul>
+            </div>
+            <!-- Image -->
+            <div class="expertise-image">
+              <!-- <img id="chemoinfo-image" class="tooltipped" data-tooltip="Click for interactive animation"
+              src="/static/main/img/logos-expertise/expertise-chemoinfo.png" alt=""> -->
+              <div id="chem-container"></div>
+              <a target="_blank" id="chemoinfo-rotate" class="btn waves-effect waves-light blue lighten-1">
+                Rotate</a>
+              <div class="image-legend">Example of a substructure research analysis. The substructure
+                on top-left was confronted against 1520 unique structures in the metabolic model of <em>Escherichia
+                  Coli</em>. 5 molecules were found. They are depicted above using javascript chemoinformatics
+                libraries.
+                You can rotate the molecules and play around with them.
+              </div>
+            </div>
+            <!-- RDKit -->
+            <div class="expertise-item">
+              <div class="exp-title-2">Modelling Chemistry - RDKit</div>
+              <ul class="check-list">
+                <li>RDKit is a C++ and Python library capable of handling structural chemical data (molecules and
+                  reactions).</li>
+                <li>Classical methods such as subtructure matching, structure similarity or maximum common substructure
+                  are directly applied on large quantities of molecules.</li>
+                <li>This allows for screening of large chemical databases to find molecules with specific properties.
+                </li>
+              </ul>
+            </div>
+            <!-- Mass Spectrometry -->
+            <div class="expertise-item">
+              <div class="exp-title-2">Mass Spectrometry - Exploratory Analysis</div>
+              <ul class="check-list">
+                <li>We can read raw data from mass spectrometry directly within python using pyMZML module.</li>
+                <li>A major challenge of Mass Spectrometry is the identification of m/z values found in a sample.</li>
+                <li>By simulating fragmentation patterns from molecules and comparing them with experimental ones, we
+                  can
+                  assign provisory names to some of the m/z values found.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
 
         <!-- Management & Coaching -->
-        <div class="my-card section scrollspy" id="management">
-          <div class="subtitle">Management & Coaching</div>
-          <ul class="check-list">
-            <li>As Bioinformatics team leader I had the opportunity to work with a collaborator. It was a fruitful
-              experience for both sides.</li>
-            <li>I also led a 28h workshop on web development in Mahindra Ecole Central in Hyderabad, India. <a
-                href="#india-workshop">More on this here</a>.</li>
-            <li>I strongly believe in positive management. Working together is an opportunity to share knowledge and
-              skills no matter the level of experience.</li>
-          </ul>
+        <div class="section scrollspy" id="management">
+          <div class="my-card">
+            <div class="subtitle">Management & Coaching</div>
+            <ul class="check-list">
+              <li>As Bioinformatics team leader I had the opportunity to work with a collaborator. It was a fruitful
+                experience for both sides.</li>
+              <li>I also led a 28h workshop on web development in Mahindra Ecole Central in Hyderabad, India. <a
+                  href="#webdev-workshop">More on this here</a>.</li>
+              <li>I strongly believe in positive management. Working together is an opportunity to share knowledge and
+                skills no matter the level of experience.</li>
+            </ul>
+          </div>
         </div>
-
       </div>
 
       <!-- Experience & Education -->
@@ -548,8 +564,9 @@
             <div class="exp-title-3">📍 Palaiseau, France (X2008)</div>
             <ul class="check-list">
               <li>Generalist Engineer from a top Engineering School in France. </li>
+              <li>Strong background acquired in statistics, science and informatics.</li>
               <li>You can take a look at <a target="_blank" href="/static/main/docs/Alfredo-Alarcon-Memoire.pdf">my
-                  master thesis</a>...
+                  master thesis</a>.
               </li>
               <li>And these two publications in which I helped with the modelling part:
                 <a target="_blank" href="https://www.vie-publique.fr/catalogue/22151-amerique-latine-2012">Documentation
@@ -578,69 +595,122 @@
 
       <!-- Side Projects -->
       <div id="side-projects-marker" class="scrollspy"></div>
-      <div id="side-projects" class="section">
+      <div id="side-projects">
         <div class="title">side projects</div>
         <!-- Chemocobra -->
-        <div class="my-card section scrollspy" id="chemocobra">
-          <div class="first-line">
-            <div class="subtitle">Chemocobra</div>
-            <!-- <a target="_blank" href="/chemocobra" class="btn btn-small waves-effect waves-light blue lighten-1">
-              App <i class="material-icons right">open_in_new</i> </a> -->
+        <div class="section scrollspy" id="chemocobra">
+          <div class="my-card">
+            <div class="first-line">
+              <div class="subtitle">Chemocobra</div>
+              <a target="_blank" href="/chemocobra" class="btn btn-small waves-effect waves-light blue lighten-1">
+                App <i class="material-icons right">open_in_new</i> </a>
+            </div>
+
+            <div class="project-descriptions">
+              <div class="expertise-item">
+                <div class="exp-title-2">
+                  Explore and compare metabolism of different species
+                </div>
+                <ul class="check-list">
+                  <li>This project aims at facilitating the simulation and exploration of metabolism fluxes in different
+                    conditions</li>
+                  <li>A metabolic model is composed of metabolites (nodes), reactions (edges), as well as genes.</li>
+                  <li>You can model different metabolites states by changing the inputs/exchanges as well as limiting
+                    fluxes through specific reactions.</li>
+                </ul>
+              </div>
+              <div class="expertise-item">
+                <div class="exp-title-2">A full-stack open source application</div>
+                <ul class="check-list">
+                  <li>Frontend was performed with React, a javascript library for dynamic web applications.</li>
+                  <li>Backend uses python, with libraries such as django and django rest framework for web development
+                    as
+                    well as scientific libraries (cobra for metabolic modelling, RDKit for chemical structures handling,
+                    pandas for data treatment, etc...)</li>
+                  <li>Deployment is performed with docker and docker-compose in Digital Ocean. Reverse proxy is used for
+                    this website using Cloudflare.</li>
+                </ul>
+              </div>
+              <div class="expertise-item">
+                <div class="exp-title-2">An ongoing project</div>
+                <ul class="check-list">
+                  <li>The next part of chemocobra will be focused on comparing chemical structures of metabolites within
+                    a
+                    metabolic model.</li>
+                  <li>It might allow to predict promiscous activities for existing enzymes as well as toxicity of
+                    existing
+                    metabolites.</li>
+                </ul>
+              </div>
+
+            </div>
+            <div>
+              <video controls>
+                <source src="/static/main/img/side-projects/chemocobra-demo.mp4" type="video/mp4">
+              </video>
+              <div class="image-legend">
+                Demo using chemocobra to compare the central metabolism of <em>Escherichia Coli</em> Wild Type vs PKT,
+                the
+                strain patented by Global Bioenergies&copy;. We can see that this web application allows us to define
+                scenarios and, once the model run, allows for comparing specific reactions, metabolites, and display the
+                results in a metabolic map, using a js/python library called Escher.
+              </div>
+            </div>
           </div>
-          <div>Coming soon...</div>
         </div>
 
-
         <!-- Web Development Workshop -->
-        <div class="my-card section scrollspy" id="webdev-workshop">
-          <!-- Title and buttons -->
-          <div class="first-line">
-            <div class="subtitle">Web Development Workshop</div>
-            <a target="_blank" href="/webdev-workshop/app"
-              class="btn btn-small waves-effect waves-light blue lighten-1">App <i
-                class="material-icons right">open_in_new</i> </a>
-            <a target="_blank" href="/webdev-workshop/slides"
-              class="btn btn-small waves-effect waves-light blue lighten-1">Slides <i
-                class="material-icons right">open_in_new</i></a>
+        <div class="section scrollspy" id="webdev-workshop">
+          <div class="my-card">
+            <!-- Title and buttons -->
+            <div class="first-line">
+              <div class="subtitle">Web Development Workshop</div>
+              <a target="_blank" href="/webdev-workshop/app"
+                class="btn btn-small waves-effect waves-light blue lighten-1">App <i
+                  class="material-icons right">open_in_new</i> </a>
+              <a target="_blank" href="/webdev-workshop/slides"
+                class="btn btn-small waves-effect waves-light blue lighten-1">Slides <i
+                  class="material-icons right">open_in_new</i></a>
 
-          </div>
-
-          <!-- Image -->
-          <div>
-            <img id="geodata-img" alt="">
-            <div class="image-legend">
-              Final project of the workshop. This application retrieves data from World Bank Indicators API as well as
-              Rest Countries API and displays these data with dynamic plots and maps. <br>Stack: React (with hooks)
-              and
-              Plotly.
             </div>
-          </div>
 
-          <!-- Text - Description -->
-          <div class="project-descriptions">
+            <!-- Image -->
             <div>
-              <img src="/static/main/img/side-projects/mahindra.jpg" alt="" id="mahindra">
-            </div>
-            <div class="expertise-item">
-              <div class="exp-title-2">28h Workshop on Frontend Web Development.</div>
-              <ul class="check-list">
-                <li>The objective of this workshop was to introduce Computer Science students at Mahindra Ecole
-                  Centrale
-                  (Hyderabad, India) to modern web technologies.</li>
-                <li>Main content was frontend development, including HTML, CSS, Javascript and React with Hooks. </li>
-                <li>It was a hands-on workshop, most of the time students were developing applications with Javascript
-                  and
-                  React.</li>
-              </ul>
+              <img id="geodata-img" alt="" src="/static/main/img/side-projects/geodata.gif">
+              <div class="image-legend">
+                Final project of the workshop. This application retrieves data from World Bank Indicators API as well as
+                Rest Countries API and displays these data with dynamic plots and maps. <br>Stack: React (with hooks)
+                and
+                Plotly.
+              </div>
             </div>
 
+            <!-- Text - Description -->
+            <div class="project-descriptions">
+              <div>
+                <img src="/static/main/img/side-projects/mahindra.jpg" alt="" id="mahindra">
+              </div>
+              <div class="expertise-item">
+                <div class="exp-title-2">28h Workshop on Frontend Web Development.</div>
+                <ul class="check-list">
+                  <li>The objective of this workshop was to introduce Computer Science students at Mahindra Ecole
+                    Centrale
+                    (Hyderabad, India) to modern web technologies.</li>
+                  <li>Main content was frontend development, including HTML, CSS, Javascript and React with Hooks. </li>
+                  <li>It was a hands-on workshop, most of the time students were developing applications with Javascript
+                    and
+                    React.</li>
+                </ul>
+              </div>
+
+            </div>
           </div>
-
         </div>
 
 
         <!-- Museo de la Solidaridad -->
-        <div class="my-card section scrollspy" id="museo-solidaridad">
+        <div class="section scrollspy" id="museo-solidaridad">
+          <div class="my-card">
           <!-- Title and button -->
           <div class="first-line">
             <div class="subtitle">Museo de la Solidaridad</div>
@@ -667,6 +737,7 @@
           </div>
         </div>
       </div>
+    </div>
 
       <!-- Pictures -->
       <div id="pictures" class="section scrollspy">
@@ -764,15 +835,15 @@
       <div class="pushpin">
         <ul class="section table-of-contents">
           <li><a href="#presentation">Presentation</a></li>
-          <li><a href="#expertise-marker">Expertise</a></li>
+          <li class="section-title">Expertise</li>
           <li><a href="#data-science" class="subsection-link" id="">Data Science</a></li>
-          <li><a href="#computational-biology" class="subsection-link" id="">Computational Biology</a></li>
-          <li><a href="#chemoinformatics" class="subsection-link" id="">Chemoinformatics</a></li>
           <li><a href="#web-development" class="subsection-link" id="">Web Development</a></li>
           <li><a href="#network-analysis" class="subsection-link" id="">Network Analysis</a></li>
+          <li><a href="#computational-biology" class="subsection-link" id="">Computational Biology</a></li>
+          <li><a href="#chemoinformatics" class="subsection-link" id="">Chemoinformatics</a></li>
           <li><a href="#management" class="subsection-link" id="">Management</a></li>
           <li><a href="#experience">Experience</a></li>
-          <li><a href="#side-projects-marker">Side Projects</a></li>
+          <li class="section-title">Side Projects</li>
           <li><a href="#chemocobra" class="subsection-link" id="">Chemocobra</a></li>
           <li><a href="#webdev-workshop" class="subsection-link" id="">Webdev Workshop</a></li>
           <li><a href="#museo-solidaridad" class="subsection-link" id="">Museo Solidaridad</a></li>
@@ -786,12 +857,70 @@
 
   <!-- Initialize materialize -->
   <script src="/static/main/js/materialize.min.js"></script>
+
+  <!-- Move and change backgrounds  -->
+  <!-- <script src="/main/static/main/js/navigation.js" ></script> -->
+  <script>
+    let BACKGROUND_URL = null;
+    let oldPosition = null;
+
+    getBackgroundImages();
+
+    function handleChangePosition(pos) {
+      if (oldPosition !== pos) {
+        oldPosition = pos;
+
+        if (BACKGROUND_URL && pos in BACKGROUND_URL) {
+          document.body.style.backgroundImage = `url(${BACKGROUND_URL[pos]})`;
+        }
+
+        document.querySelector(".table-of-contents .active") ? document.querySelector(".table-of-contents .active").classList.remove('active') : null;
+        document.querySelector(`.table-of-contents a[href="#${pos}"]`).classList.add("active");
+      }
+    }
+
+    async function getBackgroundImages() {
+      const BACKGROUND_IMG = {
+        "presentation": "/static/main/background/background-presentation-v2.jpg",
+        "data-science": "/static/main/background/background-data-science.jpg",
+        "web-development": "/static/main/background/background-webdev.jpg",
+        "network-analysis": "/static/main/background/background-network.jpg",
+        "computational-biology": "/static/main/background/background-biology.jpg",
+        "chemoinformatics": "/static/main/background/background-chemistry.jpg",
+        "management": "/static/main/background/background-management.jpg",
+        "experience": "/static/main/background/background-education.jpg",
+        "chemocobra": "/static/main/background/background-webdev.jpg",
+        "webdev-workshop": "/static/main/background/background-webdev.jpg",
+        "museo-solidaridad": "/static/main/background/background-webdev.jpg",
+        "pictures": "/static/main/background/background-presentation-v2.jpg",
+        "contact": "/static/main/background/background-presentation-v2.jpg",
+      }
+
+      const promises = Object.keys(BACKGROUND_IMG).map(key => (
+        fetch(BACKGROUND_IMG[key])
+          .then(resp => resp.blob())
+          .then(blob => [key, URL.createObjectURL(blob)])
+      ));
+
+      const respImages = await Promise.all(promises);
+
+      BACKGROUND_URL = respImages.reduce((acc, val) => {
+        acc[val[0]] = val[1];
+        return acc;
+      }, {});
+
+    }
+  </script>
+
+  <!-- Initialize materialize -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const scrollspyOptions = {
         scrollOffset: 30,
+        getActiveElement: window.handleChangePosition,
       }
       const scrollspyInst = M.ScrollSpy.init(document.querySelectorAll('.scrollspy'), scrollspyOptions);
+      console.log(scrollspyInst);
       const parallaxInst = M.Parallax.init(document.querySelectorAll('.parallax'), {});
       const pushpinOptions = {
         offset: 50,
@@ -839,16 +968,6 @@
 
     // Mahindra
     document.querySelector("#mahindra").onclick = () => window.open("https://www.mahindraecolecentrale.edu.in/", "_blank");
-
-    // Animation webdev-workshop
-    const imgGeodata = ["geodata-map.jpg", "geodata-time-series.jpg"];
-    imgGeodataElem = document.querySelector("#geodata-img");
-    setInterval(() => {
-      let currentImg = imgGeodataElem.src.split('/').splice(-1)[0];
-      // console.log(currentImg);
-      let nextSrc = imgGeodata.filter(img => img !== currentImg)[0];
-      imgGeodataElem.src = "/static/main/img/side-projects/" + nextSrc;
-    }, 1000);
 
   </script>
 
