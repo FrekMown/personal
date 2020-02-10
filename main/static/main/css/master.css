@@ -23,8 +23,8 @@
 
 /* General Layout */
 
-#data-science, #web-development, #network-analysis, #computational-biology, #chemoinformatics, #management, #chemocobra, #webdev-workshop, #museo-solidaridad {
-  min-height: 98vh;
+#data-science, #web-development, #network-analysis, #computational-biology, #chemoinformatics, #management, #chemocobra, #webdev-workshop, #museo-solidaridad, #experience {
+  min-height: 100vh;
   display: flex;
   align-items: center;
 }
@@ -169,6 +169,8 @@ video {
   display: grid;
   grid-template-columns: 1fr;
   justify-content: center;
+  min-height: 100vh;
+  padding: 5vh 0;
 }
 
 #pictures-container {
@@ -295,7 +297,7 @@ video {
   color: var(--first-color);
 }
 
-#chemoinformatics>.expertise-image {
+#chemoinformatics .expertise-image {
   min-height: 500px;
   grid-row: 3 / 5;
 }
@@ -745,7 +747,7 @@ ul.table-of-contents {
   body {
     font-size: 1.7rem;
   }
-  #presentation {
+  #presentation .my-card {
     grid-template-columns: 1fr;
   }
   #profile-pic {
