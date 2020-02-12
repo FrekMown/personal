@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="/static/main/css/chartist.min.css">
   <link rel="stylesheet" href="/static/main/css/chartist-plot.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="/static/main/css/master~v8.css">
+  <link rel="stylesheet" href="/static/main/css/master~v9.css">
   <link rel="stylesheet" href="/static/main/css/substr-viz-main.css">
   <title>Alfredo Alarcon - Scientific Informatics</title>
 </head>
@@ -883,11 +883,9 @@
     const allElements = Array.from(document.querySelectorAll(".scrollspy"));
     const elementCoordinates = getPositionsElements(allElements);
     const viewportHeight = document.documentElement.clientWidth;
-    console.log(elementCoordinates);
-    let oldPosition = "presentation";
+    let oldPosition = "";
 
     // Load background images
-    // getBackgroundImages();
     loadBackgroundImages();
 
 
@@ -911,8 +909,7 @@
         // Change background only if image background changes
         if (BACKGROUND_IMG[oldPosition] !== BACKGROUND_IMG[pos]) {
           const oldEl = document.querySelector(`#background-${oldPosition}`);
-          oldEl.style.opacity = 0;
-
+          oldEl ? oldEl.style.opacity = 0: null;
           oldPosition = pos;
 
           const el = document.querySelector(`#background-${pos}`);
@@ -921,12 +918,11 @@
 
         document.querySelector(".table-of-contents .active") ? document.querySelector(".table-of-contents .active").classList.remove('active') : null;
         document.querySelector(`.table-of-contents a[href="#${pos}"]`).classList.add("active");
+        // return `a[href="#${pos}"]`;
       }
     }
 
     function moveNextSection(direction) {
-      const currentPos = window.scrollY;
-      
       const currEl = getCurrentElement();
       const idxOldPosition = allElements.indexOf(currEl);
       const scrollOptions = { block: "center" };
