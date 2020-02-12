@@ -19,8 +19,6 @@
 </head>
 
 <body>
-  <!-- Header -->
-  <!-- <header><img src="/static/main/img/header-no-contact.jpg"></header> -->
 
   <!-- Row with main content and table of contents -->
   <!-- <div class="row"> -->
@@ -170,6 +168,8 @@
               <ul class="check-list">
                 <li>Python libraries such as scikit-learn or tensorflow help us model and predict values for time series
                   coming from different sources.</li>
+                <li>Categorical classification can be automatised with methods such as clustering or artificial neural
+                  networks.</li>
               </ul>
             </div>
             <!-- Data Visualisation -->
@@ -854,26 +854,69 @@
         </ul>
       </div>
     </div>
-
   </div>
+
+  <!-- Backgrounds -->
+  <div class="background"></div>
+
 
   <!-- Initialize materialize -->
   <script src="/static/main/js/materialize.min.js"></script>
 
   <!-- Move and change backgrounds  -->
-  <!-- <script src="/main/static/main/js/navigation.js" ></script> -->
   <script>
-    let BACKGROUND_URL = null;
+    const BACKGROUND_IMG = {
+      "presentation": "/static/main/background/background-presentation-v2.jpg",
+      "data-science": "/static/main/background/background-data-science.jpg",
+      "web-development": "/static/main/background/background-webdev.jpg",
+      "network-analysis": "/static/main/background/background-network.jpg",
+      "computational-biology": "/static/main/background/background-biology.jpg",
+      "chemoinformatics": "/static/main/background/background-chemistry.jpg",
+      "management": "/static/main/background/background-management.jpg",
+      "experience": "/static/main/background/background-education.jpg",
+      "chemocobra": "/static/main/background/background-webdev.jpg",
+      "webdev-workshop": "/static/main/background/background-webdev.jpg",
+      "museo-solidaridad": "/static/main/background/background-webdev.jpg",
+      "pictures": "/static/main/background/background-presentation-v2.jpg",
+      "contact": "/static/main/background/background-presentation-v2.jpg",
+    }
+    const allElements = Array.from(document.querySelectorAll(".scrollspy"));
+    const elementCoordinates = getPositionsElements(allElements);
+    const viewportHeight = document.documentElement.clientWidth;
+    console.log(elementCoordinates);
     let oldPosition = "presentation";
 
-    getBackgroundImages();
+    // Load background images
+    // getBackgroundImages();
+    loadBackgroundImages();
 
+
+    // Event listeners
+    window.onkeydown = e => {
+      if (e.key.indexOf("Arrow") > -1 || e.key.indexOf("Page") > -1) {
+        e.preventDefault();
+        moveNextSection(e.key.indexOf("Up") > -1 ? "up" : "down");
+      }
+    }
+
+    window.addEventListener("wheel", e => {
+      e.preventDefault();
+      e.deltaY < 0 ? moveNextSection("up") : moveNextSection("down");
+    }, { passive: false });
+
+
+    // Definition of functions
     function handleChangePosition(pos) {
       if (oldPosition !== pos) {
-        oldPosition = pos;
+        // Change background only if image background changes
+        if (BACKGROUND_IMG[oldPosition] !== BACKGROUND_IMG[pos]) {
+          const oldEl = document.querySelector(`#background-${oldPosition}`);
+          oldEl.style.opacity = 0;
 
-        if (BACKGROUND_URL && pos in BACKGROUND_URL) {
-          document.body.style.backgroundImage = `url(${BACKGROUND_URL[pos]})`;
+          oldPosition = pos;
+
+          const el = document.querySelector(`#background-${pos}`);
+          el.style.opacity = 1;
         }
 
         document.querySelector(".table-of-contents .active") ? document.querySelector(".table-of-contents .active").classList.remove('active') : null;
@@ -881,66 +924,60 @@
       }
     }
 
-    window.onkeydown = e => {
-      console.log(e.key);
-      if (e.key.indexOf("Arrow") > -1 || e.key.indexOf("Page") > -1) {
-        e.preventDefault();
-        moveNextSection(e.key.indexOf("Up") > -1 ? "up" : "down");
-      }
-    }
-
     function moveNextSection(direction) {
-      const allElements = Array.from(document.querySelectorAll(".scrollspy"));
-      const idxOldPosition = allElements.indexOf(document.querySelector(`#${oldPosition}`));
-      const scrollOptions = { block: "nearest" };
+      const currentPos = window.scrollY;
+      
+      const currEl = getCurrentElement();
+      const idxOldPosition = allElements.indexOf(currEl);
+      const scrollOptions = { block: "center" };
 
       if (direction === "up" && idxOldPosition > 0) {
-        console.log(allElements[idxOldPosition - 1]);
         allElements[idxOldPosition - 1].scrollIntoView(scrollOptions);
       }
       else if (direction === "down" && idxOldPosition < allElements.length - 1) {
-        console.log(allElements[idxOldPosition + 1]);
         allElements[idxOldPosition + 1].scrollIntoView(scrollOptions);
       }
     }
 
-    async function getBackgroundImages() {
-      const BACKGROUND_IMG = {
-        "presentation": "/static/main/background/background-presentation-v2.jpg",
-        "data-science": "/static/main/background/background-data-science.jpg",
-        "web-development": "/static/main/background/background-webdev.jpg",
-        "network-analysis": "/static/main/background/background-network.jpg",
-        "computational-biology": "/static/main/background/background-biology.jpg",
-        "chemoinformatics": "/static/main/background/background-chemistry.jpg",
-        "management": "/static/main/background/background-management.jpg",
-        "experience": "/static/main/background/background-education.jpg",
-        "chemocobra": "/static/main/background/background-webdev.jpg",
-        "webdev-workshop": "/static/main/background/background-webdev.jpg",
-        "museo-solidaridad": "/static/main/background/background-webdev.jpg",
-        "pictures": "/static/main/background/background-presentation-v2.jpg",
-        "contact": "/static/main/background/background-presentation-v2.jpg",
-      }
+    function loadBackgroundImages() {
 
-      const promises = Object.keys(BACKGROUND_IMG).map(key => (
-        fetch(BACKGROUND_IMG[key])
-          .then(resp => resp.blob())
-          .then(blob => [key, URL.createObjectURL(blob)])
-      ));
-
-      const respImages = await Promise.all(promises);
-
-      BACKGROUND_URL = respImages.reduce((acc, val) => {
-        acc[val[0]] = val[1];
-        return acc;
-      }, {});
+      // Create div elements at the end of body
+      Object.keys(BACKGROUND_IMG).forEach(key => {
+        const el = document.createElement("div");
+        el.classList.add("background");
+        el.id = `background-${key}`;
+        const img = document.createElement('img');
+        img.src = BACKGROUND_IMG[key];
+        el.append(img);
+        document.body.append(el);
+      });
 
     }
+
+    function getPositionsElements(elements) {
+      const coordinates = {};
+
+      elements.forEach(el => {
+        const rect = el.getBoundingClientRect()
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        coordinates[el.id] = { top: rect.top + scrollTop, bottom: rect.bottom + scrollTop };
+        coordinates[el.id].center = Math.round((coordinates[el.id].top + coordinates[el.id].bottom)/2, 0);
+      });
+
+      return coordinates;
+    }
+
+    function getCurrentElement() {
+      const centerY = Math.round(window.scrollY + viewportHeight/2, 0);
+      const distances = allElements.map(el => Math.abs(elementCoordinates[el.id].center - centerY));
+      return allElements[distances.indexOf(Math.min(...distances))];
+    }
+
   </script>
 
   <!-- Initialize materialize -->
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      // Get all sections
+    document.addEventListener('DOMContentLoaded', function () {      // Get all sections
 
 
       const scrollspyOptions = {
