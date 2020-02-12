@@ -51,7 +51,9 @@ html {
 #data-science, #web-development, #network-analysis, #computational-biology, #chemoinformatics, #management, #chemocobra, #webdev-workshop, #museo-solidaridad, #experience {
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 #presentation>.title {
@@ -122,6 +124,26 @@ header {
   gap: 20px;
 }
 
+#chemocobra .project-descriptions {
+  align-items: stretch;
+}
+
+#chemocobra>.my-card>.video {
+  /* border: 1px solid white; */
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 5vw; */
+  grid-row: 2/4;
+}
+
+video {
+  width: 100%;
+  max-width: 600px;
+}
+
+
 .my-card .first-line {
   display: flex;
   align-self: stretch;
@@ -166,11 +188,6 @@ header {
 #geodata-img {
   max-width: 500px;
   margin: auto;
-}
-
-video {
-  width: 100%;
-  max-width: 800px;
 }
 
 /* Section Contact */
@@ -517,7 +534,7 @@ video {
   font-weight: bold;
   grid-column: 1 / -1;
   text-shadow: 11px 11px 11px rgba(214, 214, 214, 0.7);
-  margin: 5vh 0;
+  margin: 2vh 0;
 }
 
 .grid-section>.footer {
@@ -727,16 +744,13 @@ ul.table-of-contents {
   #my-stack img {
     height: 50px;
   }
-  #expertise>.my-card, #side-projects>.my-card {
+  #expertise .my-card, #side-projects .my-card {
     grid-template-columns: 1fr;
   }
   #pictures-container>div:last-child {
     display: none;
   }
   #main-content {
-    /* border: 1px solid white; */
-    /* margin-left: 10vw; */
-    /* margin-right:  10vw; */
     padding: 3vw;
   }
   #presentation {
@@ -772,7 +786,7 @@ ul.table-of-contents {
   body {
     font-size: 1.7rem;
   }
-  #presentation .my-card {
+  #presentation  {
     grid-template-columns: 1fr;
   }
   #profile-pic {
