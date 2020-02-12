@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="/static/main/css/chartist.min.css">
   <link rel="stylesheet" href="/static/main/css/chartist-plot.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="/static/main/css/master~v9.css">
+  <link rel="stylesheet" href="/static/main/css/master~v10.css">
   <link rel="stylesheet" href="/static/main/css/substr-viz-main.css">
   <title>Alfredo Alarcon - Scientific Informatics</title>
 </head>
@@ -35,10 +35,10 @@
           <img id="profile-pic" src="/static/main/img/profile_picture.png" alt="">
           <div class="subtitle">Who Am I?</div>
           <ul class="check-list">
-            <li>Generalist Engineer from the Ecole Polytechnique, top Engineering School</li>
-            <li>8 years experience in data science and web development</li>
-            <li>Passionate about science and technology</li>
-            <li>Looking for new opportunities in any scientific field</li>
+            <li>Generalist Engineer from the Ecole Polytechnique, top Engineering School in France.</li>
+            <li>8 years experience in data science and web development.</li>
+            <li>Passionate about science and technology.</li>
+            <li>Looking for new opportunities in any scientific field.</li>
           </ul>
           <a target="_blank" href="/static/main/docs/CV_Alfredo_ALARCON.pdf"
             class="btn waves-effect waves-light blue lighten-1">
@@ -131,10 +131,9 @@
 
       <!-- Expertise -->
       <div id="expertise">
-        <div class="title">expertise</div>
-
         <!-- Data Science -->
         <div class="section scrollspy" id="data-science">
+          <div class="title">expertise</div>
           <div class="my-card">
             <div class="subtitle">Data Science</div>
             <!-- Animation -->
@@ -419,8 +418,8 @@
 
       <!-- Experience & Education -->
       <div id="experience" class="scrollspy section">
-        <!-- <div class="title">experience</div> -->
         <!-- Experience -->
+        <div class="title">experience</div>
         <div class="grid-section">
           <div class="my-card experience-list">
             <div class="subtitle">Professional Experience</div>
@@ -597,14 +596,28 @@
 
       <!-- Side Projects -->
       <div id="side-projects">
-        <div class="title">side projects</div>
         <!-- Chemocobra -->
         <div class="section scrollspy" id="chemocobra">
+          <div class="title">side projects</div>
           <div class="my-card">
             <div class="first-line">
               <div class="subtitle">Chemocobra</div>
               <a target="_blank" href="/chemocobra" class="btn btn-small waves-effect waves-light blue lighten-1">
                 App <i class="material-icons right">open_in_new</i> </a>
+            </div>
+
+            <!-- Video -->
+            <div class="video">
+              <video controls>
+                <source src="/static/main/img/side-projects/chemocobra-demo.mp4" type="video/mp4">
+              </video>
+              <div class="image-legend">
+                Demo using chemocobra to compare the central metabolism of <em>Escherichia Coli</em> Wild Type vs PKT,
+                the
+                strain patented by Global Bioenergies&copy;. We can see that this web application allows us to define
+                scenarios and, once the model run, allows for comparing specific reactions, metabolites, and display the
+                results in a metabolic map, using a js/python library called Escher.
+              </div>
             </div>
 
             <div class="project-descriptions">
@@ -620,6 +633,8 @@
                     fluxes through specific reactions.</li>
                 </ul>
               </div>
+
+              <!-- Full stack blah blah -->
               <div class="expertise-item">
                 <div class="exp-title-2">A full-stack open source application</div>
                 <ul class="check-list">
@@ -645,18 +660,7 @@
               </div>
 
             </div>
-            <div>
-              <video controls>
-                <source src="/static/main/img/side-projects/chemocobra-demo.mp4" type="video/mp4">
-              </video>
-              <div class="image-legend">
-                Demo using chemocobra to compare the central metabolism of <em>Escherichia Coli</em> Wild Type vs PKT,
-                the
-                strain patented by Global Bioenergies&copy;. We can see that this web application allows us to define
-                scenarios and, once the model run, allows for comparing specific reactions, metabolites, and display the
-                results in a metabolic map, using a js/python library called Escher.
-              </div>
-            </div>
+
           </div>
         </div>
 
@@ -794,7 +798,7 @@
 
       <!-- Contact -->
       <div id="contact" class="grid-section section scrollspy">
-        <div class="title">contact</div>
+        <!-- <div class="title">contact</div> -->
         <div class="my-card">
           <div class="subtitle">Let's keep in touch...</div>
           <div>I'm always looking for opportunities to share my knowledge and skills.</div>
@@ -881,26 +885,45 @@
       "contact": "/static/main/background/background-presentation-v2.jpg",
     }
     const allElements = Array.from(document.querySelectorAll(".scrollspy"));
-    const elementCoordinates = getPositionsElements(allElements);
-    const viewportHeight = document.documentElement.clientWidth;
+    let viewportHeight = null;
+    let elementCoordinates = null;
     let oldPosition = "";
+
+    document.addEventListener("DOMContentLoaded", function () {
+      elementCoordinates = getPositionsElements(allElements);
+      viewportHeight = document.documentElement.clientHeight;
+      console.log("content loaded", { elementCoordinates, viewportHeight })
+    })
+
+    window.addEventListener("resize", () => {
+      elementCoordinates = getPositionsElements(allElements);
+      viewportHeight = document.documentElement.clientHeight;
+      console.log("resize", { elementCoordinates, viewportHeight });
+    });
+
+
 
     // Load background images
     loadBackgroundImages();
 
 
-    // Event listeners
-    window.onkeydown = e => {
-      if (e.key.indexOf("Arrow") > -1 || e.key.indexOf("Page") > -1) {
-        e.preventDefault();
-        moveNextSection(e.key.indexOf("Up") > -1 ? "up" : "down");
+    // Event listeners only for big screens
+    if (document.documentElement.clientWidth > 990) {
+      console.log(document.documentElement.clientWidth);
+      window.onkeydown = e => {
+        if (e.key.indexOf("Arrow") > -1 || e.key.indexOf("Page") > -1) {
+          e.preventDefault();
+          moveNextSection(e.key.indexOf("Up") > -1 ? "up" : "down");
+        }
       }
+  
+      window.addEventListener("wheel", e => {
+        e.preventDefault();
+        e.deltaY < 0 ? moveNextSection("up") : moveNextSection("down");
+      }, { passive: false });
     }
 
-    window.addEventListener("wheel", e => {
-      e.preventDefault();
-      e.deltaY < 0 ? moveNextSection("up") : moveNextSection("down");
-    }, { passive: false });
+
 
 
     // Definition of functions
@@ -909,7 +932,7 @@
         // Change background only if image background changes
         if (BACKGROUND_IMG[oldPosition] !== BACKGROUND_IMG[pos]) {
           const oldEl = document.querySelector(`#background-${oldPosition}`);
-          oldEl ? oldEl.style.opacity = 0: null;
+          oldEl ? oldEl.style.opacity = 0 : null;
           oldPosition = pos;
 
           const el = document.querySelector(`#background-${pos}`);
@@ -923,8 +946,9 @@
     }
 
     function moveNextSection(direction) {
-      const currEl = getCurrentElement();
-      const idxOldPosition = allElements.indexOf(currEl);
+      let currEl = getCurrentElement();
+      console.log("moveNextSection", currEl.id, window.scrollY);
+      let idxOldPosition = allElements.indexOf(currEl);
       const scrollOptions = { block: "center" };
 
       if (direction === "up" && idxOldPosition > 0) {
@@ -954,18 +978,19 @@
       const coordinates = {};
 
       elements.forEach(el => {
-        const rect = el.getBoundingClientRect()
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        let rect = el.getBoundingClientRect()
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         coordinates[el.id] = { top: rect.top + scrollTop, bottom: rect.bottom + scrollTop };
-        coordinates[el.id].center = Math.round((coordinates[el.id].top + coordinates[el.id].bottom)/2, 0);
+        coordinates[el.id].center = Math.round((coordinates[el.id].top + coordinates[el.id].bottom) / 2, 0);
       });
 
       return coordinates;
     }
 
     function getCurrentElement() {
-      const centerY = Math.round(window.scrollY + viewportHeight/2, 0);
-      const distances = allElements.map(el => Math.abs(elementCoordinates[el.id].center - centerY));
+      let centerY = Math.round(window.scrollY + viewportHeight / 2, 0);
+      let distances = allElements.map(el => Math.abs(elementCoordinates[el.id].center - centerY));
+      console.log("distances", distances);
       return allElements[distances.indexOf(Math.min(...distances))];
     }
 
@@ -975,14 +1000,15 @@
   <script>
     document.addEventListener('DOMContentLoaded', function () {      // Get all sections
 
-
       const scrollspyOptions = {
         scrollOffset: 40,
         getActiveElement: window.handleChangePosition,
         // throttle: 800,
 
       }
-      const scrollspyInst = M.ScrollSpy.init(document.querySelectorAll('.scrollspy'), scrollspyOptions);
+      if (document.documentElement.clientWidth > 990) {
+        const scrollspyInst = M.ScrollSpy.init(document.querySelectorAll('.scrollspy'), scrollspyOptions);
+      }
       const parallaxInst = M.Parallax.init(document.querySelectorAll('.parallax'), {});
       const pushpinOptions = {
         offset: 50,
