@@ -97,8 +97,10 @@
             </div>
             <div>
               <!-- backend images -->
-              <img class="tooltipped" data-tooltip="Python" src="/static/main/img/logos-stack/python.png" alt="">
+              <!-- <img class="tooltipped" data-tooltip="Python" src="/static/main/img/logos-stack/python.png" alt=""> -->
               <img class="tooltipped" data-tooltip="Django" src="/static/main/img/logos-stack/django.png" alt="">
+              <img class="tooltipped" data-tooltip="NodeJS / Express" src="/static/main/img/logos-stack/nodejs.png"
+                alt="">
               <img class="tooltipped" data-tooltip="PostgreSQL" src="/static/main/img/logos-stack/postgresql.png"
                 alt="">
               <img class="tooltipped" data-tooltip="MongoDB" src="/static/main/img/logos-stack/mongodb.png" alt="">
@@ -132,9 +134,9 @@
       <!-- Experience & Education -->
       <div id="experience" class="scrollspy section">
         <!-- Experience -->
-        <div class="title">experience</div>
+        <!-- <div class="title">experience</div> -->
         <div class="grid-section">
-          <div class="my-card experience-list">
+          <div class="my-card experience-list" id="professional-experience">
             <div class="subtitle">Professional Experience</div>
             <!-- Experience GBE -->
             <div class="experience-section">
@@ -233,20 +235,21 @@
                   </a>
                   - <em>HarvardX</em>
                 </li>
-                <li>
+                <!-- <li>
                   <a target="_blank"
                     href="https://courses.edx.org/certificates/user/7711275/course/course-v1:MITx+20.305x+3T2015">
                     Principles of Synthetic Biology
                   </a>
                   - <em>MITx</em>
-                </li>
-                <li>
+                </li> -->
+
+                <!-- <li>
                   <a target="_blank"
                     href="https://courses.edx.org/certificates/user/7711275/course/course-v1:MITx+10.03x_2+3T2015">
                     Biopharmaceutical Manufacturing
                   </a>
                   - <em>MITx</em>
-                </li>
+                </li> -->
                 <li>
                   <a target="_blank"
                     href="https://courses.edx.org/certificates/user/7711275/course/course-v1:DavidsonX+D001x+1T2018">
@@ -261,12 +264,12 @@
                   </a>
                   - <em>Duke University</em>
                 </li>
-                <li>
+                <!-- <li>
                   <a target="_blank" href="https://www.coursera.org/account/accomplishments/certificate/EC5NLWUF5WD7">
                     Epigenetics
                   </a>
                   - <em>University of Melbourne</em>
-                </li>
+                </li> -->
               </ul>
             </div>
             <!-- Experience X -->
@@ -277,17 +280,9 @@
               <ul class="check-list">
                 <li>Generalist Engineer from a top Engineering School in France. </li>
                 <li>Strong background acquired in statistics, science and informatics.</li>
-                <li>You can take a look at <a target="_blank" href="/static/main/docs/Alfredo-Alarcon-Memoire.pdf">my
-                    master thesis</a>.
+
                 </li>
-                <li>And these two publications in which I helped with the modelling part:
-                  <a target="_blank"
-                    href="https://www.vie-publique.fr/catalogue/22151-amerique-latine-2012">Documentation
-                    Française</a> &
-                  <a target="_blank"
-                    href="https://publications.banque-france.fr/sites/default/files/medias/documents/working-paper_562_2015.pdf">Banque
-                    de France</a>.
-                </li>
+
               </ul>
             </div>
             <!-- Experience mSSB -->
@@ -298,6 +293,26 @@
               <div class="exp-title-3">📍 Paris Area, France</div>
               <ul class="check-list">
                 <li>Experience in both wet-lab and computational Biology</li>
+              </ul>
+            </div>
+
+            <!-- Experience Sciences Po -->
+            <div class="experience-section">
+              <img id="saclay-logo" src="/static/main/img/logos-experience/sciences-po.png" alt="">
+              <div class="exp-title-2">MsC Economics in Public Policies</div>
+              <div class="exp-title-3">📍 Paris, France</div>
+              <ul class="check-list">
+                <li>Statistics and Econometrics applied to Macroeconomics and Public Policies Analysis.</li>
+                <li>Master Thesis amongst the best in cohort. You can take a look at it <a target="_blank"
+                    href="/static/main/docs/Alfredo-Alarcon-Memoire.pdf">here</a>.
+                <li>I participated in two articles helping with the data analysis part:
+                  <a target="_blank"
+                    href="https://www.vie-publique.fr/catalogue/22151-amerique-latine-2012">Documentation
+                    Française</a> &
+                  <a target="_blank"
+                    href="https://publications.banque-france.fr/sites/default/files/medias/documents/working-paper_562_2015.pdf">Banque
+                    de France</a>.
+                </li>
               </ul>
             </div>
 
@@ -541,9 +556,9 @@
             <div class="expertise-image">
               <!-- <img id="chemoinfo-image" class="tooltipped" data-tooltip="Click for interactive animation"
               src="/static/main/img/logos-expertise/expertise-chemoinfo.png" alt=""> -->
-              <div id="chem-container"></div>
-              <a target="_blank" id="chemoinfo-rotate" class="btn waves-effect waves-light blue lighten-1">
+              <a target="_blank" id="chemoinfo-rotate" class="btn-small waves-effect waves-light blue lighten-1">
                 Rotate</a>
+              <div id="chem-container"></div>
               <div class="image-legend">Example of a substructure research analysis. The substructure
                 on top-left was confronted against 1520 unique structures in the metabolic model of <em>Escherichia
                   Coli</em>. 5 molecules were found. They are depicted above using javascript chemoinformatics
@@ -594,7 +609,7 @@
         </div>
       </div>
 
-      
+
 
       <!-- Side Projects -->
       <div id="side-projects">
@@ -918,7 +933,7 @@
           moveNextSection(e.key.indexOf("Up") > -1 ? "up" : "down");
         }
       }
-  
+
       window.addEventListener("wheel", e => {
         e.preventDefault();
         e.deltaY < 0 ? moveNextSection("up") : moveNextSection("down");
