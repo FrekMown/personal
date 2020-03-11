@@ -623,9 +623,10 @@
 
             <!-- Video -->
             <div class="video">
-              <video controls>
+              <!-- <video controls>
                 <source src="/static/main/img/side-projects/chemocobra-demo.mp4" type="video/mp4">
-              </video>
+              </video> -->
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/nxNcV1_KUjQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               <div class="image-legend">
                 Demo using chemocobra to compare the central metabolism of <em>Escherichia Coli</em> Wild Type vs PKT,
                 the
@@ -655,8 +656,7 @@
                 <ul class="check-list">
                   <li>Frontend was performed with React, a javascript library for dynamic web applications.</li>
                   <li>Backend uses python, with libraries such as django and django rest framework for web development
-                    as
-                    well as scientific libraries (cobra for metabolic modelling, RDKit for chemical structures handling,
+                    as well as scientific libraries (cobra for metabolic modelling, RDKit for chemical structures handling,
                     pandas for data treatment, etc...)</li>
                   <li>Deployment is performed with docker and docker-compose in Digital Ocean. Reverse proxy is used for
                     this website using Cloudflare.</li>
