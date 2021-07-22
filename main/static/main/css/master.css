@@ -150,8 +150,6 @@ video, iframe {
   grid-row: 2/4;
   display: flex;
   flex-direction: column;
-  /* align-items: stretch; */
-  /* justify-content: stretch; */
 }
 
 .my-card .first-line {
@@ -507,6 +505,11 @@ video, iframe {
 }
 
 #gbe-logo {
+  width: 220px;
+  border-radius: 5px;
+}
+
+#neovision-logo {
   width: 220px;
   border-radius: 5px;
 }
