@@ -4,6 +4,8 @@
 <head>
   <!-- Materialize -->
   <!-- Google Fonts -->
+  <!-- <link href="https://fonts.googleapis.com/css?family=Amaranth&display=swap" rel="stylesheet"> -->
+  <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -11,7 +13,7 @@
   <link rel="stylesheet" href="/static/main/css/chartist.min.css">
   <link rel="stylesheet" href="/static/main/css/chartist-plot.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="/static/main/css/master~v17.css">
+  <link rel="stylesheet" href="/static/main/css/master~v18.css">
   <link rel="stylesheet" href="/static/main/css/substr-viz-main.css">
   <title>Alfredo Alarcon - Scientific Informatics</title>
 
@@ -127,8 +129,8 @@
               <!-- data science images -->
               <img class="tooltipped" data-tooltip="Matplotlib, Pandas, Numpy, Jupyter"
                 src="/static/main/img/logos-stack/matplotlib.png" alt="">
-                <img class="tooltipped" data-tooltip="Scikit-learn" src="/static/main/img/logos-stack/sklearn.png" alt="">
-                <img class="tooltipped" data-tooltip="Pytorch" src="/static/main/img/logos-stack/pytorch.png" alt="">
+              <img class="tooltipped" data-tooltip="Scikit-learn" src="/static/main/img/logos-stack/sklearn.png" alt="">
+              <img class="tooltipped" data-tooltip="Pytorch" src="/static/main/img/logos-stack/pytorch.png" alt="">
               <img class="tooltipped" data-tooltip="Tensorflow" src="/static/main/img/logos-stack/tensorflow.png"
                 alt="">
 
@@ -139,26 +141,35 @@
       </div>
 
       <!-- Experience & Education -->
-      <div id="experience" class="scrollspy section">
-        <!-- Experience -->
-        <!-- <div class="title">experience</div> -->
+      <div id="experience" class="scrollspy section">        
         <div class="grid-section">
+          <!-- Professional Experience -->
           <div class="my-card experience-list" id="professional-experience">
             <div class="subtitle">Professional Experience</div>
+            <!-- Experience Neovision -->
+            <div class="experience-section">
+              <div class="exp-title-2">Tech Lead Artificial Intelligence</div>
+              <div class="exp-title-3">📍 Grenoble, France (From 2021)</div>
+              <img id="neovision-logo" src="/static/main/img/logos-experience/neovision.png">
+              <ul class="check-list">                
+                <li>Deep Learning methods applied to 3D objects and time series data</li>
+                <li>Development of data parsing and treatment pipelines from input raw data</li>
+                <li>Development of data analysis visualisation interfaces using python technologies (ipywidgets, plotly) for time series</li>
+                <li>Development of animated 3D interfaces for medical applications using web technologies (Typescript, React, ThreeJS)</li>
+                <li>Training of colleages in deep learning and web technologies</li>
+              </ul>
+            </div>
             <!-- Experience GBE -->
             <div class="experience-section">
               <div class="exp-title-2">Bioinformatics Team Leader</div>
               <div class="exp-title-3">📍 Paris Area, France (2017 - 2019)</div>
-              <img id="gbe-logo" src="/static/main/img/logos-experience/gbe.jpg" alt="" id="gbe">
-              <ul class="check-list">
-                <li>Began a new activity in Bioinformatics in a Biotechnology Company.</li>
-                <li>Development of a web app capable of processing, analysing and visualising most scientific data of
-                  the
-                  company (SQL, Python, JS, React).</li>
-                <li>Metabolic Modelling and transcriptomics studies led to discovery of new genes relevant for the
-                  company. Two patents being written at the moment.</li>
-                <li>Management and Training of one collaborator. Dissemination of data science and web development among
-                  biologist colleagues.</li>
+              <img id="gbe-logo" src="/static/main/img/logos-experience/gbe.jpg">
+              <ul class="check-list">                
+                <li>Foundation of a new activity in bioinformatics, data science and web development in a biotechnology company.</li>
+                <li>Development and deployment of a whole web application useful for processing, analysis and visualisation of most scientific data of the company.</li>
+                <li>Modelling and analysis of genomics and transcriptomics data, which led to the discovery of new genes and metabolic pathways. One patent on it.</li>
+                <li>Management and training of one collaborator.</li>
+                <li>Vulgarisation of data analysis and web development among biologist colleagues.</li>
               </ul>
             </div>
             <!-- Experience Systra -->
@@ -176,6 +187,49 @@
           <!-- Education -->
           <div class="my-card experience-list" id="education">
             <div class="subtitle">Education</div>
+            
+            <!-- Experience X -->
+            <div class="experience-section">
+              <img id="x-logo" src="/static/main/img/logos-experience/ecole-polytechnique.png" alt="">
+              <div class="exp-title-2">Ingénieur de l'Ecole Polytechnique</div>
+              <div class="exp-title-3">📍 Palaiseau, France (X2008)</div>
+              <ul class="check-list">
+                <li>Generalist Engineer from a top Engineering School in France. </li>
+                <li>Strong background acquired in statistics, science and informatics.</li>
+
+              </ul>
+            </div>
+            <!-- Experience mSSB -->
+            <div class="experience-section">
+              <img id="saclay-logo" src="/static/main/img/logos-experience/paris-saclay.png" alt="">
+              <div class="exp-title-2">MsC in Biotechnology</div>
+              <div class="exp-title-3"><em>Systems & Synthetic Biology</em></div>
+              <div class="exp-title-3">📍 Paris Area, France</div>
+              <ul class="check-list">
+                <li>Experience in both wet-lab and computational Biology</li>
+              </ul>
+            </div>
+
+            <!-- Experience Sciences Po -->
+            <div class="experience-section">
+              <img id="saclay-logo" src="/static/main/img/logos-experience/sciences-po.png" alt="">
+              <div class="exp-title-2">MsC Economics in Public Policies</div>
+              <div class="exp-title-3">📍 Paris, France</div>
+              <ul class="check-list">
+                <li>Statistics and Econometrics applied to Macroeconomics and Public Policies Analysis.</li>
+                <li>Master Thesis amongst the best in cohort. You can take a look at it <a target="_blank"
+                    href="/static/main/docs/Alfredo-Alarcon-Memoire.pdf">here</a>.
+                <li>I participated in two articles helping with the data analysis part:
+                  <a target="_blank"
+                    href="https://www.vie-publique.fr/catalogue/22151-amerique-latine-2012">Documentation
+                    Française</a> &
+                  <a target="_blank"
+                    href="https://publications.banque-france.fr/sites/default/files/medias/documents/working-paper_562_2015.pdf">Banque
+                    de France</a>.
+                </li>
+              </ul>
+            </div>
+
             <!-- Experience MOOCS -->
             <div class="experience-section" id="moocs">
               <img id="mooc-logo" src="/static/main/img/logos-experience/mooc.png" alt="">
@@ -183,21 +237,35 @@
               <div class="exp-title-3"><em>Web Development, Data Science & Biotechnology</em></div>
               <!-- All MOOCs -->
               <ul class="check-list">
+
                 <li>
                   <a target="_blank"
-                    href="https://www.coursera.org/account/accomplishments/specialization/certificate/AX2LHK6WJR52">
-                    Deep Learning Specialisation</a>
-                  <a target="_blank" href="https://www.coursera.org/account/accomplishments/certificate/BJL262VTRDBP">
-                    1 </a>
-                  <a target="_blank" href="https://www.coursera.org/account/accomplishments/certificate/PDEDH5GVFYX6">
-                    2 </a>
-                  <a target="_blank" href="https://www.coursera.org/account/accomplishments/certificate/Y9HA6ETNDUUW">
-                    3 </a>
-                  <a target="_blank" href="https://www.coursera.org/account/accomplishments/certificate/T83MLWPKF59E">
-                    4 </a>
-                  <a target="_blank" href="https://www.coursera.org/account/accomplishments/certificate/Z37NBYYQ5NAR">
-                    5 </a>
-
+                    href="https://www.coursera.org/account/accomplishments/specialization/UZ2V3ZVQA3EP">
+                    Reinforcement Learning Specialisation</a> (4 Courses)
+                  - <em>University of Alberta</em>
+                </li>
+                <li>
+                  <a target="_blank"
+                    href="https://www.coursera.org/account/accomplishments/specialization/WN6YKZ8UP2MD">
+                    AI for Medicine</a> (3 Courses)
+                  - <em>deeplearning.ai</em>
+                </li>
+                <li>
+                  <a target="_blank"
+                    href="https://www.coursera.org/account/accomplishments/specialization/UB62RGV4M8FS">
+                    Generative Adversarial Networks (GANs)</a> (3 Courses)
+                  - <em>deeplearning.ai</em>
+                </li>
+                <li>
+                  <a target="_blank"
+                    href="https://www.coursera.org/account/accomplishments/specialization/GLNNM7M7KDRQ">
+                    Tensorflow: Data and Deployment Specialisation</a> (4 Courses)
+                  - <em>University of Alberta</em>
+                </li>
+                <li>
+                  <a target="_blank"
+                    href="https://www.coursera.org/account/accomplishments/specialization/AX2LHK6WJR52">
+                    Deep Learning Specialisation</a> (5 Courses)
                   - <em>deeplearning.ai</em>
                 </li>
                 <li>
@@ -239,24 +307,26 @@
                   <a target="_blank"
                     href="https://s3.amazonaws.com/verify.edx.org/downloads/81b609fd04a14e1eb8bd84994eedb333/Certificate.pdf">
                     Biochemistry
+                  </a> - 
+                  <a target="_blank" href="https://www.coursera.org/account/accomplishments/certificate/KX6EJBGBLA4E">
+                    Human Physiology
+                  </a> - 
+                  <a target="_blank" href="https://www.coursera.org/account/accomplishments/certificate/EC5NLWUF5WD7">
+                    Epigenetics
                   </a>
-                  - <em>HarvardX</em>
+                  - <em>HarvardX, Duke University, University of Melbourne</em>
                 </li>
-                <!-- <li>
+                <li>
                   <a target="_blank"
                     href="https://courses.edx.org/certificates/user/7711275/course/course-v1:MITx+20.305x+3T2015">
                     Principles of Synthetic Biology
-                  </a>
-                  - <em>MITx</em>
-                </li> -->
-
-                <!-- <li>
+                  </a> - 
                   <a target="_blank"
                     href="https://courses.edx.org/certificates/user/7711275/course/course-v1:MITx+10.03x_2+3T2015">
                     Biopharmaceutical Manufacturing
                   </a>
                   - <em>MITx</em>
-                </li> -->
+                </li>
                 <li>
                   <a target="_blank"
                     href="https://courses.edx.org/certificates/user/7711275/course/course-v1:DavidsonX+D001x+1T2018">
@@ -265,59 +335,7 @@
                   - <em>Davidson College</em>
                 </li>
 
-                <li>
-                  <a target="_blank" href="https://www.coursera.org/account/accomplishments/certificate/KX6EJBGBLA4E">
-                    Human Physiology
-                  </a>
-                  - <em>Duke University</em>
-                </li>
-                <li>
-                  <a target="_blank" href="https://www.coursera.org/account/accomplishments/certificate/EC5NLWUF5WD7">
-                    Epigenetics
-                  </a>
-                  - <em>University of Melbourne</em>
-                </li>
-              </ul>
-            </div>
-            <!-- Experience X -->
-            <div class="experience-section">
-              <img id="x-logo" src="/static/main/img/logos-experience/ecole-polytechnique.png" alt="">
-              <div class="exp-title-2">Ingénieur de l'Ecole Polytechnique</div>
-              <div class="exp-title-3">📍 Palaiseau, France (X2008)</div>
-              <ul class="check-list">
-                <li>Generalist Engineer from a top Engineering School in France. </li>
-                <li>Strong background acquired in statistics, science and informatics.</li>
-
-              </ul>
-            </div>
-            <!-- Experience mSSB -->
-            <div class="experience-section">
-              <img id="saclay-logo" src="/static/main/img/logos-experience/paris-saclay.png" alt="">
-              <div class="exp-title-2">MsC in Biotechnology</div>
-              <div class="exp-title-3"><em>Systems & Synthetic Biology</em></div>
-              <div class="exp-title-3">📍 Paris Area, France</div>
-              <ul class="check-list">
-                <li>Experience in both wet-lab and computational Biology</li>
-              </ul>
-            </div>
-
-            <!-- Experience Sciences Po -->
-            <div class="experience-section">
-              <img id="saclay-logo" src="/static/main/img/logos-experience/sciences-po.png" alt="">
-              <div class="exp-title-2">MsC Economics in Public Policies</div>
-              <div class="exp-title-3">📍 Paris, France</div>
-              <ul class="check-list">
-                <li>Statistics and Econometrics applied to Macroeconomics and Public Policies Analysis.</li>
-                <li>Master Thesis amongst the best in cohort. You can take a look at it <a target="_blank"
-                    href="/static/main/docs/Alfredo-Alarcon-Memoire.pdf">here</a>.
-                <li>I participated in two articles helping with the data analysis part:
-                  <a target="_blank"
-                    href="https://www.vie-publique.fr/catalogue/22151-amerique-latine-2012">Documentation
-                    Française</a> &
-                  <a target="_blank"
-                    href="https://publications.banque-france.fr/sites/default/files/medias/documents/working-paper_562_2015.pdf">Banque
-                    de France</a>.
-                </li>
+                
               </ul>
             </div>
 
@@ -361,12 +379,13 @@
             </div>
             <!-- Forecasting - Machine Learning -->
             <div class="expertise-item">
-              <div class="exp-title-2">Forecasting - Machine Learning</div>
+              <div class="exp-title-2">Machine Learning - Deep Learning - AI</div>
               <ul class="check-list">
-                <li>Python libraries such as scikit-learn or tensorflow help us model and predict values for time series
-                  coming from different sources.</li>
                 <li>Categorical classification can be automatised with methods such as clustering or artificial neural
                   networks.</li>
+                <li><strong>Time Series forecasting</strong> can be useful in many real-life situations. This can be achieved with classical methods such as ARIMA, with newer methods such as facebook's prophet or with deep learning using the <a href="https://github.com/jdb78/pytorch-forecasting">pytorch-forecasting</a> library</li>
+                <li>Classification and segmentation of <strong>3D data</strong> can be used to automate medical image processing. With libraries such as <a href="https://github.com/nicolas-chaulet/torch-points3d">pytorch-points3d</a> we can apply cutting-edge technologies to these data.</li>
+                <li><strong>Reinforcement Learning</strong> can be used to explore huge combinatorial spaces such as the possible chemical compounds useful for a specific pharmeceutical target</li>
               </ul>
             </div>
             <!-- Data Visualisation -->
@@ -377,6 +396,7 @@
                   patterns or correlations in data.</li>
                 <li>With javascript libraries we can create interactive visualisations and animations, which can be
                   embedded into a website for either internal purposes or external diffusion.</li>
+                <li>3D data can be easily accessed in the browser using the threeJS library</li>
               </ul>
             </div>
           </div>
@@ -1058,6 +1078,7 @@
       "systra-logo": "http://www.systra.com",
       "x-logo": "http://www.polytechnique.edu",
       "saclay-logo": "http://www.mssb.fr",
+      "neovision-logo": "http://www.neovision.fr"
 
     }
     Array.from(document.querySelectorAll(".experience-section img")).forEach(elem => {
