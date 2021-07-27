@@ -1,6 +1,3 @@
-#!/bin/bash
-ssh root@188.166.35.164
-su frek
 cd /home/frek/personal
 git pull
 git submodule update
