@@ -1,4 +1,3 @@
-su frek
 cd /home/frek/personal
 git pull
 git submodule update

@@ -24,4 +24,5 @@
 ## To deploy:
 1. Make sure local public key is set up in remote Digital Ocean server
 2. Connect to remote using SSH : `ssh root@188.166.35.164`
+3. Switch to a non-root user: `su frek`
 4. Deploy using `bash /home/frek/personal/deploy.sh`
