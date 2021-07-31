@@ -20,6 +20,9 @@
   <!-- Google Analytics -->
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-172041613-1"></script>
+
+  <!-- Add smtpJS -->
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
@@ -849,7 +852,7 @@
           <div>I'm always looking for opportunities to share my knowledge and skills.</div>
           <div>Please fulfill the form below in case you have any question or proposition.</div>
           <div>English, Français & Español are all welcome!</div>
-          <form>
+          <form id="message-form">
             <!-- Name -->
             <div class="input-field">
               <i class="material-icons prefix">account_circle</i>
@@ -857,11 +860,11 @@
               <label for="icon_prefix">Name</label>
             </div>
             <!-- Telephone -->
-            <div class="input-field">
+            <!-- <div class="input-field">
               <i class="material-icons prefix">phone</i>
               <input id="icon_telephone" type="tel" class="validate">
               <label for="icon_telephone">Telephone</label>
-            </div>
+            </div> -->
             <!-- E-mail -->
             <div class="input-field">
               <i class="material-icons prefix">email</i>
@@ -871,8 +874,14 @@
             <!-- Message -->
             <div class="input-field col s6">
               <i class="material-icons prefix">mode_edit</i>
-              <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+              <textarea id="icon_prefix2" class="materialize-textarea validate"></textarea>
               <label for="icon_prefix2">Message</label>
+            </div>
+            <!-- Send message -->
+            <div class="input-field center-align">
+              <button class="btn waves-effect waves-light" type="submit" name="action" id="send-btn">Send
+                <i class="material-icons right">send</i>
+              </button>
             </div>
           </form>
         </div>
@@ -937,13 +946,11 @@
     document.addEventListener("DOMContentLoaded", function () {
       elementCoordinates = getPositionsElements(allElements);
       viewportHeight = document.documentElement.clientHeight;
-      console.log("content loaded", { elementCoordinates, viewportHeight })
     })
 
     window.addEventListener("resize", () => {
       elementCoordinates = getPositionsElements(allElements);
       viewportHeight = document.documentElement.clientHeight;
-      console.log("resize", { elementCoordinates, viewportHeight });
     });
 
 
@@ -1033,7 +1040,6 @@
     function getCurrentElement() {
       let centerY = Math.round(window.scrollY + viewportHeight / 2, 0);
       let distances = allElements.map(el => Math.abs(elementCoordinates[el.id].center - centerY));
-      console.log("distances", distances);
       return allElements[distances.indexOf(Math.min(...distances))];
     }
 
@@ -1099,9 +1105,63 @@
 
 
     // Mahindra
-    document.querySelector("#mahindra").onclick = () => window.open("https://www.mahindraecolecentrale.edu.in/", "_blank");
+    document.querySelector("#mahindra").onclick = () => window.open("https://www.mahindraecolecentrale.edu.in/", "_blank");    
 
   </script>
+
+  <!-- Send Message -->
+  <script>
+    const btn = document.getElementById("send-btn");
+    const form = document.getElementById("message-form");
+
+    
+
+    function onSendMessage(event) {
+      event.preventDefault();
+
+      const name = icon_prefix.value;
+      const email = icon_email.value;
+      const message = icon_prefix2.value;
+
+      if (name.length === 0 || email.length === 0 || message.length === 0) {
+        alert('Please fill all fields');
+        return;
+      }
+
+      const body = `
+        <ul>
+          <li><strong>Name</strong>: ${name}</li><br>
+          <li><strong>E-mail</strong>: ${email}</li><br>
+          <li><strong>Message</strong>: ${message}</li><br>
+      `
+
+      Email.send({
+        SecureToken : "b1ee5e02-72e6-4697-bc29-24d955337033",
+        To : 'a.alarcon.y@gmail.com',
+        From : 'alfredo.alarcon.website@gmail.com',
+        Subject : `[website] New message from ${name}`,
+        Body : body
+      }).then(
+        message => { 
+          console.log({message});
+          if (message === "OK") {
+            alert("Message sent, thank you !")
+          }
+          else {
+            alert("There seems to be a server error, please send this message to a.alarcon.y@gmail.com")
+          }
+        }
+      );
+
+        
+    }
+
+    form.onsubmit = onSendMessage;
+
+    
+  </script>
+
+  
 
   <!-- Initialize Chartist Animation -->
   <script src="/static/main/js/chartist.min.js"></script>
