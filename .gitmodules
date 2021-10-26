@@ -3,11 +3,6 @@
 	url = https://github.com/FrekMown/chemocobra.git
 	branch = single-app
 
-[submodule "geodata"]
-	path = geodata
-	url = https://github.com/FrekMown/geodata.git
-	branch = single-app
-
 [submodule "museo_solidaridad"]
 	path = museo_solidaridad
 	url = https://github.com/FrekMown/museo-solidaridad.git
