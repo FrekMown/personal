@@ -9,3 +9,7 @@
 	branch = single-app
 
 	
+[submodule "geodata"]
+	path = geodata
+	url = git@github.com:FrekMown/geodata.git
+	branch = master
