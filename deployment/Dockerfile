@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:18.04
 LABEL Conda Development Team <conda@continuum.io>
 
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
@@ -10,7 +10,7 @@ RUN apt-get update --fix-missing && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
- RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-4.5.11-Linux-x86_64.sh -O ~/miniconda.sh && \
+RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-4.5.11-Linux-x86_64.sh -O ~/miniconda.sh && \
     /bin/bash ~/miniconda.sh -b -p /opt/conda && \
     rm ~/miniconda.sh && \
     /opt/conda/bin/conda clean -tipsy && \
@@ -26,5 +26,9 @@ RUN conda install -c rdkit rdkit
 RUN pip install -r /tmp/requirements.txt
 RUN apt-get install -y libxrender-dev
 ENV VERSION_APP PRODUCTION
+RUN mkdir /code/
+RUN chmod -R a+rw /code/
+RUN mkdir /.cache
+RUN chmod -R a+rwx /.cache
 
 WORKDIR /code/
